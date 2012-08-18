@@ -1,6 +1,6 @@
 # compare.js
 
-compare.js implements JavaScript's comparison operators for Node.js and the browser the way you would expect them to be.
+compare.js implements JavaScript's comparison operators for Node.js the way you would expect them to be.
 
 ## Installation
 
