@@ -40,6 +40,12 @@ Please note that each comparison operator works on each combination of types and
 
 That's it :-)!
 
+## Running the tests
+
+Go to the folder where you have cloned compare.js to and run [mocha](https://github.com/visionmedia/mocha):
+
+    $ mocha
+
 ## Copyright
 
 (c) Copyright 2012 [Golo Roden](http://www.goloroden.de), contact using webmaster@goloroden.de
