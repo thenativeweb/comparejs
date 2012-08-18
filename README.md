@@ -1,4 +1,4 @@
-# compare.js #
+# compare.js
 
 Implementing the comparison operators eq, ne, gt, ge, lt and le in JavaScript for use with Node.js and the browser.
 
