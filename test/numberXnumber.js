@@ -29,6 +29,7 @@ suite('compare.js', function () {
           cmp.eq(new Number(3.14159), new Number(3.14159)).should.equal(true);
         });
       });
+
       suite('not equal => false', function () {
         test('int x int', function () {
           cmp.eq(23, 42).should.equal(false);
@@ -96,6 +97,7 @@ suite('compare.js', function () {
           cmp.ne(new Number(3.14159), new Number(3.14159)).should.equal(false);
         });
       });
+      
       suite('not equal => true', function () {
         test('int x int', function () {
           cmp.ne(23, 42).should.equal(true);
