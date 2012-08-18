@@ -18,13 +18,15 @@ var cmp = require('compare.js');
 
 Now you are able to use the various comparison operators:
 
-    cmp.eq() => equal
-    cmp.ne() => not equal
-    cmp.gt() => greater than
-    cmp.ge() => greater than or equal
-    cmp.lt() => less than
-    cmp.le() => less than or equal
-    cmp.id() => identical
+<table>
+  <tr><td>cmp.eq</td><td>equal</td></tr>
+  <tr><td>cmp.ne</td><td>not equal</td></tr>
+  <tr><td>cmp.gt</td><td>greater than</td></tr>
+  <tr><td>cmp.ge</td><td>greater than or equal</td></tr>
+  <tr><td>cmp.lt</td><td>less than</td></tr>
+  <tr><td>cmp.le</td><td>less than or equal</td></tr>
+  <tr><td>cmp.id</td><td>identical</td></tr>
+</table>
 
 That's it :-)!
 
