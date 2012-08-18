@@ -19,14 +19,17 @@ var cmp = require('compare.js');
 Now you are able to use the various comparison operators:
 
 <table>
-  <tr><td>cmp.eq</td><td>equal</td></tr>
-  <tr><td>cmp.ne</td><td>not equal</td></tr>
-  <tr><td>cmp.gt</td><td>greater than</td></tr>
-  <tr><td>cmp.ge</td><td>greater than or equal</td></tr>
-  <tr><td>cmp.lt</td><td>less than</td></tr>
-  <tr><td>cmp.le</td><td>less than or equal</td></tr>
-  <tr><td>cmp.id</td><td>identical</td></tr>
+  <tr><th>Operator</th><th>Description</th></tr>
+  <tr><td>cmp.eq(first, second)</td><td>equal</td></tr>
+  <tr><td>cmp.ne(first, second)</td><td>not equal</td></tr>
+  <tr><td>cmp.gt(first, second)</td><td>greater than</td></tr>
+  <tr><td>cmp.ge(first, second)</td><td>greater than or equal</td></tr>
+  <tr><td>cmp.lt(first, second)</td><td>less than</td></tr>
+  <tr><td>cmp.le(first, second)</td><td>less than or equal</td></tr>
+  <tr><td>cmp.id(first, second)</td><td>identical</td></tr>
 </table>
+
+Please note that each comparison operator works on each combination of types and does what you would expect it to do.
 
 That's it :-)!
 
