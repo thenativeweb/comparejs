@@ -12,7 +12,7 @@ compare.js implements JavaScript's comparison operators for Node.js the way you 
 - Supports comparison of native data types and constructor-created data types, such as `number` and `new Number()`.
 - Supports comparison with `undefined` correctly, as <= and >= are problematic in plain JavaScript.
 - Supports comparison in a perfectly type-safe way out-of-the-box.
-- Supports comparison by value and by reference, depending on what makes sense.
+- Supports comparison by equality and identity, depending on what makes sense.
 
 ## Quick Start
 
