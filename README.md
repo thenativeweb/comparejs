@@ -8,10 +8,10 @@ compare.js implements JavaScript's comparison operators for Node.js the way you 
 
 ## Features
 
-- Supports comparison of numbers, strings, booleans, functions and undefined.
-- Supports comparison in a type-safe manner.
-- Supports comparison by value and by reference.
-- Supports comparison with `undefined` correctly.
+- Supports comparison of `number`, `string`, `boolean`, `function` and `undefined`.
+- Supports comparison with `undefined` correctly, as <= and >= are problematic in plain JavaScript.
+- Supports comparison in a perfectly type-safe way out-of-the-box.
+- Supports comparison by value and by reference, depending on what makes sense.
 
 ## Quick Start
 
