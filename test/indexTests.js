@@ -39,7 +39,7 @@ suite('compare.js', function () {
 
   suite('ne', function () {
     suite('number x number', function () {
-      suite('equal => true', function () {
+      suite('equal => false', function () {
         test('int x int', function () {
           cmp.ne(23, 23).should.equal(false);
         });
@@ -48,7 +48,7 @@ suite('compare.js', function () {
           cmp.ne(3.14159, 3.14159).should.equal(false);
         });
       });
-      suite('not equal => false', function () {
+      suite('not equal => true', function () {
         test('int x int', function () {
           cmp.ne(23, 42).should.equal(true);
         });
