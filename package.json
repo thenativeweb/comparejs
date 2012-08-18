@@ -2,13 +2,13 @@
   "name": "compare.js",
   "version": "0.0.1",
   "description": "Implementing the comparison operators eq, ne, gt, ge, lt and le in JavaScript for use with Node.js and the browser.",
-  "main": "lib/index.js",
-  "dependencies": {
-
+  "author": "Golo Roden <webmaster@goloroden.de>",
+  "main": "./lib/index",
+  "devDependencies": {
+    "should": "1.1.0"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/goloroden/compare.js.git"
-  },
-  "author": "Golo Roden"
+  }
 }
