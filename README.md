@@ -8,8 +8,9 @@ compare.js implements JavaScript's comparison operators for Node.js and the brow
 
 ## Features
 
+- Supports comparison in a type-safe manner
 - Supports comparison by value and by reference
-- Handles `undefined` correctly
+- Supports comparison with `undefined` correctly
 
 ## Quick Start
 
