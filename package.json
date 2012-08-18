@@ -4,6 +4,9 @@
   "description": "Implementing the comparison operators eq, ne, gt, ge, lt and le in JavaScript for use with Node.js and the browser.",
   "author": "Golo Roden <webmaster@goloroden.de>",
   "main": "./lib/index",
+  "dependencies": {
+    "underscore": "1.3.3"
+  },
   "devDependencies": {
     "should": "1.1.0"
   },
