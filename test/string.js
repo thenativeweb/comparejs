@@ -105,4 +105,22 @@ suite('string x string', function () {
       test('empty x string' , function () { cmp.le(   '', 'Foo').should.equal(true); });
     });
   });
+
+  suite('id', function () {
+    suite('identical => true', function () {
+      test('string x string'    , function () { cmp.id(           'Foo' ,            'Foo' ).should.equal(true); });
+      test('string x String()'  , function () { cmp.id(           'Foo' , new String('Foo')).should.equal(true); });
+      test('String() x String()', function () { cmp.id(new String('Foo'), new String('Foo')).should.equal(true); });
+      test('empty x empty'      , function () { cmp.id(              '' ,               '' ).should.equal(true); });
+      test('empty x Empty()'    , function () { cmp.id(              '' , new String(   '')).should.equal(true); });
+    });
+
+    suite('not identical => false', function () {
+      test('string x string'    , function () { cmp.id(           'Foo' ,            'Bar' ).should.equal(false); });
+      test('string x String()'  , function () { cmp.id(           'Foo' , new String('Bar')).should.equal(false); });
+      test('String() x String()', function () { cmp.id(new String('Foo'), new String('Bar')).should.equal(false); });
+      test('string x empty'     , function () { cmp.id(           'Foo' ,               '' ).should.equal(false); });
+      test('string x Empty()'   , function () { cmp.id(           'Foo' , new String(   '')).should.equal(false); });
+    });
+  });
 });

@@ -37,4 +37,10 @@ suite('undefined x undefined', function () {
       test('undefined x undefined', function () { cmp.le(undefined, undefined).should.equal(true); });
     });
   });
+
+  suite('id', function () {
+    suite('identical => true', function () {
+      test('undefined x undefined', function () { cmp.id(undefined, undefined).should.equal(true); });
+    });
+  });
 });

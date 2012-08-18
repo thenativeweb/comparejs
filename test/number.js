@@ -165,4 +165,30 @@ suite('number x number', function () {
       test('isNaN x double', function () { cmp.le(Number.NaN,    3.14159).should.equal(false); });
     });
   });
+
+  suite('id', function () {
+    suite('identical => true', function () {
+      test('int x int'          , function () { cmp.id(                23 ,                 23 ).should.equal(true); });
+      test('int x Int()'        , function () { cmp.id(                23 , new Number(     23)).should.equal(true); });
+      test('Int() x Int()'      , function () { cmp.id(new Number(     23), new Number(     23)).should.equal(true); });
+      test('double x double'    , function () { cmp.id(           3.14159 ,            3.14159 ).should.equal(true); });
+      test('double x Double()'  , function () { cmp.id(           3.14159 , new Number(3.14159)).should.equal(true); });
+      test('Double() x Double()', function () { cmp.id(new Number(3.14159), new Number(3.14159)).should.equal(true); });
+    });
+
+    suite('not identical => false', function () {
+      test('int x int'          , function () { cmp.id(                23 ,                 42 ).should.equal(false); });
+      test('int x Int()'        , function () { cmp.id(                23 , new Number(     42)).should.equal(false); });
+      test('Int() x Int()'      , function () { cmp.id(new Number(     23), new Number(     42)).should.equal(false); });
+      test('double x double'    , function () { cmp.id(           3.14159 ,            2.71828 ).should.equal(false); });
+      test('double x Double()'  , function () { cmp.id(           3.14159 , new Number(2.71828)).should.equal(false); });
+      test('Double() x Double()', function () { cmp.id(new Number(3.14159), new Number(2.71828)).should.equal(false); });
+    });
+
+    suite('isNaN => false', function () {
+      test('int x isNaN'  , function () { cmp.id(        23, Number.NaN ).should.equal(false); });
+      test('isNaN x isNaN', function () { cmp.id(Number.NaN, Number.NaN ).should.equal(false); });
+      test('isNan x int'  , function () { cmp.id(Number.NaN,         42 ).should.equal(false); });
+    });
+  });
 });

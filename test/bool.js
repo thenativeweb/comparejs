@@ -101,4 +101,24 @@ suite('bool x bool', function () {
       test('false x true', function () { cmp.le(false, true).should.equal(true); });
     });
   });
+
+  suite('id', function () {
+    suite('identical => true', function () {
+      test('true    x true'   , function () { cmp.id(             true ,              true ).should.equal(true); });
+      test('true    x True()' , function () { cmp.id(             true , new Boolean( true)).should.equal(true); });
+      test('True()  x True()' , function () { cmp.id(new Boolean( true), new Boolean( true)).should.equal(true); });
+      test('false   x false'  , function () { cmp.id(            false ,             false ).should.equal(true); });
+      test('false   x False()', function () { cmp.id(            false , new Boolean(false)).should.equal(true); });
+      test('False() x False()', function () { cmp.id(new Boolean(false), new Boolean(false)).should.equal(true); });
+    });
+
+    suite('not identical => false', function () {
+      test('true    x false'   , function () { cmp.id(             true ,             false ).should.equal(false); });
+      test('true    x False()' , function () { cmp.id(             true , new Boolean(false)).should.equal(false); });
+      test('True()  x False()' , function () { cmp.id(new Boolean( true), new Boolean(false)).should.equal(false); });
+      test('false   x true'    , function () { cmp.id(            false ,              true ).should.equal(false); });
+      test('false   x True()'  , function () { cmp.id(            false , new Boolean( true)).should.equal(false); });
+      test('False() x True()'  , function () { cmp.id(new Boolean(false), new Boolean( true)).should.equal(false); });
+    });
+  });
 });
