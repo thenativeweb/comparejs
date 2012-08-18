@@ -62,7 +62,7 @@ suite('bool x bool', function () {
       test('true x false', function () { cmp.ge(true, false).should.equal(true); });
     });
 
-    suite('equal => false', function () {
+    suite('equal => true', function () {
       test('true x true'  , function () { cmp.ge( true,  true).should.equal(true); });
       test('false x false', function () { cmp.ge(false, false).should.equal(true); });
     });
@@ -92,7 +92,7 @@ suite('bool x bool', function () {
       test('true x false', function () { cmp.le(true, false).should.equal(false); });
     });
 
-    suite('equal => false', function () {
+    suite('equal => true', function () {
       test('true x true'  , function () { cmp.le( true,  true).should.equal(true); });
       test('false x false', function () { cmp.le(false, false).should.equal(true); });
     });
