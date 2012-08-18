@@ -79,7 +79,7 @@ suite('number x number', function () {
       test('isNaN x int'   , function () { cmp.gt(Number.NaN,         23).should.equal(false); });
       test('double x isNaN', function () { cmp.gt(   3.14159, Number.NaN).should.equal(false); });
       test('isNaN x double', function () { cmp.gt(Number.NaN,    3.14159).should.equal(false); });
-    })
+    });
   });
 
   suite('ge', function () {
@@ -107,14 +107,62 @@ suite('number x number', function () {
       test('isNaN x int'   , function () { cmp.ge(Number.NaN,         23).should.equal(false); });
       test('double x isNaN', function () { cmp.ge(   3.14159, Number.NaN).should.equal(false); });
       test('isNaN x double', function () { cmp.ge(Number.NaN,    3.14159).should.equal(false); });
-    })
+    });
   });
 
   suite('lt', function () {
+    suite('greater => false', function () {
+      test('int x int'      , function () { cmp.lt(     42,      23).should.equal(false); });
+      test('double x double', function () { cmp.lt(3.14159, 2.71828).should.equal(false); });
+      test('int x double'   , function () { cmp.lt(      3, 2.71828).should.equal(false); });
+      test('double x int'   , function () { cmp.lt(3.14159,       3).should.equal(false); });
+    });
 
+    suite('equal => false', function () {
+      test('int x int'      , function () { cmp.lt(     23,      23).should.equal(false); });
+      test('double x double', function () { cmp.lt(3.14159, 3.14159).should.equal(false); });
+    });
+
+    suite('less => true', function () {
+      test('int x int'      , function () { cmp.lt(     23,      42).should.equal(true); });
+      test('double x double', function () { cmp.lt(2.71828, 3.14159).should.equal(true); });
+      test('int x double'   , function () { cmp.lt(      3, 3.14159).should.equal(true); });
+      test('double x int'   , function () { cmp.lt(2.71828,       3).should.equal(true); });
+    });
+
+    suite('isNan => false', function () {
+      test('int x isNaN'   , function () { cmp.lt(        23, Number.NaN).should.equal(false); });
+      test('isNaN x int'   , function () { cmp.lt(Number.NaN,         23).should.equal(false); });
+      test('double x isNaN', function () { cmp.lt(   3.14159, Number.NaN).should.equal(false); });
+      test('isNaN x double', function () { cmp.lt(Number.NaN,    3.14159).should.equal(false); });
+    });
   });
 
   suite('le', function () {
+    suite('greater => false', function () {
+      test('int x int'      , function () { cmp.le(     42,      23).should.equal(false); });
+      test('double x double', function () { cmp.le(3.14159, 2.71828).should.equal(false); });
+      test('int x double'   , function () { cmp.le(      3, 2.71828).should.equal(false); });
+      test('double x int'   , function () { cmp.le(3.14159,       3).should.equal(false); });
+    });
 
+    suite('equal => true', function () {
+      test('int x int'      , function () { cmp.le(     23,      23).should.equal(true); });
+      test('double x double', function () { cmp.le(3.14159, 3.14159).should.equal(true); });
+    });
+
+    suite('less => true', function () {
+      test('int x int'      , function () { cmp.le(     23,      42).should.equal(true); });
+      test('double x double', function () { cmp.le(2.71828, 3.14159).should.equal(true); });
+      test('int x double'   , function () { cmp.le(      3, 3.14159).should.equal(true); });
+      test('double x int'   , function () { cmp.le(2.71828,       3).should.equal(true); });
+    });
+
+    suite('isNan => false', function () {
+      test('int x isNaN'   , function () { cmp.le(        23, Number.NaN).should.equal(false); });
+      test('isNaN x int'   , function () { cmp.le(Number.NaN,         23).should.equal(false); });
+      test('double x isNaN', function () { cmp.le(   3.14159, Number.NaN).should.equal(false); });
+      test('isNaN x double', function () { cmp.le(Number.NaN,    3.14159).should.equal(false); });
+    });
   });
 });
