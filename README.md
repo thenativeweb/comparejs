@@ -8,6 +8,9 @@ compare.js implements JavaScript's comparison operators for Node.js and the brow
 
 ## Features
 
+- Supports comparison by value and by reference
+- Handles undefined correctly
+
 ## Quick Start
 
 Using compare.js is easy. All you need to do is to add a reference to it within your Node.js application:
