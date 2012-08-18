@@ -56,31 +56,29 @@ suite('number x number', function () {
 
   suite('gt', function () {
     suite('greater => true', function () {
-      test('int x int');
-      test('double x double');
-      test('int x double');
-      test('double x int');
+      test('int x int'      , function () { cmp.gt(     42,      23).should.equal(true); });
+      test('double x double', function () { cmp.gt(3.14159, 2.71828).should.equal(true); });
+      test('int x double'   , function () { cmp.gt(      3, 2.71828).should.equal(true); });
+      test('double x int'   , function () { cmp.gt(3.14159,       3).should.equal(true); });
     });
 
     suite('equal => false', function () {
-      test('int x int');
-      test('double x double');
-      test('int x double');
-      test('double x int');
+      test('int x int'      , function () { cmp.gt(     23,      23).should.equal(false); });
+      test('double x double', function () { cmp.gt(3.14159, 3.14159).should.equal(false); });
     });
 
     suite('less => false', function () {
-      test('int x int');
-      test('double x double');
-      test('int x double');
-      test('double x int');
+      test('int x int'      , function () { cmp.gt(     23,      42).should.equal(false); });
+      test('double x double', function () { cmp.gt(2.71828, 3.14159).should.equal(false); });
+      test('int x double'   , function () { cmp.gt(      3, 3.14159).should.equal(false); });
+      test('double x int'   , function () { cmp.gt(2.71828,       3).should.equal(false); });
     });
 
     suite('isNan => false', function () {
-      test('int x isNaN');
-      test('isNaN x int');
-      test('double x isNaN');
-      test('isNaN x double');
+      test('int x isNaN'   , function () { cmp.gt(        23, Number.NaN).should.equal(false); });
+      test('isNaN x int'   , function () { cmp.gt(Number.NaN,         23).should.equal(false); });
+      test('double x isNaN', function () { cmp.gt(   3.14159, Number.NaN).should.equal(false); });
+      test('isNaN x double', function () { cmp.gt(Number.NaN,    3.14159).should.equal(false); });
     })
   });
 
