@@ -1,6 +1,12 @@
 # compare.js
 
-Implementing the comparison operators eq, ne, gt, ge, lt and le in JavaScript for use with Node.js and the browser.
+ompare.js implements JavaScript's comparison operators for Node.js and the browser the way you would expect them to be.
+
+## Installation
+
+```JavaScript
+TBD
+```
 
 ## Copyright
 
