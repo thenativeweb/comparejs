@@ -4,12 +4,12 @@ compare.js implements JavaScript's comparison operators for Node.js and the brow
 
 ## Installation
 
-    $ TBD
+    $ npm install compare.js
 
 ## Features
 
 - Supports comparison by value and by reference
-- Handles undefined correctly
+- Handles `undefined` correctly
 
 ## Quick Start
 
