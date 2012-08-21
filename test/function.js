@@ -2,84 +2,106 @@ var cmp = require('../lib/index'),
     should = require('should');
 
 suite('function x function', function () {
+  var f1 = function () { return 23; },
+      f2 = function () { return 23; },
+      g1 = function () { return 42; },
+      g2 = function () { return 42; },
+      F1 = new Function('return 23;'),
+      F2 = new Function('return 23;'),
+      G1 = new Function('return 42;'),
+      G2 = new Function('return 42;');
+
   suite('eq', function () {
     suite('equal => true', function () {
-      test('function   x function'  , function () { cmp.eq(function () { return 23; }, function () { return 23; }).should.equal(true); });
-      test('Function() x Function()', function () { cmp.eq(new Function('return 23;'), new Function('return 23;')).should.equal(true); });
+      test('function   x function'  , function () { cmp.eq(f1, f2).should.equal(true); });
+      test('Function() x Function()', function () { cmp.eq(F1, F2).should.equal(true); });
     });
 
     suite('not equal => false', function () {
-      test('function   x function'  , function () { cmp.eq(function () { return 23; }, function () { return 42; }).should.equal(false); });
-      test('function   x Function()', function () { cmp.eq(function () { return 23; }, new Function('return 42;')).should.equal(false); });
-      test('Function() x Function()', function () { cmp.eq(new Function('return 23;'), new Function('return 42;')).should.equal(false); });
+      test('function   x function'  , function () { cmp.eq(f1, g1).should.equal(false); });
+      test('function   x Function()', function () { cmp.eq(f1, F1).should.equal(false); });
+      test('Function() x function  ', function () { cmp.eq(F1, f1).should.equal(false); });
+      test('Function() x Function()', function () { cmp.eq(F1, G1).should.equal(false); });
     });
   });
 
   suite('ne', function () {
     suite('equal => false', function () {
-      test('function   x function'  , function () { cmp.ne(function () { return 23; }, function () { return 23; }).should.equal(false); });
-      test('Function() x Function()', function () { cmp.ne(new Function('return 23;'), new Function('return 23;')).should.equal(false); });
+      test('function   x function'  , function () { cmp.ne(f1, f2).should.equal(false); });
+      test('Function() x Function()', function () { cmp.ne(F1, F2).should.equal(false); });
     });
 
     suite('not equal => true', function () {
-      test('function   x function'  , function () { cmp.ne(function () { return 23; }, function () { return 42; }).should.equal(true); });
-      test('function   x Function()', function () { cmp.ne(function () { return 23; }, new Function('return 42;')).should.equal(true); });
-      test('Function() x Function()', function () { cmp.ne(new Function('return 23;'), new Function('return 42;')).should.equal(true); });
+      test('function   x function'  , function () { cmp.ne(f1, g1).should.equal(true); });
+      test('function   x Function()', function () { cmp.ne(f1, F1).should.equal(true); });
+      test('Function() x function  ', function () { cmp.ne(F1, f1).should.equal(true); });
+      test('Function() x Function()', function () { cmp.ne(F1, G1).should.equal(true); });
     });
   });
 
   suite('gt', function () {
     suite('any => false', function () {
-      test('function   x function'  , function () { cmp.gt(function () { return 23; }, function () { return 42; }).should.equal(false); });
-      test('function   x Function()', function () { cmp.gt(function () { return 23; }, new Function('return 42;')).should.equal(false); });
-      test('Function() x Function()', function () { cmp.gt(new Function('return 23;'), new Function('return 42;')).should.equal(false); });
+      test('function   x function'  , function () { cmp.gt(f1, f2).should.equal(false); });
+      test('function   x function'  , function () { cmp.gt(f1, g1).should.equal(false); });
+      test('function   x Function()', function () { cmp.gt(f1, F1).should.equal(false); });
+      test('Function() x function  ', function () { cmp.gt(F1, f1).should.equal(false); });
+      test('Function() x Function()', function () { cmp.gt(F1, F2).should.equal(false); });
+      test('Function() x Function()', function () { cmp.gt(F1, G1).should.equal(false); });
     });
   });
 
   suite('ge', function () {
     suite('equal => true', function () {
-      test('function   x function'  , function () { cmp.ge(function () { return 23; }, function () { return 23; }).should.equal(true); });
-      test('Function() x Function()', function () { cmp.ge(new Function('return 23;'), new Function('return 23;')).should.equal(true); });
+      test('function   x function'  , function () { cmp.ge(f1, f2).should.equal(true); });
+      test('Function() x Function()', function () { cmp.ge(F1, F2).should.equal(true); });
     });
 
     suite('not equal => false', function () {
-      test('function   x function'  , function () { cmp.ge(function () { return 23; }, function () { return 42; }).should.equal(false); });
-      test('function   x Function()', function () { cmp.ge(function () { return 23; }, new Function('return 42;')).should.equal(false); });
-      test('Function() x Function()', function () { cmp.ge(new Function('return 23;'), new Function('return 42;')).should.equal(false); });
+      test('function   x function'  , function () { cmp.ge(f1, g1).should.equal(false); });
+      test('function   x Function()', function () { cmp.ge(f1, F1).should.equal(false); });
+      test('Function() x function  ', function () { cmp.ge(F1, f1).should.equal(false); });
+      test('Function() x Function()', function () { cmp.ge(F1, G1).should.equal(false); });
     });
   });
 
   suite('lt', function () {
     suite('any => false', function () {
-      test('function   x function'  , function () { cmp.lt(function () { return 23; }, function () { return 42; }).should.equal(false); });
-      test('function   x Function()', function () { cmp.lt(function () { return 23; }, new Function('return 42;')).should.equal(false); });
-      test('Function() x Function()', function () { cmp.lt(new Function('return 23;'), new Function('return 42;')).should.equal(false); });
+      test('function   x function'  , function () { cmp.lt(f1, f2).should.equal(false); });
+      test('function   x function'  , function () { cmp.lt(f1, g1).should.equal(false); });
+      test('function   x Function()', function () { cmp.lt(f1, F1).should.equal(false); });
+      test('Function() x function  ', function () { cmp.lt(F1, f1).should.equal(false); });
+      test('Function() x Function()', function () { cmp.lt(F1, F2).should.equal(false); });
+      test('Function() x Function()', function () { cmp.lt(F1, G1).should.equal(false); });
     });
   });
 
   suite('le', function () {
     suite('equal => true', function () {
-      test('function   x function'  , function () { cmp.le(function () { return 23; }, function () { return 23; }).should.equal(true); });
-      test('Function() x Function()', function () { cmp.le(new Function('return 23;'), new Function('return 23;')).should.equal(true); });
+      test('function   x function'  , function () { cmp.le(f1, f2).should.equal(true); });
+      test('Function() x Function()', function () { cmp.le(F1, F2).should.equal(true); });
     });
 
     suite('not equal => false', function () {
-      test('function   x function'  , function () { cmp.le(function () { return 23; }, function () { return 42; }).should.equal(false); });
-      test('function   x Function()', function () { cmp.le(function () { return 23; }, new Function('return 42;')).should.equal(false); });
-      test('Function() x Function()', function () { cmp.le(new Function('return 23;'), new Function('return 42;')).should.equal(false); });
+      test('function   x function'  , function () { cmp.le(f1, g1).should.equal(false); });
+      test('function   x Function()', function () { cmp.le(f1, F1).should.equal(false); });
+      test('Function() x function  ', function () { cmp.le(F1, f1).should.equal(false); });
+      test('Function() x Function()', function () { cmp.le(F1, G1).should.equal(false); });
     });
   });
 
   suite('id', function () {
     suite('equal => true', function () {
-      test('function   x function'  , function () { var f = function () { return 23; }; cmp.id(f, f).should.equal(true); });
-      test('Function() x Function()', function () { var f = new Function('return 23;'); cmp.id(f, f).should.equal(true); });
+      test('function   x function'  , function () { cmp.id(f1, f1).should.equal(true); });
+      test('Function() x Function()', function () { cmp.id(F1, F1).should.equal(true); });
     });
 
     suite('not equal => false', function () {
-      test('function   x function'  , function () { cmp.id(function () { return 23; }, function () { return 23; }).should.equal(false); });
-      test('function   x Function()', function () { cmp.id(function () { return 23; }, new Function('return 23;')).should.equal(false); });
-      test('Function() x Function()', function () { cmp.id(new Function('return 23;'), new Function('return 23;')).should.equal(false); });
+      test('function   x function'  , function () { cmp.id(f1, f2).should.equal(false); });
+      test('function   x function'  , function () { cmp.id(f1, g1).should.equal(false); });
+      test('function   x Function()', function () { cmp.id(f1, F1).should.equal(false); });
+      test('Function() x function  ', function () { cmp.id(F1, f1).should.equal(false); });
+      test('Function() x Function()', function () { cmp.id(F1, F2).should.equal(false); });
+      test('Function() x Function()', function () { cmp.id(F1, G1).should.equal(false); });
     });
   });
 });

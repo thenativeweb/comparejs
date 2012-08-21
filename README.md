@@ -14,7 +14,7 @@ compare.js implements JavaScript's comparison operators for Node.js the way you 
 - Supports comparison with `undefined` correctly, as <= and >= are problematic in plain JavaScript.
 - Supports comparison in a perfectly type-safe way out-of-the-box.
 - Supports comparison by equality and identity, depending on what makes sense.
-- Developed using TDD and backed up by more than 450 unit tests.
+- Developed using TDD and backed up by more than 475 unit tests.
 
 ## Quick Start
 
