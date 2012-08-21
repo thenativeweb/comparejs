@@ -11,7 +11,7 @@ compare.js implements JavaScript's comparison operators for Node.js the way you 
 - Supports comparison of `number`, `string`, `boolean`, `function`, `object`, `array` and `undefined`.
 - Supports comparison of native data types and constructor-created data types, such as `number` and `new Number()`.
 - Supports comparison of objects and arrays using deep-equal.
-- Supports comparison of objects with `<`, `<=`, `>` and `>=` by handling them as subsets.
+- Supports comparison of objects and arrays with `<`, `<=`, `>` and `>=` by handling them as subsets.
 - Supports comparison with `undefined` correctly, as `<=` and `>=` are problematic in plain JavaScript.
 - Supports comparison in a perfectly type-safe way out-of-the-box.
 - Supports comparison by equality and identity, depending on what makes sense.
