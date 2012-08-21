@@ -5,7 +5,6 @@
   "author": "Golo Roden <webmaster@goloroden.de>",
   "main": "./lib/index",
   "dependencies": {
-    "underscore": "1.3.3"
   },
   "devDependencies": {
     "should": "1.1.0"
