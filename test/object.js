@@ -2,101 +2,189 @@ var cmp = require('../lib/index'),
     should = require('should');
 
 suite('object x object', function () {
+  var o1 = { foo: 'bar' },
+      o2 = { foo: 'bar' },
+      p1 = { foo: 'baz' },
+      O1 = new Object(),
+      O2 = new Object(),
+      P1 = new Object(),
+      empty = {},
+      Empty = new Object();
+
+  O1.foo = 'bar';
+  O2.foo = 'bar';
+  P1.foo = 'baz';
+
   suite('eq', function () {
     suite('equal => true', function () {
-      test('object   x object'  , function () { cmp.eq({ foo: 'bar' }, { foo: 'bar' }).should.equal(true); });
-      test('object   x Object()', function () { cmp.eq(            {},   new Object()).should.equal(true); });
-      test('Object() x Object()', function () { cmp.eq(  new Object(),   new Object()).should.equal(true); });
-      test('null     x null'    , function () { cmp.eq(          null,           null).should.equal(true); });
+      test('object x object'    , function () { cmp.eq(  o1,   o2).should.equal(true); });
+      test('object x Object()'  , function () { cmp.eq(  o1,   O1).should.equal(true); });
+      test('Object() x object'  , function () { cmp.eq(  O1,   o1).should.equal(true); });
+      test('Object() x Object()', function () { cmp.eq(  O1,   O2).should.equal(true); });
+      test('null x null'        , function () { cmp.eq(null, null).should.equal(true); });
     });
 
     suite('not equal => false', function () {
-      test('object   x object'  , function () {                                          cmp.eq({ foo: 'bar' }, { foo: 'baz' }).should.equal(false); });
-      test('object   x Object()', function () {                                          cmp.eq({ foo: 'bar' },   new Object()).should.equal(false); });
-      test('Object() x Object()', function () { var foo = new Object(); foo.foo = 'bar'; cmp.eq(           foo,   new Object()).should.equal(false); });
-      test('object   x null'    , function () {                                          cmp.eq(            {},           null).should.equal(false); });
+      test('object x object'    , function () { cmp.eq(  o1,   p1).should.equal(false); });
+      test('object x Object()'  , function () { cmp.eq(  o1,   P1).should.equal(false); });
+      test('Object() x object'  , function () { cmp.eq(  O1,   p1).should.equal(false); });
+      test('Object() x Object()', function () { cmp.eq(  O1,   P1).should.equal(false); });
+      test('object x null'      , function () { cmp.eq(  o1, null).should.equal(false); });
+      test('Object() x null'    , function () { cmp.eq(  O1, null).should.equal(false); });
+      test('null x object'      , function () { cmp.eq(null,   o1).should.equal(false); });
+      test('null x Object()'    , function () { cmp.eq(null,   O1).should.equal(false); });
     });
   });
 
   suite('ne', function () {
     suite('equal => false', function () {
-      test('object   x object'  , function () { cmp.ne({ foo: 'bar' }, { foo: 'bar' }).should.equal(false); });
-      test('object   x Object()', function () { cmp.ne(            {},   new Object()).should.equal(false); });
-      test('Object() x Object()', function () { cmp.ne(  new Object(),   new Object()).should.equal(false); });
-      test('null     x null'    , function () { cmp.ne(          null,           null).should.equal(false); });
+      test('object x object'    , function () { cmp.ne(  o1,   o2).should.equal(false); });
+      test('object x Object()'  , function () { cmp.ne(  o1,   O1).should.equal(false); });
+      test('Object() x object'  , function () { cmp.ne(  O1,   o1).should.equal(false); });
+      test('Object() x Object()', function () { cmp.ne(  O1,   O2).should.equal(false); });
+      test('null x null'        , function () { cmp.ne(null, null).should.equal(false); });
     });
 
     suite('not equal => true', function () {
-      test('object   x object'  , function () {                                          cmp.ne({ foo: 'bar' }, { foo: 'baz' }).should.equal(true); });
-      test('object   x Object()', function () {                                          cmp.ne({ foo: 'bar' },   new Object()).should.equal(true); });
-      test('Object() x Object()', function () { var foo = new Object(); foo.foo = 'bar'; cmp.ne(           foo,   new Object()).should.equal(true); });
-      test('object   x null'    , function () {                                          cmp.ne(            {},           null).should.equal(true); });
+      test('object x object'    , function () { cmp.ne(  o1,   p1).should.equal(true); });
+      test('object x Object()'  , function () { cmp.ne(  o1,   P1).should.equal(true); });
+      test('Object() x object'  , function () { cmp.ne(  O1,   p1).should.equal(true); });
+      test('Object() x Object()', function () { cmp.ne(  O1,   P1).should.equal(true); });
+      test('object x null'      , function () { cmp.ne(  o1, null).should.equal(true); });
+      test('Object() x null'    , function () { cmp.ne(  O1, null).should.equal(true); });
+      test('null x object'      , function () { cmp.ne(null,   o1).should.equal(true); });
+      test('null x Object()'    , function () { cmp.ne(null,   O1).should.equal(true); });
     });
   });
 
   suite('gt', function () {
-    suite('any => false', function () {
-      test('object   x object'  , function () { cmp.gt({ foo: 'bar' }, { foo: 'bar' }).should.equal(false); });
-      test('object   x Object()', function () { cmp.gt(            {},   new Object()).should.equal(false); });
-      test('Object() x Object()', function () { cmp.gt(  new Object(),   new Object()).should.equal(false); });
-      test('object   x null'    , function () { cmp.gt(            {},           null).should.equal(false); });
-      test('null     x null'    , function () { cmp.gt(          null,           null).should.equal(false); });
+    suite('greater than => true', function () {
+
+    });
+
+    suite('equal => false', function () {
+      test('object x object'    , function () { cmp.gt(  o1,   o2).should.equal(false); });
+      test('object x Object()'  , function () { cmp.gt(  o1,   O1).should.equal(false); });
+      test('Object() x object'  , function () { cmp.gt(  O1,   o1).should.equal(false); });
+      test('Object() x Object()', function () { cmp.gt(  O1,   O2).should.equal(false); });
+      test('null x null'        , function () { cmp.gt(null, null).should.equal(false); });
+    });
+
+    suite('not equal => false', function () {
+      test('object x object'    , function () { cmp.gt(  o1,   p1).should.equal(false); });
+      test('object x Object()'  , function () { cmp.gt(  o1,   P1).should.equal(false); });
+      test('Object() x object'  , function () { cmp.gt(  O1,   p1).should.equal(false); });
+      test('Object() x Object()', function () { cmp.gt(  O1,   P1).should.equal(false); });
+      test('object x null'      , function () { cmp.gt(  o1, null).should.equal(false); });
+      test('Object() x null'    , function () { cmp.gt(  O1, null).should.equal(false); });
+      test('null x object'      , function () { cmp.gt(null,   o1).should.equal(false); });
+      test('null x Object()'    , function () { cmp.gt(null,   O1).should.equal(false); });
+    });
+
+    suite('less than => false', function () {
+
     });
   });
 
   suite('ge', function () {
+    suite('greater than => true', function () {
+
+    });
+
     suite('equal => true', function () {
-      test('object   x object'  , function () { cmp.ge({ foo: 'bar' }, { foo: 'bar' }).should.equal(true); });
-      test('object   x Object()', function () { cmp.ge(            {},   new Object()).should.equal(true); });
-      test('Object() x Object()', function () { cmp.ge(  new Object(),   new Object()).should.equal(true); });
-      test('null     x null'    , function () { cmp.ge(          null,           null).should.equal(true); });
+      test('object x object'    , function () { cmp.ge(  o1,   o2).should.equal(true); });
+      test('object x Object()'  , function () { cmp.ge(  o1,   O1).should.equal(true); });
+      test('Object() x object'  , function () { cmp.ge(  O1,   o1).should.equal(true); });
+      test('Object() x Object()', function () { cmp.ge(  O1,   O2).should.equal(true); });
+      test('null x null'        , function () { cmp.ge(null, null).should.equal(true); });
     });
 
     suite('not equal => false', function () {
-      test('object   x object'  , function () {                                          cmp.ge({ foo: 'bar' }, { foo: 'baz' }).should.equal(false); });
-      test('object   x Object()', function () {                                          cmp.ge({ foo: 'bar' },   new Object()).should.equal(false); });
-      test('Object() x Object()', function () { var foo = new Object(); foo.foo = 'bar'; cmp.ge(           foo,   new Object()).should.equal(false); });
-      test('object   x null'    , function () {                                          cmp.ge(            {},           null).should.equal(false); });
+      test('object x object'    , function () { cmp.ge(  o1,   p1).should.equal(false); });
+      test('object x Object()'  , function () { cmp.ge(  o1,   P1).should.equal(false); });
+      test('Object() x object'  , function () { cmp.ge(  O1,   p1).should.equal(false); });
+      test('Object() x Object()', function () { cmp.ge(  O1,   P1).should.equal(false); });
+      test('object x null'      , function () { cmp.ge(  o1, null).should.equal(false); });
+      test('Object() x null'    , function () { cmp.ge(  O1, null).should.equal(false); });
+      test('null x object'      , function () { cmp.ge(null,   o1).should.equal(false); });
+      test('null x Object()'    , function () { cmp.ge(null,   O1).should.equal(false); });
+    });
+
+    suite('less than => false', function () {
+
     });
   });
 
   suite('lt', function () {
-    suite('any => false', function () {
-      test('object   x object'  , function () { cmp.lt({ foo: 'bar' }, { foo: 'bar' }).should.equal(false); });
-      test('object   x Object()', function () { cmp.lt(            {},   new Object()).should.equal(false); });
-      test('Object() x Object()', function () { cmp.lt(  new Object(),   new Object()).should.equal(false); });
-      test('object   x null'    , function () { cmp.lt(            {},           null).should.equal(false); });
-      test('null     x null'    , function () { cmp.lt(          null,           null).should.equal(false); });
+    suite('greater than => false', function () {
+
+    });
+
+    suite('equal => false', function () {
+      test('object x object'    , function () { cmp.lt(  o1,   o2).should.equal(false); });
+      test('object x Object()'  , function () { cmp.lt(  o1,   O1).should.equal(false); });
+      test('Object() x object'  , function () { cmp.lt(  O1,   o1).should.equal(false); });
+      test('Object() x Object()', function () { cmp.lt(  O1,   O2).should.equal(false); });
+      test('null x null'        , function () { cmp.lt(null, null).should.equal(false); });
+    });
+
+    suite('not equal => false', function () {
+      test('object x object'    , function () { cmp.lt(  o1,   p1).should.equal(false); });
+      test('object x Object()'  , function () { cmp.lt(  o1,   P1).should.equal(false); });
+      test('Object() x object'  , function () { cmp.lt(  O1,   p1).should.equal(false); });
+      test('Object() x Object()', function () { cmp.lt(  O1,   P1).should.equal(false); });
+      test('object x null'      , function () { cmp.lt(  o1, null).should.equal(false); });
+      test('Object() x null'    , function () { cmp.lt(  O1, null).should.equal(false); });
+      test('null x object'      , function () { cmp.lt(null,   o1).should.equal(false); });
+      test('null x Object()'    , function () { cmp.lt(null,   O1).should.equal(false); });
+    });
+
+    suite('less than => true', function () {
+
     });
   });
 
   suite('le', function () {
+    suite('greater than => false', function () {
+
+    });
+
     suite('equal => true', function () {
-      test('object   x object'  , function () { cmp.le({ foo: 'bar' }, { foo: 'bar' }).should.equal(true); });
-      test('object   x Object()', function () { cmp.le(            {},   new Object()).should.equal(true); });
-      test('Object() x Object()', function () { cmp.le(  new Object(),   new Object()).should.equal(true); });
-      test('null     x null'    , function () { cmp.le(          null,           null).should.equal(true); });
+      test('object x object'    , function () { cmp.le(  o1,   o2).should.equal(true); });
+      test('object x Object()'  , function () { cmp.le(  o1,   O1).should.equal(true); });
+      test('Object() x object'  , function () { cmp.le(  O1,   o1).should.equal(true); });
+      test('Object() x Object()', function () { cmp.le(  O1,   O2).should.equal(true); });
+      test('null x null'        , function () { cmp.le(null, null).should.equal(true); });
     });
 
     suite('not equal => false', function () {
-      test('object   x object'  , function () {                                          cmp.le({ foo: 'bar' }, { foo: 'baz' }).should.equal(false); });
-      test('object   x Object()', function () {                                          cmp.le({ foo: 'bar' },   new Object()).should.equal(false); });
-      test('Object() x Object()', function () { var foo = new Object(); foo.foo = 'bar'; cmp.le(           foo,   new Object()).should.equal(false); });
-      test('object   x null'    , function () {                                          cmp.le(            {},           null).should.equal(false); });
+      test('object x object'    , function () { cmp.le(  o1,   p1).should.equal(false); });
+      test('object x Object()'  , function () { cmp.le(  o1,   P1).should.equal(false); });
+      test('Object() x object'  , function () { cmp.le(  O1,   p1).should.equal(false); });
+      test('Object() x Object()', function () { cmp.le(  O1,   P1).should.equal(false); });
+      test('object x null'      , function () { cmp.le(  o1, null).should.equal(false); });
+      test('Object() x null'    , function () { cmp.le(  O1, null).should.equal(false); });
+      test('null x object'      , function () { cmp.le(null,   o1).should.equal(false); });
+      test('null x Object()'    , function () { cmp.le(null,   O1).should.equal(false); });
+    });
+
+    suite('less than => true', function () {
+
     });
   });
 
   suite('id', function () {
-    suite('equal => true', function () {
-      test('object   x object'  , function () { var foo = {};           cmp.id(foo ,  foo).should.equal(true); });
-      test('Object() x Object()', function () { var foo = new Object(); cmp.id(foo ,  foo).should.equal(true); });
-      test('null     x null'    , function () {                         cmp.id(null, null).should.equal(true); });
+    suite('identical => true', function () {
+      test('object x object'    , function () { cmp.id(  o1,   o1).should.equal(true); });
+      test('Object() x Object()', function () { cmp.id(  O1,   O1).should.equal(true); });
+      test('null x null'        , function () { cmp.id(null, null).should.equal(true); });
     });
 
-    suite('not equal => false', function () {
-      test('object   x object'  , function () { cmp.id(          {},           {}).should.equal(false); });
-      test('object   x Object()', function () { cmp.id(          {}, new Object()).should.equal(false); });
-      test('Object() x Object()', function () { cmp.id(new Object(), new Object()).should.equal(false); });
+    suite('not identical => false', function () {
+      test('object x object'    , function () { cmp.id(  o1,   o2).should.equal(false); });
+      test('object x Object()'  , function () { cmp.id(  o1,   O1).should.equal(false); });
+      test('Object() x object'  , function () { cmp.id(  O1,   o1).should.equal(false); });
+      test('Object() x Object()', function () { cmp.id(  O1,   O2).should.equal(false); });
     });
   });
 });

@@ -5,11 +5,9 @@ suite('function x function', function () {
   var f1 = function () { return 23; },
       f2 = function () { return 23; },
       g1 = function () { return 42; },
-      g2 = function () { return 42; },
       F1 = new Function('return 23;'),
       F2 = new Function('return 23;'),
-      G1 = new Function('return 42;'),
-      G2 = new Function('return 42;');
+      G1 = new Function('return 42;');
 
   suite('eq', function () {
     suite('equal => true', function () {
