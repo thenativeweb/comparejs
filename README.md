@@ -1,6 +1,6 @@
 # compare.js
 
-compare.js implements JavaScript's comparison operators for Node.js the way you would expect them to be.
+compare.js implements JavaScript's comparison operators for Node.js and the browser the way you would expect them to be.
 
 ## Installation
 
@@ -19,13 +19,24 @@ compare.js implements JavaScript's comparison operators for Node.js the way you 
 
 ## Quick Start
 
-Using compare.js is easy. All you need to do is to add a reference to it within your Node.js application:
+Basically, using compare.js is easy. All you need to do is to add a reference to it within your application:
+
+### On Node.js
 
 ```javascript
 var cmp = require('compare.js');
 ```
 
-Now you are able to use the various comparison operators:
+### In the browser
+
+```html
+<script type="text/javascript" src="https://raw.github.com/goloroden/compare.js/master/lib/index.js"></script>
+```
+
+### Common
+
+Now you are able to use the various comparison operators. All you need to do is access the `cmp` object and
+use its functions:
 
 <table>
   <tr><th>Operator</th><th>Description</th></tr>
