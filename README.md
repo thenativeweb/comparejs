@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/goloroden/compare.js.png)](http://travis-ci.org/goloroden/compare.js)
 # compare.js
 
 compare.js implements JavaScript's comparison operators for Node.js and the browser the way you would expect them to be.
