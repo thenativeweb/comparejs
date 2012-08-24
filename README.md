@@ -15,7 +15,7 @@ compare.js implements JavaScript's comparison operators for Node.js and the brow
 - Supports comparison with `undefined` correctly, as `<=` and `>=` are problematic in plain JavaScript.
 - Supports comparison in a perfectly type-safe way out-of-the-box.
 - Supports comparison by equality and identity, depending on what makes sense.
-- Developed using TDD and backed up by more than 680 unit tests.
+- Developed using TDD and backed up by more than 690 unit tests.
 
 ## Quick Start
 
@@ -39,14 +39,14 @@ Now you are able to use the various comparison operators. All you need to do is 
 use its functions:
 
 <table>
-  <tr><th>Operator</th><th>Description</th></tr>
-  <tr><td>cmp.eq(first, second)</td><td>equal</td></tr>
-  <tr><td>cmp.ne(first, second)</td><td>not equal</td></tr>
-  <tr><td>cmp.gt(first, second)</td><td>greater than</td></tr>
-  <tr><td>cmp.ge(first, second)</td><td>greater than or equal</td></tr>
-  <tr><td>cmp.lt(first, second)</td><td>less than</td></tr>
-  <tr><td>cmp.le(first, second)</td><td>less than or equal</td></tr>
-  <tr><td>cmp.id(first, second)</td><td>identical</td></tr>
+  <tr><th>Operator</th><th>Alias</th><th>Description</th></tr>
+  <tr><td>cmp.eq(first, second)</td><td>cmp.equal(first, second)</td><td>equal</td></tr>
+  <tr><td>cmp.ne(first, second)</td><td>cmp.notEqual(first, second)</td><td>not equal</td></tr>
+  <tr><td>cmp.gt(first, second)</td><td>cmp.greaterThan(first, second)</td><td>greater than</td></tr>
+  <tr><td>cmp.ge(first, second)</td><td>cmp.greaterThanOrEqual(first, second)</td><td>greater than or equal</td></tr>
+  <tr><td>cmp.lt(first, second)</td><td>cmp.lessThan(first, second)</td><td>less than</td></tr>
+  <tr><td>cmp.le(first, second)</td><td>cmp.lessThanOrEqual(first, second)</td><td>less than or equal</td></tr>
+  <tr><td>cmp.id(first, second)</td><td>cmp.identical(first, second)</td><td>identical</td></tr>
 </table>
 
 Please note that each comparison operator works on each combination of types and does what you would expect it to do.
