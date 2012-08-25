@@ -112,6 +112,12 @@ suite('string x string', function () {
     });
   });
 
+  suite('gts', function () {
+    suite('any => false', function () {
+      test('string x string', function () { cmp.gts(foo, foo).should.equal(false); });
+    });
+  });
+
   suite('ge', function () {
     suite('greater => true', function () {
       test('string x string'    , function () { cmp.ge(foo,   bar).should.equal(true); });
@@ -144,6 +150,12 @@ suite('string x string', function () {
       test('empty x String()'   , function () { cmp.ge(empty, Foo).should.equal(false); });
       test('Empty() x string'   , function () { cmp.ge(Empty, foo).should.equal(false); });
       test('Empty() x String()' , function () { cmp.ge(Empty, Foo).should.equal(false); });
+    });
+  });
+
+  suite('ges', function () {
+    suite('any => false', function () {
+      test('string x string', function () { cmp.ges(foo, foo).should.equal(false); });
     });
   });
 
@@ -182,6 +194,12 @@ suite('string x string', function () {
     });
   });
 
+  suite('lts', function () {
+    suite('any => false', function () {
+      test('string x string', function () { cmp.lts(foo, foo).should.equal(false); });
+    });
+  });
+
   suite('le', function () {
     suite('greater => false', function () {
       test('string x string'    , function () { cmp.le(foo,   bar).should.equal(false); });
@@ -214,6 +232,12 @@ suite('string x string', function () {
       test('empty x String()'   , function () { cmp.le(empty, Foo).should.equal(true); });
       test('Empty() x string'   , function () { cmp.le(Empty, foo).should.equal(true); });
       test('Empty() x String()' , function () { cmp.le(Empty, Foo).should.equal(true); });
+    });
+  });
+
+  suite('les', function () {
+    suite('any => false', function () {
+      test('string x string', function () { cmp.les(foo, foo).should.equal(false); });
     });
   });
 

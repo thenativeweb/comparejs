@@ -92,6 +92,12 @@ suite('bool x bool', function () {
     });
   });
 
+  suite('gts', function () {
+    suite('any => false', function () {
+      test('true x true', function () { cmp.gts(true, true).should.equal(false); });
+    });
+  });
+
   suite('ge', function () {
     suite('greater => true', function () {
       test('true    x false'  , function () { cmp.ge(true , false).should.equal(true); });
@@ -116,6 +122,12 @@ suite('bool x bool', function () {
       test('false   x True()' , function () { cmp.ge(false,  True).should.equal(false); });
       test('False() x true'   , function () { cmp.ge(False,  true).should.equal(false); });
       test('False() x True()' , function () { cmp.ge(False,  True).should.equal(false); });
+    });
+  });
+
+  suite('ges', function () {
+    suite('any => false', function () {
+      test('true x true', function () { cmp.ges(true, true).should.equal(false); });
     });
   });
 
@@ -146,6 +158,12 @@ suite('bool x bool', function () {
     });
   });
 
+  suite('lts', function () {
+    suite('any => false', function () {
+      test('true x true', function () { cmp.lts(true, true).should.equal(false); });
+    });
+  });
+
   suite('le', function () {
     suite('greater => false', function () {
       test('true    x false'  , function () { cmp.le(true , false).should.equal(false); });
@@ -170,6 +188,12 @@ suite('bool x bool', function () {
       test('false   x True()' , function () { cmp.le(false,  True).should.equal(true); });
       test('False() x true'   , function () { cmp.le(False,  true).should.equal(true); });
       test('False() x True()' , function () { cmp.le(False,  True).should.equal(true); });
+    });
+  });
+
+  suite('les', function () {
+    suite('any => false', function () {
+      test('true x true', function () { cmp.les(true, true).should.equal(false); });
     });
   });
 

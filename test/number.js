@@ -99,6 +99,12 @@ suite('number x number', function () {
     });
   });
 
+  suite('gts', function () {
+    suite('any => false', function () {
+      test('number x number', function () { cmp.gts(smallNumber, smallNumber).should.equal(false); });
+    });
+  });
+
   suite('ge', function () {
     suite('greater => true', function () {
       test('number x number'    , function () { cmp.ge(largeNumber, smallNumber).should.equal(true); });
@@ -127,6 +133,12 @@ suite('number x number', function () {
       test('isNaN x isNaN'   , function () { cmp.ge( notANumber,  notANumber).should.equal(false); });
       test('isNan x number'  , function () { cmp.ge( notANumber, smallNumber).should.equal(false); });
       test('isNan x Number()', function () { cmp.ge( notANumber, SmallNumber).should.equal(false); });
+    });
+  });
+
+  suite('ges', function () {
+    suite('any => false', function () {
+      test('number x number', function () { cmp.ges(smallNumber, smallNumber).should.equal(false); });
     });
   });
 
@@ -161,6 +173,12 @@ suite('number x number', function () {
     });
   });
 
+  suite('lts', function () {
+    suite('any => false', function () {
+      test('number x number', function () { cmp.lts(smallNumber, smallNumber).should.equal(false); });
+    });
+  });
+
   suite('le', function () {
     suite('greater => false', function () {
       test('number x number'    , function () { cmp.le(largeNumber, smallNumber).should.equal(false); });
@@ -189,6 +207,12 @@ suite('number x number', function () {
       test('isNaN x isNaN'   , function () { cmp.le( notANumber,  notANumber).should.equal(false); });
       test('isNan x number'  , function () { cmp.le( notANumber, smallNumber).should.equal(false); });
       test('isNan x Number()', function () { cmp.le( notANumber, SmallNumber).should.equal(false); });
+    });
+  });
+
+  suite('les', function () {
+    suite('any => false', function () {
+      test('number x number', function () { cmp.les(smallNumber, smallNumber).should.equal(false); });
     });
   });
 

@@ -16,7 +16,7 @@ compare.js implements JavaScript's comparison operators for Node.js and the brow
 - Supports comparison with `undefined` correctly, as `<=` and `>=` are problematic in plain JavaScript.
 - Supports comparison in a perfectly type-safe way out-of-the-box.
 - Supports comparison by equality and identity, depending on what makes sense.
-- Developed using TDD and backed up by more than 740 unit tests.
+- Developed using TDD and backed up by more than 870 unit tests.
 
 ## Quick start
 
@@ -60,8 +60,12 @@ For objects, there are special operators that compare by structure. Among other 
 
 <table>
   <tr><th>Operator</th><th>Alias</th><th>Description</th></tr>
-  <tr><td>cmp.eqs(first, second)</td><td>cmp.equalStructure(first, second)</td><td>equal structure</td></tr>
-  <tr><td>cmp.nes(first, second)</td><td>cmp.notEqualStructure(first, second)</td><td>not equal structure</td></tr>
+  <tr><td>cmp.eqs(first, second)</td><td>cmp.equalByStructure(first, second)</td><td>equal by structure</td></tr>
+  <tr><td>cmp.nes(first, second)</td><td>cmp.notEqualByStructure(first, second)</td><td>not equal by structure</td></tr>
+  <tr><td>cmp.gts(first, second)</td><td>cmp.greaterThanByStructure(first, second)</td><td>greater than by structure</td></tr>
+  <tr><td>cmp.ges(first, second)</td><td>cmp.greaterThanOrEqualByStructure(first, second)</td><td>greater than or equal by structure</td></tr>
+  <tr><td>cmp.lts(first, second)</td><td>cmp.lessThanByStructure(first, second)</td><td>less than by structure</td></tr>
+  <tr><td>cmp.les(first, second)</td><td>cmp.lessThanOrEqualByStructure(first, second)</td><td>less than or equal by structure</td></tr>
 </table>
 
 Please note that these operators only work for objects. For any other type, they return `false`.

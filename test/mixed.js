@@ -50,12 +50,30 @@ suite('mixed types', function () {
     });
   });
 
+  suite('gts', function () {
+    suite('any => false', function () {
+      test('number x string'  , function () { cmp.gts( 0,        '').should.equal(false); });
+      test('number x boolean' , function () { cmp.gts( 0,     false).should.equal(false); });
+      test('string x boolean' , function () { cmp.gts('',     false).should.equal(false); });
+      test('function x string', function () { cmp.gts( f, fAsString).should.equal(false); });
+    });
+  });
+
   suite('ge', function () {
     suite('any => false', function () {
       test('number x string'  , function () { cmp.ge( 0,        '').should.equal(false); });
       test('number x boolean' , function () { cmp.ge( 0,     false).should.equal(false); });
       test('string x boolean' , function () { cmp.ge('',     false).should.equal(false); });
       test('function x string', function () { cmp.ge( f, fAsString).should.equal(false); });
+    });
+  });
+
+  suite('ges', function () {
+    suite('any => false', function () {
+      test('number x string'  , function () { cmp.ges( 0,        '').should.equal(false); });
+      test('number x boolean' , function () { cmp.ges( 0,     false).should.equal(false); });
+      test('string x boolean' , function () { cmp.ges('',     false).should.equal(false); });
+      test('function x string', function () { cmp.ges( f, fAsString).should.equal(false); });
     });
   });
 
@@ -68,12 +86,30 @@ suite('mixed types', function () {
     });
   });
 
+  suite('lts', function () {
+    suite('any => false', function () {
+      test('number x string'  , function () { cmp.lts( 0,        '').should.equal(false); });
+      test('number x boolean' , function () { cmp.lts( 0,     false).should.equal(false); });
+      test('string x boolean' , function () { cmp.lts('',     false).should.equal(false); });
+      test('function x string', function () { cmp.lts( f, fAsString).should.equal(false); });
+    });
+  });
+
   suite('le', function () {
     suite('any => false', function () {
       test('number x string'  , function () { cmp.le( 0,        '').should.equal(false); });
       test('number x boolean' , function () { cmp.le( 0,     false).should.equal(false); });
       test('string x boolean' , function () { cmp.le('',     false).should.equal(false); });
       test('function x string', function () { cmp.le( f, fAsString).should.equal(false); });
+    });
+  });
+
+  suite('les', function () {
+    suite('any => false', function () {
+      test('number x string'  , function () { cmp.les( 0,        '').should.equal(false); });
+      test('number x boolean' , function () { cmp.les( 0,     false).should.equal(false); });
+      test('string x boolean' , function () { cmp.les('',     false).should.equal(false); });
+      test('function x string', function () { cmp.les( f, fAsString).should.equal(false); });
     });
   });
 

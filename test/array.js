@@ -104,6 +104,12 @@ suite('array x array', function () {
     });
   });
 
+  suite('gts', function () {
+    suite('any => false', function () {
+      test('array x array'    , function () { cmp.gts(a1, a1).should.equal(false); });
+    });
+  });
+
   suite('ge', function () {
     suite('greater than => true', function () {
       test('array x array'    , function () { cmp.ge(a1, empty).should.equal(true); });
@@ -136,6 +142,12 @@ suite('array x array', function () {
       test('array x Array()'  , function () { cmp.ge(Empty, a1).should.equal(false); });
       test('Array() x array'  , function () { cmp.ge(empty, A1).should.equal(false); });
       test('Array() x Array()', function () { cmp.ge(Empty, A1).should.equal(false); });
+    });
+  });
+
+  suite('ges', function () {
+    suite('any => false', function () {
+      test('array x array'    , function () { cmp.ges(a1, a1).should.equal(false); });
     });
   });
 
@@ -174,6 +186,12 @@ suite('array x array', function () {
     });
   });
 
+  suite('lts', function () {
+    suite('any => false', function () {
+      test('array x array'    , function () { cmp.lts(a1, a1).should.equal(false); });
+    });
+  });
+
   suite('le', function () {
     suite('greater than => false', function () {
       test('array x array'    , function () { cmp.le(a1, empty).should.equal(false); });
@@ -206,6 +224,12 @@ suite('array x array', function () {
       test('array x Array()'  , function () { cmp.le(Empty, a1).should.equal(true); });
       test('Array() x array'  , function () { cmp.le(empty, A1).should.equal(true); });
       test('Array() x Array()', function () { cmp.le(Empty, A1).should.equal(true); });
+    });
+  });
+
+  suite('les', function () {
+    suite('any => false', function () {
+      test('array x array'    , function () { cmp.les(a1, a1).should.equal(false); });
     });
   });
 

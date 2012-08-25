@@ -60,6 +60,12 @@ suite('function x function', function () {
     });
   });
 
+  suite('gts', function () {
+    suite('any => false', function () {
+      test('function x function', function () { cmp.gts(f1, f1).should.equal(false); });
+    });
+  });
+
   suite('ge', function () {
     suite('equal => true', function () {
       test('function   x function'  , function () { cmp.ge(f1, f2).should.equal(true); });
@@ -74,6 +80,12 @@ suite('function x function', function () {
     });
   });
 
+  suite('ges', function () {
+    suite('any => false', function () {
+      test('function x function', function () { cmp.ges(f1, f1).should.equal(false); });
+    });
+  });
+
   suite('lt', function () {
     suite('any => false', function () {
       test('function   x function'  , function () { cmp.lt(f1, f2).should.equal(false); });
@@ -82,6 +94,12 @@ suite('function x function', function () {
       test('Function() x function  ', function () { cmp.lt(F1, f1).should.equal(false); });
       test('Function() x Function()', function () { cmp.lt(F1, F2).should.equal(false); });
       test('Function() x Function()', function () { cmp.lt(F1, G1).should.equal(false); });
+    });
+  });
+
+  suite('lts', function () {
+    suite('any => false', function () {
+      test('function x function', function () { cmp.lts(f1, f1).should.equal(false); });
     });
   });
 
@@ -96,6 +114,12 @@ suite('function x function', function () {
       test('function   x Function()', function () { cmp.le(f1, F1).should.equal(false); });
       test('Function() x function  ', function () { cmp.le(F1, f1).should.equal(false); });
       test('Function() x Function()', function () { cmp.le(F1, G1).should.equal(false); });
+    });
+  });
+
+  suite('les', function () {
+    suite('any => false', function () {
+      test('function x function', function () { cmp.les(f1, f1).should.equal(false); });
     });
   });
 

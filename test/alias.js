@@ -10,6 +10,10 @@ suite('alias', function () {
   test('le x lessThanOrEqual'   , function () { cmp.eq(cmp.le(23, 23), cmp.lessThanOrEqual(   23, 23)).should.equal(true); });
   test('id x identical'         , function () { cmp.eq(cmp.id(23, 23), cmp.identical(         23, 23)).should.equal(true); });
 
-  test('eqs x equalStructure'   , function () { cmp.eq(cmp.eqs({}, {}), cmp.equalStructure({},    {})).should.equal(true); });
-  test('nes x notEqualStructure', function () { cmp.eq(cmp.nes({}, {}), cmp.notEqualStructure({}, {})).should.equal(true); });
+  test('eqs x equalByStructure'             , function () { cmp.eq(cmp.eqs({}, {}), cmp.equalByStructure(             {}, {})).should.equal(true); });
+  test('nes x notEqualByStructure'          , function () { cmp.eq(cmp.nes({}, {}), cmp.notEqualByStructure(          {}, {})).should.equal(true); });
+  test('gts x greaterThanByStructure'       , function () { cmp.eq(cmp.gts({}, {}), cmp.greaterThanByStructure(       {}, {})).should.equal(true); });
+  test('ges x greaterThanOrEqualByStructure', function () { cmp.eq(cmp.ges({}, {}), cmp.greaterThanOrEqualByStructure({}, {})).should.equal(true); });
+  test('lts x lessThanByStructure'          , function () { cmp.eq(cmp.lts({}, {}), cmp.lessThanByStructure(          {}, {})).should.equal(true); });
+  test('les x lessThanOrEqualByStructure'   , function () { cmp.eq(cmp.les({}, {}), cmp.lessThanOrEqualByStructure(   {}, {})).should.equal(true); });
 });

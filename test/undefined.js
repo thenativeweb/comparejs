@@ -32,9 +32,21 @@ suite('undefined x undefined', function () {
     });
   });
 
+  suite('gts', function () {
+    suite('any => false', function () {
+      test('undefined x undefined', function () { cmp.gts(undefined, undefined).should.equal(false); });
+    });
+  });
+
   suite('ge', function () {
     suite('equal => true', function () {
       test('undefined x undefined', function () { cmp.ge(undefined, undefined).should.equal(true); });
+    });
+  });
+
+  suite('ges', function () {
+    suite('any => false', function () {
+      test('undefined x undefined', function () { cmp.ges(undefined, undefined).should.equal(false); });
     });
   });
 
@@ -44,9 +56,21 @@ suite('undefined x undefined', function () {
     });
   });
 
+  suite('lts', function () {
+    suite('any => false', function () {
+      test('undefined x undefined', function () { cmp.lts(undefined, undefined).should.equal(false); });
+    });
+  });
+
   suite('le', function () {
     suite('equal => true', function () {
       test('undefined x undefined', function () { cmp.le(undefined, undefined).should.equal(true); });
+    });
+  });
+
+  suite('les', function () {
+    suite('any => false', function () {
+      test('undefined x undefined', function () { cmp.les(undefined, undefined).should.equal(false); });
     });
   });
 
