@@ -64,7 +64,7 @@ For objects, there are special operators that compare by structure. Among other 
   <tr><td>cmp.nes(first, second)</td><td>cmp.notEqualStructure(first, second)</td><td>not equal structure</td></tr>
 </table>
 
-Please note that these operators only work for objects.
+Please note that these operators only work for objects. For any other type, they return `false`.
 
 ## Running the tests
 
