@@ -62,6 +62,12 @@ suite('number x number', function () {
     });
   });
 
+  suite('nes', function () {
+    suite('any => false', function () {
+      test('number x number', function () { cmp.nes(smallNumber, smallNumber).should.equal(false); });
+    });
+  });
+
   suite('gt', function () {
     suite('greater => true', function () {
       test('number x number'    , function () { cmp.gt(largeNumber, smallNumber).should.equal(true); });

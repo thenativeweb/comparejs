@@ -61,6 +61,7 @@ For objects, there are special operators that compare by structure. Among other 
 <table>
   <tr><th>Operator</th><th>Alias</th><th>Description</th></tr>
   <tr><td>cmp.eqs(first, second)</td><td>cmp.equalStructure(first, second)</td><td>equal structure</td></tr>
+  <tr><td>cmp.nes(first, second)</td><td>cmp.notEqualStructure(first, second)</td><td>not equal structure</td></tr>
 </table>
 
 Please note that these operators only work for objects.

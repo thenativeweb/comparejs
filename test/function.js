@@ -43,6 +43,12 @@ suite('function x function', function () {
     });
   });
 
+  suite('nes', function () {
+    suite('any => false', function () {
+      test('function x function', function () { cmp.nes(f1, f1).should.equal(false); });
+    });
+  });
+
   suite('gt', function () {
     suite('any => false', function () {
       test('function   x function'  , function () { cmp.gt(f1, f2).should.equal(false); });

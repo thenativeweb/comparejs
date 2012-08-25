@@ -20,6 +20,12 @@ suite('undefined x undefined', function () {
     });
   });
 
+  suite('nes', function () {
+    suite('any => false', function () {
+      test('undefined x undefined', function () { cmp.nes(undefined, undefined).should.equal(false); });
+    });
+  });
+
   suite('gt', function () {
     suite('equal => false', function () {
       test('undefined x undefined', function () { cmp.gt(undefined, undefined).should.equal(false); });

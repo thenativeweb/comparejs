@@ -71,6 +71,12 @@ suite('string x string', function () {
     });
   });
 
+  suite('nes', function () {
+    suite('any => false', function () {
+      test('string x string', function () { cmp.nes(foo, foo).should.equal(false); });
+    });
+  });
+
   suite('gt', function () {
     suite('greater => true', function () {
       test('string x string'    , function () { cmp.gt(foo,   bar).should.equal(true); });

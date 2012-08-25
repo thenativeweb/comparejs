@@ -14,12 +14,30 @@ suite('mixed types', function () {
     });
   });
 
+  suite('eqs', function () {
+    suite('any => false', function () {
+      test('number x string'  , function () { cmp.eqs( 0,        '').should.equal(false); });
+      test('number x boolean' , function () { cmp.eqs( 0,     false).should.equal(false); });
+      test('string x boolean' , function () { cmp.eqs('',     false).should.equal(false); });
+      test('function x string', function () { cmp.eqs( f, fAsString).should.equal(false); });
+    });
+  });
+
   suite('ne', function () {
     suite('any => true', function () {
       test('number x string'  , function () { cmp.ne( 0,        '').should.equal(true); });
       test('number x boolean' , function () { cmp.ne( 0,     false).should.equal(true); });
       test('string x boolean' , function () { cmp.ne('',     false).should.equal(true); });
       test('function x string', function () { cmp.ne( f, fAsString).should.equal(true); });
+    });
+  });
+
+  suite('nes', function () {
+    suite('any => false', function () {
+      test('number x string'  , function () { cmp.nes( 0,        '').should.equal(false); });
+      test('number x boolean' , function () { cmp.nes( 0,     false).should.equal(false); });
+      test('string x boolean' , function () { cmp.nes('',     false).should.equal(false); });
+      test('function x string', function () { cmp.nes( f, fAsString).should.equal(false); });
     });
   });
 

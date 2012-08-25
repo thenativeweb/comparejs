@@ -59,6 +59,12 @@ suite('bool x bool', function () {
     });
   });
 
+  suite('nes', function () {
+    suite('any => false', function () {
+      test('true x true', function () { cmp.nes(true, true).should.equal(false); });
+    });
+  });
+
   suite('gt', function () {
     suite('greater => true', function () {
       test('true    x false'  , function () { cmp.gt(true , false).should.equal(true); });

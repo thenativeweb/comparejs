@@ -63,6 +63,12 @@ suite('array x array', function () {
     });
   });
 
+  suite('nes', function () {
+    suite('any => false', function () {
+      test('array x array'    , function () { cmp.nes(a1, a1).should.equal(false); });
+    });
+  });
+
   suite('gt', function () {
     suite('greater than => true', function () {
       test('array x array'    , function () { cmp.gt(a1, empty).should.equal(true); });

@@ -10,5 +10,6 @@ suite('alias', function () {
   test('le x lessThanOrEqual'   , function () { cmp.eq(cmp.le(23, 23), cmp.lessThanOrEqual(   23, 23)).should.equal(true); });
   test('id x identical'         , function () { cmp.eq(cmp.id(23, 23), cmp.identical(         23, 23)).should.equal(true); });
 
-  test('eqs x equalStructure'   , function () { cmp.eq(cmp.eqs({}, {}), cmp.equalStructure({}, {})).should.equal(true); });
+  test('eqs x equalStructure'   , function () { cmp.eq(cmp.eqs({}, {}), cmp.equalStructure({},    {})).should.equal(true); });
+  test('nes x notEqualStructure', function () { cmp.eq(cmp.nes({}, {}), cmp.notEqualStructure({}, {})).should.equal(true); });
 });
