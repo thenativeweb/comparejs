@@ -8,6 +8,12 @@ suite('undefined x undefined', function () {
     });
   });
 
+  suite('eqs', function () {
+    suite('any => false', function () {
+      test('undefined x undefined', function () { cmp.eqs(undefined, undefined).should.equal(false); });
+    });
+  });
+
   suite('ne', function () {
     suite('equal => false', function () {
       test('undefined x undefined', function () { cmp.ne(undefined, undefined).should.equal(false); });

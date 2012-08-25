@@ -37,6 +37,12 @@ suite('string x string', function () {
     });
   });
 
+  suite('eqs', function () {
+    suite('any => false', function () {
+      test('string x string', function () { cmp.eqs(foo, foo).should.equal(false); });
+    });
+  });
+
   suite('ne', function () {
     suite('equal => false', function () {
       test('string x string'    , function () { cmp.ne(foo  ,   foo).should.equal(false); });

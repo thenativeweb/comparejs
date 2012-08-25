@@ -36,6 +36,12 @@ suite('array x array', function () {
     });
   });
 
+  suite('eqs', function () {
+    suite('any => false', function () {
+      test('array x array'    , function () { cmp.eqs(a1, a1).should.equal(false); });
+    });
+  });
+
   suite('ne', function () {
     suite('equal => false', function () {
       test('array x array'    , function () { cmp.ne(  a1,   a2).should.equal(false); });

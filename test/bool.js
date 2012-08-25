@@ -29,6 +29,12 @@ suite('bool x bool', function () {
     });
   });
 
+  suite('eqs', function () {
+    suite('any => false', function () {
+      test('true x true', function () { cmp.eqs(true, true).should.equal(false); });
+    });
+  });
+
   suite('ne', function () {
     suite('equal => false', function () {
       test('true    x true'   , function () { cmp.ne(true ,  true).should.equal(false); });

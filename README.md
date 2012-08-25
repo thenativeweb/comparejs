@@ -12,12 +12,13 @@ compare.js implements JavaScript's comparison operators for Node.js and the brow
 - Supports comparison of native data types and constructor-created data types, such as `number` and `new Number()`.
 - Supports comparison of objects and arrays using deep-equal.
 - Supports comparison of objects and arrays with `<`, `<=`, `>` and `>=` by handling them as subsets.
+- Supports comparison of objects by structure.
 - Supports comparison with `undefined` correctly, as `<=` and `>=` are problematic in plain JavaScript.
 - Supports comparison in a perfectly type-safe way out-of-the-box.
 - Supports comparison by equality and identity, depending on what makes sense.
 - Developed using TDD and backed up by more than 690 unit tests.
 
-## Quick Start
+## Quick start
 
 Basically, using compare.js is easy. All you need to do is to add a reference to it within your application:
 
@@ -52,6 +53,17 @@ use its functions:
 Please note that each comparison operator works on each combination of types and does what you would expect it to do.
 
 That's it :-)!
+
+## Structure comparison operators
+
+For objects, there are special operators that compare by structure. Among other things, they can be used to verify objects against interfaces:
+
+<table>
+  <tr><th>Operator</th><th>Alias</th><th>Description</th></tr>
+  <tr><td>cmp.eqs(first, second)</td><td>cmp.equalStructure(first, second)</td><td>equal structure</td></tr>
+</table>
+
+Please note that these operators only work for objects.
 
 ## Running the tests
 

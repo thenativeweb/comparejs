@@ -23,6 +23,12 @@ suite('function x function', function () {
     });
   });
 
+  suite('eqs', function () {
+    suite('any => false', function () {
+      test('function x function', function () { cmp.eqs(f1, f1).should.equal(false); });
+    });
+  });
+
   suite('ne', function () {
     suite('equal => false', function () {
       test('function   x function'  , function () { cmp.ne(f1, f2).should.equal(false); });

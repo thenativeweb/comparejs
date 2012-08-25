@@ -32,6 +32,12 @@ suite('number x number', function () {
     });
   });
 
+  suite('eqs', function () {
+    suite('any => false', function () {
+      test('number x number', function () { cmp.eqs(smallNumber, smallNumber).should.equal(false); });
+    });
+  });
+
   suite('ne', function () {
     suite('equal => false', function () {
       test('number x number'    , function () { cmp.ne(smallNumber, smallNumber).should.equal(false); });
