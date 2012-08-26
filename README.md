@@ -31,7 +31,7 @@ var cmp = require('compare.js');
 ### In the browser
 
 ```html
-<script type="text/javascript" src="https://raw.github.com/goloroden/compare.js/master/lib/index.js"></script>
+<script type="text/javascript" src="https://raw.github.com/goloroden/compare.js/master/bin/compare-[x.y.z].min.js"></script>
 ```
 
 ### Common
