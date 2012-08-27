@@ -2,9 +2,44 @@
 
 compare.js implements JavaScript's comparison operators for Node.js and the browser the way you would expect them to be.
 
-## Installation
+## Installing
+
+### Node.js
+
+Basically, using compare.js in Node.js is easy. All you need to do is install it using `npm` by running the
+following command:
 
     $ npm install compare.js
+
+Then, you can reference it from your application by adding the following line:
+
+```javascript
+var cmp = require('compare.js');
+```
+
+### In the browser
+
+Using compare.js in the browser is easy, too. All you need to do here is add a script reference within your web
+site. If you want to use the latest version hosted on GitHub, use:
+
+```html
+<script type="text/javascript" src="https://raw.github.com/goloroden/compare.js/master/bin/compare.min.js"></script>
+```
+
+If instead you want to use a specific version hosted on GitHub, use:
+
+```html
+<script type="text/javascript" src="https://raw.github.com/goloroden/compare.js/master/bin/compare-[x.y.z].min.js"></script>
+```
+
+Of course you can also download any version manually and add a local reference.
+
+If you are running Visual Studio, instead of downloading manually you can also install compare.js by using the
+[NuGet package](http://nuget.org/packages/compare.js). For that run the following command inside the NuGet console:
+
+    PM> Install-Package compare.js
+
+*Note: The NuGet package was created by [Alexander Zeitler](http://www.pdmlab.com). Thanks for that :-)!*
 
 ## Features
 
@@ -18,33 +53,7 @@ compare.js implements JavaScript's comparison operators for Node.js and the brow
 - Supports comparison by equality and identity, depending on what makes sense.
 - Developed using TDD and backed up by more than 870 unit tests.
 
-## Quick start
-
-Basically, using compare.js is easy. All you need to do is to add a reference to it within your application:
-
-### On Node.js
-
-```javascript
-var cmp = require('compare.js');
-```
-
-### In the browser
-
-Use
-
-```html
-<script type="text/javascript" src="https://raw.github.com/goloroden/compare.js/master/bin/compare-[x.y.z].min.js"></script>
-```
-
-to get a specific version, or
-
-```html
-<script type="text/javascript" src="https://raw.github.com/goloroden/compare.js/master/bin/compare.min.js"></script>
-```
-
-to get the latest one.
-
-### Common
+## Basic usage
 
 Now you are able to use the various comparison operators. All you need to do is access the `cmp` object and
 use its functions:
@@ -61,8 +70,6 @@ use its functions:
 </table>
 
 Please note that each comparison operator works on each combination of types and does what you would expect it to do.
-
-That's it :-)!
 
 ## Structure comparison operators
 
@@ -85,6 +92,8 @@ Please note that these operators only work for objects. For any other type, they
 Go to the folder where you have cloned compare.js to and run [mocha](https://github.com/visionmedia/mocha):
 
     $ mocha
+
+That's it :-)!
 
 ## License
 
