@@ -30,9 +30,19 @@ var cmp = require('compare.js');
 
 ### In the browser
 
+Use
+
 ```html
 <script type="text/javascript" src="https://raw.github.com/goloroden/compare.js/master/bin/compare-[x.y.z].min.js"></script>
 ```
+
+to get a specific version, or
+
+```html
+<script type="text/javascript" src="https://raw.github.com/goloroden/compare.js/master/bin/compare.min.js"></script>
+```
+
+to get the latest one.
 
 ### Common
 
