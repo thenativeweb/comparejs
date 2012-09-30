@@ -2,6 +2,8 @@
 
 compare.js implements JavaScript's comparison operators for Node.js and the browser the way you would expect them to be.
 
+If you have any questions or feedback, feel free to contact me using [@goloroden](https://twitter.com/goloroden) on Twitter.
+
 ## Installing
 
 ### Node.js
