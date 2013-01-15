@@ -1,5 +1,5 @@
 {
-  "name": "compare.js",
+  "name": "comparejs",
   "version": "0.0.10",
   "description": "Implementing the comparison operators eq, ne, gt, ge, lt and le in JavaScript for use with Node.js and the browser.",
   "author": "Golo Roden <webmaster@goloroden.de>",
