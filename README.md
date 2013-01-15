@@ -53,7 +53,7 @@ If you are running Visual Studio, instead of downloading manually you can also i
 - Supports comparison with `undefined` correctly, as `<=` and `>=` are problematic in plain JavaScript.
 - Supports comparison in a perfectly type-safe way out-of-the-box.
 - Supports comparison by equality and identity, depending on what makes sense.
-- Developed using TDD and backed up by more than 870 unit tests.
+- Developed using TDD and backed up by more than 890 unit tests.
 
 ## Basic usage
 
