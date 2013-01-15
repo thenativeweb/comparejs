@@ -1,6 +1,6 @@
-# compare.js
+# comparejs
 
-compare.js implements JavaScript's comparison operators for Node.js and the browser the way you would expect them to be.
+comparejs implements JavaScript's comparison operators for Node.js and the browser the way you would expect them to be.
 
 If you have any questions or feedback, feel free to contact me using [@goloroden](https://twitter.com/goloroden) on Twitter.
 
@@ -8,35 +8,35 @@ If you have any questions or feedback, feel free to contact me using [@goloroden
 
 ### Node.js
 
-Basically, using compare.js in Node.js is easy. All you need to do is install it using `npm` by running the
+Basically, using comparejs in Node.js is easy. All you need to do is install it using `npm` by running the
 following command:
 
-    $ npm install compare.js
+    $ npm install comparejs
 
 Then, you can reference it from your application by adding the following line:
 
 ```javascript
-var cmp = require('compare.js');
+var cmp = require('comparejs');
 ```
 
 ### In the browser
 
-Using compare.js in the browser is easy, too. All you need to do here is add a script reference within your web
+Using comparejs in the browser is easy, too. All you need to do here is add a script reference within your web
 site. If you want to use the latest version hosted on GitHub, use:
 
 ```html
-<script type="text/javascript" src="https://raw.github.com/goloroden/compare.js/master/bin/compare.min.js"></script>
+<script type="text/javascript" src="https://raw.github.com/goloroden/comparejs/master/bin/compare.min.js"></script>
 ```
 
 If instead you want to use a specific version hosted on GitHub, use:
 
 ```html
-<script type="text/javascript" src="https://raw.github.com/goloroden/compare.js/master/bin/compare-[x.y.z].min.js"></script>
+<script type="text/javascript" src="https://raw.github.com/goloroden/comparejs/master/bin/compare-[x.y.z].min.js"></script>
 ```
 
 Of course you can also download any version manually and add a local reference.
 
-If you are running Visual Studio, instead of downloading manually you can also install compare.js by using the
+If you are running Visual Studio, instead of downloading manually you can also install comparejs by using the
 [NuGet package](http://nuget.org/packages/compare.js). For that run the following command inside the NuGet console:
 
     PM> Install-Package compare.js
@@ -91,9 +91,9 @@ Please note that these operators only work for objects. For any other type, they
 
 ## Running the tests
 
-Go to the folder where you have cloned compare.js to and run [mocha](https://github.com/visionmedia/mocha):
+comparejs has been developed using TDD. To run the tests, go to the folder where you have installed comparejs to and run `npm test`. You need to have [mocha](https://github.com/visionmedia/mocha) installed.
 
-    $ mocha
+    $ npm test
 
 That's it :-)!
 
