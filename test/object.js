@@ -6,6 +6,8 @@ suite('object x object', function () {
       o2 = { foo: 'bar' },
       p1 = { foo: 'baz' },
       q1 = { bar: 'foo' },
+      r1 = { foo: '' },
+      r2 = { foo: '' },
       O1 = new Object(),
       O2 = new Object(),
       P1 = new Object(),
@@ -25,6 +27,7 @@ suite('object x object', function () {
       test('Object() x object'  , function () { cmp.eq(  O1,   o1).should.equal(true); });
       test('Object() x Object()', function () { cmp.eq(  O1,   O2).should.equal(true); });
       test('null x null'        , function () { cmp.eq(null, null).should.equal(true); });
+      test('falsey x falsey'    , function () { cmp.eq(  r1,   r2).should.equal(true); });
     });
 
     suite('not equal => false', function () {
