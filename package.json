@@ -1,6 +1,6 @@
 {
   "name": "comparejs",
-  "version": "0.0.11",
+  "version": "0.1.0",
   "description": "Implementing the comparison operators eq, ne, gt, ge, lt and le in JavaScript for use with Node.js and the browser.",
   "contributors": [
     {
@@ -13,8 +13,7 @@
     }
   ],
   "main": "lib/compare.js",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "grunt": "0.4.5",
     "should": "4.0.4",
