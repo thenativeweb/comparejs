@@ -1,49 +1,20 @@
 # comparejs
 
-comparejs implements JavaScript's comparison operators for Node.js and the browser the way you would expect them to be.
+comparejs implements JavaScript's comparison operators the way you would expect them to be.
 
-If you have any questions or feedback, feel free to contact me using [@goloroden](https://twitter.com/goloroden) on Twitter.
-
-## Installing
-
-### Node.js
-
-Basically, using comparejs in Node.js is easy. All you need to do is install it using `npm` by running the
-following command:
+## Installation
 
     $ npm install comparejs
 
-Then, you can reference it from your application by adding the following line:
+## Quick Start
+
+To use comparejs you need to reference it from your application by adding the following line:
 
 ```javascript
 var cmp = require('comparejs');
 ```
 
-### In the browser
-
-Using comparejs in the browser is easy, too. All you need to do here is add a script reference within your web
-site. If you want to use the latest version hosted on GitHub, use:
-
-```html
-<script type="text/javascript" src="https://raw.github.com/goloroden/comparejs/master/bin/compare.min.js"></script>
-```
-
-If instead you want to use a specific version hosted on GitHub, use:
-
-```html
-<script type="text/javascript" src="https://raw.github.com/goloroden/comparejs/master/bin/compare-[x.y.z].min.js"></script>
-```
-
-Of course you can also download any version manually and add a local reference.
-
-If you are running Visual Studio, instead of downloading manually you can also install comparejs by using the
-[NuGet package](http://nuget.org/packages/compare.js). For that run the following command inside the NuGet console:
-
-    PM> Install-Package compare.js
-
-*Note: The NuGet package was created by [Alexander Zeitler](http://www.pdmlab.com). Thanks for that :-)!*
-
-## Features
+### Features
 
 - Supports comparison of `number`, `string`, `boolean`, `function`, `object`, `array` and `undefined`.
 - Supports comparison of native data types and constructor-created data types, such as `number` and `new Number()`.
@@ -55,7 +26,7 @@ If you are running Visual Studio, instead of downloading manually you can also i
 - Supports comparison by equality and identity, depending on what makes sense.
 - Developed using TDD and backed up by more than 930 unit tests.
 
-## Basic usage
+### Basic usage
 
 Now you are able to use the various comparison operators. All you need to do is access the `cmp` object and
 use its functions:
@@ -73,7 +44,7 @@ use its functions:
 
 Please note that each comparison operator works on each combination of types and does what you would expect it to do.
 
-## Structure comparison operators
+### Structure comparison operators
 
 For objects, there are special operators that compare by structure. Among other things, they can be used to verify objects against interfaces:
 
@@ -89,21 +60,19 @@ For objects, there are special operators that compare by structure. Among other 
 
 Please note that these operators only work for objects. For any other type, they return `false`.
 
-## Running the tests
+## Running the build
 
-comparejs has been developed using TDD. To run the tests, go to the folder where you have installed comparejs to and run `npm test`. You need to have [mocha](https://github.com/visionmedia/mocha) installed.
+This module can be built using [Grunt](http://gruntjs.com/). Besides running the tests, this also analyses the code. To run Grunt, go to the folder where you have installed comparejs and run `grunt`. You need to have [grunt-cli](https://github.com/gruntjs/grunt-cli) installed.
 
-    $ npm test
-
-That's it :-)!
+    $ grunt
 
 ## License
 
 The MIT License (MIT)
-Copyright (c) 2012 Golo Roden.
- 
+Copyright (c) 2012-2014 the native web.
+
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
- 
+
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
- 
+
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
