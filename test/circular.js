@@ -40,6 +40,7 @@ suite('cmp', function () {
 			done();
 		});
 	});
+
 	suite('eqs', function () {
 		test('first with self reference => false', function (done) {
 			var first = {
@@ -75,6 +76,7 @@ suite('cmp', function () {
 			done();
 		});
 	});
+
 	suite('ne', function () {
 		test('first with self reference => true', function (done) {
 			var first = {
@@ -110,6 +112,7 @@ suite('cmp', function () {
 			done();
 		});
 	});
+
 	suite('nes', function () {
 		test('first with self reference => true', function (done) {
 			var first = {
@@ -145,6 +148,7 @@ suite('cmp', function () {
 			done();
 		});
 	});
+
 	suite('gt', function () {
 		test('first with self reference => true', function (done) {
 			var first = {
@@ -180,6 +184,7 @@ suite('cmp', function () {
 			done();
 		});
 	});
+
 	suite('gts', function () {
 		test('first with self reference => true', function (done) {
 			var first = {
@@ -215,6 +220,7 @@ suite('cmp', function () {
 			done();
 		});
 	});
+
 	suite('ge', function () {
 		test('first with self reference => true', function (done) {
 			var first = {
@@ -250,6 +256,7 @@ suite('cmp', function () {
 			done();
 		});
 	});
+
 	suite('ges', function () {
 		test('first with self reference => true', function (done) {
 			var first = {
@@ -285,6 +292,7 @@ suite('cmp', function () {
 			done();
 		});
 	});
+
 	suite('lt', function () {
 		test('first with self reference => false', function (done) {
 			var first = {
@@ -320,6 +328,7 @@ suite('cmp', function () {
 			done();
 		});
 	});
+
 	suite('lts', function () {
 		test('first with self reference => false', function (done) {
 			var first = {
@@ -355,6 +364,7 @@ suite('cmp', function () {
 			done();
 		});
 	});
+
 	suite('le', function () {
 		test('first with self reference => false', function (done) {
 			var first = {
@@ -390,6 +400,7 @@ suite('cmp', function () {
 			done();
 		});
 	});
+
 	suite('les', function () {
 		test('first with self reference => false', function (done) {
 			var first = {
@@ -425,6 +436,7 @@ suite('cmp', function () {
 			done();
 		});
 	});
+
 	suite('id', function () {
 		test('first with self reference => false', function (done) {
 			var first = {
@@ -457,6 +469,15 @@ suite('cmp', function () {
 			first.mySelf = first;
 			second.mySelf = second;
 			cmp.id(first, second).should.equal(false);
+			done();
+		});
+
+		test('identical with self reference => true', function (done) {
+			var first = {
+				name:'foo'
+			};
+			first.mySelf = first;
+			cmp.id(first, first).should.equal(true);
 			done();
 		});
 	});

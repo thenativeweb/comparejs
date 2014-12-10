@@ -8,12 +8,15 @@
       "email": "golo.roden@thenativeweb.io"
     },
     {
+      "name": "Stefan Kley",
+      "email": "s.kley@kleywalker.de"
+    },
+    {
       "name": "Ryan Hughes",
       "email": "ryanhooz@gmail.com"
     }
   ],
   "main": "lib/compare.js",
-  "dependencies": {},
   "devDependencies": {
     "grunt": "0.4.5",
     "should": "4.0.4",
