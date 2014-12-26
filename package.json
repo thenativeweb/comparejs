@@ -19,8 +19,8 @@
   "main": "lib/compare.js",
   "devDependencies": {
     "grunt": "0.4.5",
-    "should": "4.3.1",
-    "tourism": "0.9.4"
+    "should": "4.4.1",
+    "tourism": "0.10.1"
   },
   "repository": {
     "type": "git",
