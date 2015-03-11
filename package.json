@@ -19,12 +19,18 @@
   "main": "lib/compare.js",
   "devDependencies": {
     "grunt": "0.4.5",
-    "should": "4.4.1",
-    "tourism": "0.10.1"
+    "should": "5.1.0",
+    "tourism": "0.15.0"
   },
   "repository": {
     "type": "git",
     "url": "git://github.com/thenativeweb/comparejs.git"
   },
+  "keywords": [
+    "assert",
+    "compare",
+    "equal",
+    "test"
+  ],
   "license": "MIT"
 }
