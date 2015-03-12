@@ -2,8 +2,6 @@
 
 comparejs implements JavaScript's comparison operators the way you would expect them to be.
 
-[![Circle CI](https://circleci.com/gh/thenativeweb/comparejs.svg?style=svg)](https://circleci.com/gh/thenativeweb/comparejs)
-
 ## Installation
 
     $ npm install comparejs
