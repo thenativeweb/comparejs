@@ -117,6 +117,11 @@ suite('object x object', function () {
         cmp.eq(r1, s1).should.equal(false);
         done();
       });
+
+      test('object x empty array', function (done) {
+        cmp.eq(empty, []).should.equal(false);
+        done();
+      });
     });
   });
 
