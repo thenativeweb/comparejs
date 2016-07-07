@@ -130,6 +130,14 @@ suite('cmp', function () {
       cmp.eq(first, second).should.equal(false);
       done();
     });
+
+    test('empty object and empty array on second level => false', function (done) {
+      var first = { foo: 'bar', baz: {}};
+      var second = { foo: 'bar', baz: []};
+
+      cmp.eq(first, second).should.equal(false);
+      done();
+    });
   });
 
   suite('eqs', function () {
