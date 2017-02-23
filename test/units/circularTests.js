@@ -1,19 +1,19 @@
 'use strict';
 
-/*eslint-disable no-unused-vars*/
-var should = require('should');
-/*eslint-enable no-unused-vars*/
+/* eslint-disable no-unused-vars */
+const should = require('should');
+/* eslint-enable no-unused-vars */
 
-var cmp = require('../lib/compare');
+const cmp = require('../../lib/compare');
 
-suite('cmp', function () {
-  suite('eq', function () {
-    test('first with self reference => false', function (done) {
-      var first = {
+suite('cmp', () => {
+  suite('eq', () => {
+    test('first with self reference => false', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -22,12 +22,12 @@ suite('cmp', function () {
       done();
     });
 
-    test('second with self reference => false', function (done) {
-      var first = {
+    test('second with self reference => false', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -36,12 +36,12 @@ suite('cmp', function () {
       done();
     });
 
-    test('both with self reference => true', function (done) {
-      var first = {
+    test('both with self reference => true', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -52,13 +52,13 @@ suite('cmp', function () {
     });
   });
 
-  suite('eqs', function () {
-    test('first with self reference => false', function (done) {
-      var first = {
+  suite('eqs', () => {
+    test('first with self reference => false', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -67,12 +67,12 @@ suite('cmp', function () {
       done();
     });
 
-    test('second with self reference => false', function (done) {
-      var first = {
+    test('second with self reference => false', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -81,12 +81,12 @@ suite('cmp', function () {
       done();
     });
 
-    test('both with self reference => true', function (done) {
-      var first = {
+    test('both with self reference => true', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -97,13 +97,13 @@ suite('cmp', function () {
     });
   });
 
-  suite('ne', function () {
-    test('first with self reference => true', function (done) {
-      var first = {
+  suite('ne', () => {
+    test('first with self reference => true', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -112,12 +112,12 @@ suite('cmp', function () {
       done();
     });
 
-    test('second with self reference => true', function (done) {
-      var first = {
+    test('second with self reference => true', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -126,12 +126,12 @@ suite('cmp', function () {
       done();
     });
 
-    test('both with self reference => false', function (done) {
-      var first = {
+    test('both with self reference => false', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -142,13 +142,13 @@ suite('cmp', function () {
     });
   });
 
-  suite('nes', function () {
-    test('first with self reference => true', function (done) {
-      var first = {
+  suite('nes', () => {
+    test('first with self reference => true', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -157,12 +157,12 @@ suite('cmp', function () {
       done();
     });
 
-    test('second with self reference => true', function (done) {
-      var first = {
+    test('second with self reference => true', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -171,12 +171,12 @@ suite('cmp', function () {
       done();
     });
 
-    test('both with self reference => false', function (done) {
-      var first = {
+    test('both with self reference => false', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -187,13 +187,13 @@ suite('cmp', function () {
     });
   });
 
-  suite('gt', function () {
-    test('first with self reference => true', function (done) {
-      var first = {
+  suite('gt', () => {
+    test('first with self reference => true', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -202,12 +202,12 @@ suite('cmp', function () {
       done();
     });
 
-    test('second with self reference => false', function (done) {
-      var first = {
+    test('second with self reference => false', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -216,12 +216,12 @@ suite('cmp', function () {
       done();
     });
 
-    test('both with self reference => false', function (done) {
-      var first = {
+    test('both with self reference => false', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -232,13 +232,13 @@ suite('cmp', function () {
     });
   });
 
-  suite('gts', function () {
-    test('first with self reference => true', function (done) {
-      var first = {
+  suite('gts', () => {
+    test('first with self reference => true', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -247,12 +247,12 @@ suite('cmp', function () {
       done();
     });
 
-    test('second with self reference => false', function (done) {
-      var first = {
+    test('second with self reference => false', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -261,12 +261,12 @@ suite('cmp', function () {
       done();
     });
 
-    test('both with self reference => false', function (done) {
-      var first = {
+    test('both with self reference => false', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -277,13 +277,13 @@ suite('cmp', function () {
     });
   });
 
-  suite('ge', function () {
-    test('first with self reference => true', function (done) {
-      var first = {
+  suite('ge', () => {
+    test('first with self reference => true', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -292,12 +292,12 @@ suite('cmp', function () {
       done();
     });
 
-    test('second with self reference => false', function (done) {
-      var first = {
+    test('second with self reference => false', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -306,12 +306,12 @@ suite('cmp', function () {
       done();
     });
 
-    test('both with self reference => true', function (done) {
-      var first = {
+    test('both with self reference => true', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -322,13 +322,13 @@ suite('cmp', function () {
     });
   });
 
-  suite('ges', function () {
-    test('first with self reference => true', function (done) {
-      var first = {
+  suite('ges', () => {
+    test('first with self reference => true', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -337,12 +337,12 @@ suite('cmp', function () {
       done();
     });
 
-    test('second with self reference => false', function (done) {
-      var first = {
+    test('second with self reference => false', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -351,12 +351,12 @@ suite('cmp', function () {
       done();
     });
 
-    test('both with self reference => true', function (done) {
-      var first = {
+    test('both with self reference => true', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -367,13 +367,13 @@ suite('cmp', function () {
     });
   });
 
-  suite('lt', function () {
-    test('first with self reference => false', function (done) {
-      var first = {
+  suite('lt', () => {
+    test('first with self reference => false', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -382,12 +382,12 @@ suite('cmp', function () {
       done();
     });
 
-    test('second with self reference => true', function (done) {
-      var first = {
+    test('second with self reference => true', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -396,12 +396,12 @@ suite('cmp', function () {
       done();
     });
 
-    test('both with self reference => false', function (done) {
-      var first = {
+    test('both with self reference => false', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -412,13 +412,13 @@ suite('cmp', function () {
     });
   });
 
-  suite('lts', function () {
-    test('first with self reference => false', function (done) {
-      var first = {
+  suite('lts', () => {
+    test('first with self reference => false', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -427,12 +427,12 @@ suite('cmp', function () {
       done();
     });
 
-    test('second with self reference => true', function (done) {
-      var first = {
+    test('second with self reference => true', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -441,12 +441,12 @@ suite('cmp', function () {
       done();
     });
 
-    test('both with self reference => false', function (done) {
-      var first = {
+    test('both with self reference => false', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -457,13 +457,13 @@ suite('cmp', function () {
     });
   });
 
-  suite('le', function () {
-    test('first with self reference => false', function (done) {
-      var first = {
+  suite('le', () => {
+    test('first with self reference => false', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -472,12 +472,12 @@ suite('cmp', function () {
       done();
     });
 
-    test('second with self reference => true', function (done) {
-      var first = {
+    test('second with self reference => true', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -486,12 +486,12 @@ suite('cmp', function () {
       done();
     });
 
-    test('both with self reference => true', function (done) {
-      var first = {
+    test('both with self reference => true', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -502,13 +502,13 @@ suite('cmp', function () {
     });
   });
 
-  suite('les', function () {
-    test('first with self reference => false', function (done) {
-      var first = {
+  suite('les', () => {
+    test('first with self reference => false', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -517,12 +517,12 @@ suite('cmp', function () {
       done();
     });
 
-    test('second with self reference => true', function (done) {
-      var first = {
+    test('second with self reference => true', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -531,12 +531,12 @@ suite('cmp', function () {
       done();
     });
 
-    test('both with self reference => true', function (done) {
-      var first = {
+    test('both with self reference => true', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -547,13 +547,13 @@ suite('cmp', function () {
     });
   });
 
-  suite('id', function () {
-    test('first with self reference => false', function (done) {
-      var first = {
+  suite('id', () => {
+    test('first with self reference => false', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -562,12 +562,12 @@ suite('cmp', function () {
       done();
     });
 
-    test('second with self reference => false', function (done) {
-      var first = {
+    test('second with self reference => false', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -576,12 +576,12 @@ suite('cmp', function () {
       done();
     });
 
-    test('both with self reference => false', function (done) {
-      var first = {
+    test('both with self reference => false', done => {
+      const first = {
         name: 'foo'
       };
 
-      var second = {
+      const second = {
         name: 'foo'
       };
 
@@ -591,10 +591,11 @@ suite('cmp', function () {
       done();
     });
 
-    test('identical with self reference => true', function (done) {
-      var first = {
+    test('identical with self reference => true', done => {
+      const first = {
         name: 'foo'
       };
+
       first.mySelf = first;
       cmp.id(first, first).should.equal(true);
       done();

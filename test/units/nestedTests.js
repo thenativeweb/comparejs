@@ -1,15 +1,15 @@
 'use strict';
 
-/*eslint-disable no-unused-vars*/
-var should = require('should');
-/*eslint-enable no-unused-vars*/
+/* eslint-disable no-unused-vars */
+const should = require('should');
+/* eslint-enable no-unused-vars */
 
-var cmp = require('../lib/compare');
+const cmp = require('../../lib/compare');
 
-suite('cmp', function () {
-  suite('eq', function () {
-    test('both equal => true', function (done) {
-      var first = {
+suite('cmp', () => {
+  suite('eq', () => {
+    test('both equal => true', done => {
+      const first = {
         name: 'foo',
         value: 42,
         nested: {
@@ -19,7 +19,7 @@ suite('cmp', function () {
         }
       };
 
-      var second = {
+      const second = {
         name: 'foo',
         value: 42,
         nested: {
@@ -33,8 +33,8 @@ suite('cmp', function () {
       done();
     });
 
-    test('not equal on first level => false', function (done) {
-      var first = {
+    test('not equal on first level => false', done => {
+      const first = {
         name: 'foo',
         value: 23,
         nested: {
@@ -44,7 +44,7 @@ suite('cmp', function () {
         }
       };
 
-      var second = {
+      const second = {
         name: 'foo',
         value: 42,
         nested: {
@@ -58,8 +58,8 @@ suite('cmp', function () {
       done();
     });
 
-    test('missing property on first level => false', function (done) {
-      var first = {
+    test('missing property on first level => false', done => {
+      const first = {
         name: 'foo',
         nested: {
           empty: null,
@@ -68,7 +68,7 @@ suite('cmp', function () {
         }
       };
 
-      var second = {
+      const second = {
         name: 'foo',
         value: 42,
         nested: {
@@ -82,8 +82,8 @@ suite('cmp', function () {
       done();
     });
 
-    test('not equal on second level => false', function (done) {
-      var first = {
+    test('not equal on second level => false', done => {
+      const first = {
         name: 'foo',
         value: 42,
         nested: {
@@ -93,7 +93,7 @@ suite('cmp', function () {
         }
       };
 
-      var second = {
+      const second = {
         name: 'foo',
         value: 42,
         nested: {
@@ -107,8 +107,8 @@ suite('cmp', function () {
       done();
     });
 
-    test('missing property on second level => false', function (done) {
-      var first = {
+    test('missing property on second level => false', done => {
+      const first = {
         name: 'foo',
         value: 42,
         nested: {
@@ -118,7 +118,7 @@ suite('cmp', function () {
         }
       };
 
-      var second = {
+      const second = {
         name: 'foo',
         value: 42,
         nested: {
@@ -131,18 +131,18 @@ suite('cmp', function () {
       done();
     });
 
-    test('empty object and empty array on second level => false', function (done) {
-      var first = { foo: 'bar', baz: {}};
-      var second = { foo: 'bar', baz: []};
+    test('empty object and empty array on second level => false', done => {
+      const first = { foo: 'bar', baz: {}};
+      const second = { foo: 'bar', baz: []};
 
       cmp.eq(first, second).should.equal(false);
       done();
     });
   });
 
-  suite('eqs', function () {
-    test('both equal => true', function (done) {
-      var first = {
+  suite('eqs', () => {
+    test('both equal => true', done => {
+      const first = {
         name: 'foo',
         value: 42,
         nested: {
@@ -152,7 +152,7 @@ suite('cmp', function () {
         }
       };
 
-      var second = {
+      const second = {
         name: 'foo',
         value: 42,
         nested: {
@@ -166,8 +166,8 @@ suite('cmp', function () {
       done();
     });
 
-    test('not equal on first level => true', function (done) {
-      var first = {
+    test('not equal on first level => true', done => {
+      const first = {
         name: 'foo',
         value: 23,
         nested: {
@@ -177,7 +177,7 @@ suite('cmp', function () {
         }
       };
 
-      var second = {
+      const second = {
         name: 'foo',
         value: 42,
         nested: {
@@ -191,8 +191,8 @@ suite('cmp', function () {
       done();
     });
 
-    test('missing property on first level => false', function (done) {
-      var first = {
+    test('missing property on first level => false', done => {
+      const first = {
         name: 'foo',
         nested: {
           empty: null,
@@ -201,7 +201,7 @@ suite('cmp', function () {
         }
       };
 
-      var second = {
+      const second = {
         name: 'foo',
         value: 42,
         nested: {
@@ -215,8 +215,8 @@ suite('cmp', function () {
       done();
     });
 
-    test('not equal on second level => true', function (done) {
-      var first = {
+    test('not equal on second level => true', done => {
+      const first = {
         name: 'foo',
         value: 42,
         nested: {
@@ -226,7 +226,7 @@ suite('cmp', function () {
         }
       };
 
-      var second = {
+      const second = {
         name: 'foo',
         value: 42,
         nested: {
@@ -240,8 +240,8 @@ suite('cmp', function () {
       done();
     });
 
-    test('missing property on second level => false', function (done) {
-      var first = {
+    test('missing property on second level => false', done => {
+      const first = {
         name: 'foo',
         value: 42,
         nested: {
@@ -251,7 +251,7 @@ suite('cmp', function () {
         }
       };
 
-      var second = {
+      const second = {
         name: 'foo',
         value: 42,
         nested: {
