@@ -4,14 +4,16 @@ comparejs implements JavaScript's comparison operators the way you would expect 
 
 ## Installation
 
-    $ npm install comparejs
+```bash
+$ npm install comparejs
+```
 
 ## Quick Start
 
 To use comparejs you need to reference it from your application by adding the following line:
 
 ```javascript
-var cmp = require('comparejs');
+const cmp = require('comparejs');
 ```
 
 ### Features
@@ -62,14 +64,16 @@ Please note that these operators only work for objects. For any other type, they
 
 ## Running the build
 
-This module can be built using [Grunt](http://gruntjs.com/). Besides running the tests, this also analyses the code. To run Grunt, go to the folder where you have installed comparejs and run `grunt`. You need to have [grunt-cli](https://github.com/gruntjs/grunt-cli) installed.
+To build this module use [roboter](https://www.npmjs.com/package/roboter).
 
-    $ grunt
+```bash
+$ bot
+```
 
 ## License
 
 The MIT License (MIT)
-Copyright (c) 2012-2015 the native web.
+Copyright (c) 2012-2017 the native web.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
