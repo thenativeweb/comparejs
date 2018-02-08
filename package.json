@@ -14,13 +14,17 @@
     {
       "name": "Ryan Hughes",
       "email": "ryanhooz@gmail.com"
+    },
+    {
+      "name": "Jan-Hendrik Grundhöfer",
+      "email": "jan-hendrik.grundhoefer@thenativeweb.io"
     }
   ],
   "main": "dist/compare.js",
   "devDependencies": {
-    "roboter": "0.14.6",
-    "roboter-server": "0.14.6",
-    "should": "11.2.0"
+    "roboter": "0.15.6",
+    "roboter-server": "0.15.6",
+    "should": "13.2.1"
   },
   "repository": {
     "type": "git",
