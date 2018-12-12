@@ -4,7 +4,7 @@
 const should = require('should');
 /* eslint-enable no-unused-vars */
 
-const cmp = require('../../lib/compare');
+const cmp = require('../../src/compare');
 
 suite('object x object', () => {
   /* eslint-disable no-new-object */
@@ -22,7 +22,9 @@ suite('object x object', () => {
         q1 = { bar: 'foo' },
         r1 = { foo: '' },
         r2 = { foo: '' },
-        s1 = { foo: null };
+        s1 = { foo: null },
+        t1 = { foo: 'bar', bas: { bat: 'bax' }},
+        t2 = { foo: 'bar', bas: { bat: 'bax', bay: 'baz' }};
 
   O1.foo = 'bar';
   O2.foo = 'bar';
@@ -401,6 +403,11 @@ suite('object x object', () => {
   suite('gt', () => {
     suite('greater than => true', () => {
       test('object x object', done => {
+        cmp.gt(t2, t1).should.equal(true);
+        done();
+      });
+
+      test('object x empty', done => {
         cmp.gt(o1, empty).should.equal(true);
         done();
       });
@@ -507,6 +514,11 @@ suite('object x object', () => {
 
     suite('less than => false', () => {
       test('object x object', done => {
+        cmp.gt(t1, t2).should.equal(false);
+        done();
+      });
+
+      test('empty x object', done => {
         cmp.gt(empty, o1).should.equal(false);
         done();
       });
@@ -651,6 +663,11 @@ suite('object x object', () => {
   suite('ge', () => {
     suite('greater than => true', () => {
       test('object x object', done => {
+        cmp.ge(t2, t1).should.equal(true);
+        done();
+      });
+
+      test('object x empty', done => {
         cmp.ge(o1, empty).should.equal(true);
         done();
       });
@@ -772,6 +789,11 @@ suite('object x object', () => {
 
     suite('less than => false', () => {
       test('object x object', done => {
+        cmp.ge(t1, t2).should.equal(false);
+        done();
+      });
+
+      test('empty x object', done => {
         cmp.ge(empty, o1).should.equal(false);
         done();
       });
@@ -916,6 +938,11 @@ suite('object x object', () => {
   suite('lt', () => {
     suite('greater than => false', () => {
       test('object x object', done => {
+        cmp.lt(t2, t1).should.equal(false);
+        done();
+      });
+
+      test('object x empty', done => {
         cmp.lt(o1, empty).should.equal(false);
         done();
       });
@@ -1022,6 +1049,11 @@ suite('object x object', () => {
 
     suite('less than => true', () => {
       test('object x object', done => {
+        cmp.lt(t1, t2).should.equal(true);
+        done();
+      });
+
+      test('empty x object', done => {
         cmp.lt(empty, o1).should.equal(true);
         done();
       });
@@ -1166,6 +1198,11 @@ suite('object x object', () => {
   suite('le', () => {
     suite('greater than => false', () => {
       test('object x object', done => {
+        cmp.le(t2, t1).should.equal(false);
+        done();
+      });
+
+      test('object x empty', done => {
         cmp.le(o1, empty).should.equal(false);
         done();
       });
@@ -1287,6 +1324,11 @@ suite('object x object', () => {
 
     suite('less than => true', () => {
       test('object x object', done => {
+        cmp.le(t1, t2).should.equal(true);
+        done();
+      });
+
+      test('empty x object', done => {
         cmp.le(empty, o1).should.equal(true);
         done();
       });

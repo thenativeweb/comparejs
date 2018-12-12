@@ -40,7 +40,7 @@ const isSubset = function (derived, base, verified) {
         ) {
           return false;
         }
-        if (!(isSubset(derived[i], base[i], verified) && isSubset(base[i], derived[i], verified))) {
+        if (!isSubset(derived[i], base[i], verified)) {
           return false;
         }
       } else if (cmp.ne(derived[i], base[i])) {

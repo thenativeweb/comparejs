@@ -67,7 +67,7 @@ Please note that these operators only work for objects. For any other type, they
 To build this module use [roboter](https://www.npmjs.com/package/roboter).
 
 ```shell
-$ bot
+$ npx roboter
 ```
 
 ## License
