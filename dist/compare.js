@@ -1,6 +1,8 @@
 'use strict';
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+var _typeof2 = _interopRequireDefault(require("@babel/runtime/helpers/typeof"));
 
 var alias = {
   eq: 'equal',
@@ -10,7 +12,6 @@ var alias = {
   lt: 'lessThan',
   le: 'lessThanOrEqual',
   id: 'identical',
-
   eqs: 'equalByStructure',
   nes: 'notEqualByStructure',
   gts: 'greaterThanByStructure',
@@ -26,26 +27,29 @@ var isSubset = function isSubset(derived, base, verified) {
 
   for (var i in derived) {
     if (verified.indexOf(derived[i]) === -1) {
-      if (_typeof(derived[i]) === 'object') {
+      if ((0, _typeof2.default)(derived[i]) === 'object') {
         verified.push(derived[i]);
       }
 
       if (!base.hasOwnProperty(i)) {
         return false;
       }
-
       /* eslint-disable no-use-before-define */
-      if (_typeof(derived[i]) === 'object' && _typeof(base[i]) === 'object' && derived[i] && base[i]) {
+
+
+      if ((0, _typeof2.default)(derived[i]) === 'object' && (0, _typeof2.default)(base[i]) === 'object' && derived[i] && base[i]) {
         if (Array.isArray(derived[i]) && !Array.isArray(base[i]) || !Array.isArray(derived[i]) && Array.isArray(base[i])) {
           return false;
         }
-        if (!(isSubset(derived[i], base[i], verified) && isSubset(base[i], derived[i], verified))) {
+
+        if (!isSubset(derived[i], base[i], verified)) {
           return false;
         }
       } else if (cmp.ne(derived[i], base[i])) {
         return false;
       }
       /* eslint-enable no-use-before-define */
+
     }
   }
 
@@ -59,10 +63,11 @@ var isSubsetStructure = function isSubsetStructure(derived, base, verified) {
 
   for (var i in derived) {
     if (verified.indexOf(derived[i]) === -1) {
-      if (_typeof(derived[i]) === 'object') {
+      if ((0, _typeof2.default)(derived[i]) === 'object') {
         verified.push(derived[i]);
       }
-      if (_typeof(base[i]) !== _typeof(derived[i]) || _typeof(derived[i]) === 'object' && !isSubsetStructure(derived[i], base[i], verified)) {
+
+      if ((0, _typeof2.default)(base[i]) !== (0, _typeof2.default)(derived[i]) || (0, _typeof2.default)(derived[i]) === 'object' && !isSubsetStructure(derived[i], base[i], verified)) {
         return false;
       }
     }
@@ -73,7 +78,7 @@ var isSubsetStructure = function isSubsetStructure(derived, base, verified) {
 
 var wrap = function wrap(fn1, fn2) {
   return function () {
-    for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
       args[_key] = arguments[_key];
     }
 
@@ -84,7 +89,7 @@ var wrap = function wrap(fn1, fn2) {
 var unwrap = function unwrap(obj) {
   if (obj === null) {
     return obj;
-  } else if ((typeof obj === 'undefined' ? 'undefined' : _typeof(obj)) === 'object' && (obj.constructor === Number || obj.constructor === String || obj.constructor === Boolean)) {
+  } else if ((0, _typeof2.default)(obj) === 'object' && (obj.constructor === Number || obj.constructor === String || obj.constructor === Boolean)) {
     return obj.valueOf();
   }
 
@@ -94,12 +99,11 @@ var unwrap = function unwrap(obj) {
 var processTypes = function processTypes(fn, first, second) {
   first = unwrap(first);
   second = unwrap(second);
-
   return fn(first, second);
 };
 
 var processTypesStructure = function processTypesStructure(fn, first, second) {
-  if ((typeof first === 'undefined' ? 'undefined' : _typeof(first)) !== 'object' || (typeof second === 'undefined' ? 'undefined' : _typeof(second)) !== 'object') {
+  if ((0, _typeof2.default)(first) !== 'object' || (0, _typeof2.default)(second) !== 'object') {
     return false;
   }
 
@@ -116,10 +120,10 @@ var cmp = {
     if (typeof first === 'function' && typeof second === 'function') {
       first = first.toString();
       second = second.toString();
-    }
+    } // Objects are compared as subsets, but only if both are defined (i.e. not null, undefined, ...).
 
-    // Objects are compared as subsets, but only if both are defined (i.e. not null, undefined, ...).
-    if ((typeof first === 'undefined' ? 'undefined' : _typeof(first)) === 'object' && (typeof second === 'undefined' ? 'undefined' : _typeof(second)) === 'object' && first && second) {
+
+    if ((0, _typeof2.default)(first) === 'object' && (0, _typeof2.default)(second) === 'object' && first && second) {
       if (Array.isArray(first) && !Array.isArray(second) || !Array.isArray(first) && Array.isArray(second)) {
         return false;
       }
@@ -133,9 +137,9 @@ var cmp = {
     // If exactly one is null, they are not equal by structure.
     if (first && !second || !first && second) {
       return false;
-    }
+    } // If both are null, they are equal by structure.
 
-    // If both are null, they are equal by structure.
+
     if (!first && !second) {
       return true;
     }
@@ -152,15 +156,15 @@ var cmp = {
     // If at least one parameter is a function, greater than does not make sense.
     if (typeof first === 'function' || typeof second === 'function') {
       return false;
-    }
+    } // Objects are compared as subsets, but only if both are defined (i.e. not null, undefined, ...).
 
-    // Objects are compared as subsets, but only if both are defined (i.e. not null, undefined, ...).
-    if ((typeof first === 'undefined' ? 'undefined' : _typeof(first)) === 'object' && (typeof second === 'undefined' ? 'undefined' : _typeof(second)) === 'object' && first && second) {
+
+    if ((0, _typeof2.default)(first) === 'object' && (0, _typeof2.default)(second) === 'object' && first && second) {
       return isSubset(second, first) && !isSubset(first, second);
-    }
+    } // If an object is compared with null, neither is greater.
 
-    // If an object is compared with null, neither is greater.
-    if ((typeof first === 'undefined' ? 'undefined' : _typeof(first)) === 'object' && !second || (typeof second === 'undefined' ? 'undefined' : _typeof(second)) === 'object' && !first) {
+
+    if ((0, _typeof2.default)(first) === 'object' && !second || (0, _typeof2.default)(second) === 'object' && !first) {
       return false;
     }
 
@@ -170,15 +174,15 @@ var cmp = {
     // If the second object is null, the first is greater by structure.
     if (first && !second) {
       return true;
-    }
+    } // Otherwise, if the first is null, it is not greater (no matter what the second is).
 
-    // Otherwise, if the first is null, it is not greater (no matter what the second is).
+
     if (!first) {
       return false;
-    }
-
-    // If both are not null, compare as a subset. Note that second must be a subset of first, if first
+    } // If both are not null, compare as a subset. Note that second must be a subset of first, if first
     // is greater than second.
+
+
     return isSubsetStructure(second, first) && !isSubsetStructure(first, second);
   },
   ge: function ge(first, second) {
@@ -191,15 +195,15 @@ var cmp = {
     // If at least one parameter is a function, less than does not make sense.
     if (typeof first === 'function' || typeof second === 'function') {
       return false;
-    }
+    } // Objects are compared as subsets, but only if both are defined (i.e. not null, undefined, ...).
 
-    // Objects are compared as subsets, but only if both are defined (i.e. not null, undefined, ...).
-    if ((typeof first === 'undefined' ? 'undefined' : _typeof(first)) === 'object' && (typeof second === 'undefined' ? 'undefined' : _typeof(second)) === 'object' && first && second) {
+
+    if ((0, _typeof2.default)(first) === 'object' && (0, _typeof2.default)(second) === 'object' && first && second) {
       return isSubset(first, second) && !isSubset(second, first);
-    }
+    } // If an object is compared with null, neither is greater.
 
-    // If an object is compared with null, neither is greater.
-    if ((typeof first === 'undefined' ? 'undefined' : _typeof(first)) === 'object' && !second || (typeof second === 'undefined' ? 'undefined' : _typeof(second)) === 'object' && !first) {
+
+    if ((0, _typeof2.default)(first) === 'object' && !second || (0, _typeof2.default)(second) === 'object' && !first) {
       return false;
     }
 
@@ -209,15 +213,15 @@ var cmp = {
     // If the first object is null, it is less by structure.
     if (!first && second) {
       return true;
-    }
+    } // Otherwise, if the second is null, the first is not less (no matter what it is).
 
-    // Otherwise, if the second is null, the first is not less (no matter what it is).
+
     if (!second) {
       return false;
-    }
-
-    // If both are not null, compare as a subset. Note that first must be a subset of second, if first
+    } // If both are not null, compare as a subset. Note that first must be a subset of second, if first
     // is less than second.
+
+
     return isSubsetStructure(first, second) && !isSubsetStructure(second, first);
   },
   le: function le(first, second) {
@@ -228,7 +232,7 @@ var cmp = {
   },
   id: function id(first, second) {
     // Functions and objects need to be compared by reference, all other types are compared by value.
-    if (typeof first === 'function' && typeof second === 'function' || (typeof first === 'undefined' ? 'undefined' : _typeof(first)) === 'object' && (typeof second === 'undefined' ? 'undefined' : _typeof(second)) === 'object') {
+    if (typeof first === 'function' && typeof second === 'function' || (0, _typeof2.default)(first) === 'object' && (0, _typeof2.default)(second) === 'object') {
       return first === second;
     }
 
