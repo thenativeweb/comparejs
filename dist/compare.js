@@ -2,6 +2,8 @@
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
+var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
+
 var _typeof2 = _interopRequireDefault(require("@babel/runtime/helpers/typeof"));
 
 var alias = {
@@ -19,37 +21,137 @@ var alias = {
   lts: 'lessThanByStructure',
   les: 'lessThanOrEqualByStructure'
 };
+var cmp;
 
-var isSubset = function isSubset(derived, base, verified) {
-  if (!verified) {
-    verified = [];
+var isSubset = function isSubset(potentialSubset, superset) {
+  var visited = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
+
+  if ((0, _typeof2.default)(potentialSubset) !== 'object') {
+    throw new Error('Potential subset must be an object.');
   }
 
-  for (var i in derived) {
-    if (verified.indexOf(derived[i]) === -1) {
-      if ((0, _typeof2.default)(derived[i]) === 'object') {
-        verified.push(derived[i]);
+  if ((0, _typeof2.default)(superset) !== 'object') {
+    throw new Error('Superset must be an object.');
+  }
+
+  if (potentialSubset === null && superset !== null || potentialSubset !== null && superset === null) {
+    return false;
+  }
+
+  if (potentialSubset === null && superset === null) {
+    return true;
+  }
+
+  if (Array.isArray(potentialSubset) && !Array.isArray(superset) || !Array.isArray(potentialSubset) && Array.isArray(superset)) {
+    return false;
+  }
+
+  if (Array.isArray(potentialSubset) && Array.isArray(superset)) {
+    if (potentialSubset.length > superset.length) {
+      return false;
+    }
+
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+      var _loop = function _loop() {
+        var item = _step.value;
+
+        if ((0, _typeof2.default)(item) === 'object') {
+          if (visited.includes(item)) {
+            return "continue";
+          }
+
+          visited.push(item);
+          /* eslint-disable no-loop-func */
+
+          var _supersetHasItem = superset.some(function (superItem) {
+            return cmp.eq(item, superItem);
+          });
+          /* eslint-enable no-loop-func */
+
+
+          if (!_supersetHasItem) {
+            return {
+              v: false
+            };
+          }
+
+          return "continue";
+        }
+        /* eslint-disable no-loop-func */
+
+
+        var supersetHasItem = superset.some(function (superItem) {
+          return cmp.eq(item, superItem);
+        });
+        /* eslint-enable no-loop-func */
+
+        if (!supersetHasItem) {
+          return {
+            v: false
+          };
+        }
+      };
+
+      for (var _iterator = potentialSubset[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        var _ret = _loop();
+
+        switch (_ret) {
+          case "continue":
+            continue;
+
+          default:
+            if ((0, _typeof2.default)(_ret) === "object") return _ret.v;
+        }
+      }
+    } catch (err) {
+      _didIteratorError = true;
+      _iteratorError = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion && _iterator.return != null) {
+          _iterator.return();
+        }
+      } finally {
+        if (_didIteratorError) {
+          throw _iteratorError;
+        }
+      }
+    }
+
+    return true;
+  }
+
+  if (Object.keys(potentialSubset).length > Object.keys(superset).length) {
+    return false;
+  }
+
+  var _arr = Object.entries(potentialSubset);
+
+  for (var _i = 0; _i < _arr.length; _i++) {
+    var _arr$_i = (0, _slicedToArray2.default)(_arr[_i], 2),
+        key = _arr$_i[0],
+        value = _arr$_i[1];
+
+    if ((0, _typeof2.default)(value) === 'object') {
+      if (visited.includes(value)) {
+        continue;
       }
 
-      if (!base.hasOwnProperty(i)) {
+      visited.push(value);
+
+      if (!isSubset(value, superset[key], visited)) {
         return false;
       }
-      /* eslint-disable no-use-before-define */
 
+      continue;
+    }
 
-      if ((0, _typeof2.default)(derived[i]) === 'object' && (0, _typeof2.default)(base[i]) === 'object' && derived[i] && base[i]) {
-        if (Array.isArray(derived[i]) && !Array.isArray(base[i]) || !Array.isArray(derived[i]) && Array.isArray(base[i])) {
-          return false;
-        }
-
-        if (!isSubset(derived[i], base[i], verified)) {
-          return false;
-        }
-      } else if (cmp.ne(derived[i], base[i])) {
-        return false;
-      }
-      /* eslint-enable no-use-before-define */
-
+    if (cmp.ne(value, superset[key])) {
+      return false;
     }
   }
 
@@ -114,7 +216,7 @@ var processTypesStructure = function processTypesStructure(fn, first, second) {
   return fn(first, second);
 };
 
-var cmp = {
+cmp = {
   eq: function eq(first, second) {
     // If two functions shall be compared, compare their source code.
     if (typeof first === 'function' && typeof second === 'function') {
