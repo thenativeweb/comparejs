@@ -143,6 +143,10 @@ var isSubset = function isSubset(potentialSubset, superset) {
 
       visited.push(value);
 
+      if ((0, _typeof2.default)(superset[key]) !== 'object') {
+        return false;
+      }
+
       if (!isSubset(value, superset[key], visited)) {
         return false;
       }
