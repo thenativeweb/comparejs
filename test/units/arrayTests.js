@@ -49,6 +49,11 @@ suite('array x array', () => {
         cmp.eq(null, null).should.equal(true);
         done();
       });
+
+      test('array[3] x array[3]', done => {
+        cmp.eq([ 2, 3, 4 ], [ 2, 3, 4 ]).should.equal(true);
+        done();
+      });
     });
 
     suite('not equal => false', () => {
@@ -91,6 +96,11 @@ suite('array x array', () => {
         cmp.eq(null, A1).should.equal(false);
         done();
       });
+
+      test('array[3] x array[3]', done => {
+        cmp.eq([ 2, 3, 4 ], [ 4, 5, 6 ]).should.equal(false);
+        done();
+      });
     });
   });
 
@@ -127,6 +137,11 @@ suite('array x array', () => {
 
       test('null x null', done => {
         cmp.ne(null, null).should.equal(false);
+        done();
+      });
+
+      test('array[3] x array[3]', done => {
+        cmp.ne([ 2, 3, 4 ], [ 2, 3, 4 ]).should.equal(false);
         done();
       });
     });
@@ -171,6 +186,11 @@ suite('array x array', () => {
         cmp.ne(null, A1).should.equal(true);
         done();
       });
+
+      test('array[3] x array[3]', done => {
+        cmp.ne([ 2, 3, 4 ], [ 4, 5, 6 ]).should.equal(true);
+        done();
+      });
     });
   });
 
@@ -204,6 +224,11 @@ suite('array x array', () => {
         cmp.gt(A1, Empty).should.equal(true);
         done();
       });
+
+      test('array[3] x array[1]', done => {
+        cmp.gt([ 2, 3, 4 ], [ 3 ]).should.equal(true);
+        done();
+      });
     });
 
     suite('equal => false', () => {
@@ -229,6 +254,11 @@ suite('array x array', () => {
 
       test('null x null', done => {
         cmp.gt(null, null).should.equal(false);
+        done();
+      });
+
+      test('array[3] x array[3]', done => {
+        cmp.gt([ 2, 3, 4 ], [ 2, 3, 4 ]).should.equal(false);
         done();
       });
     });
@@ -273,6 +303,11 @@ suite('array x array', () => {
         cmp.gt(null, A1).should.equal(false);
         done();
       });
+
+      test('array[3] x array[3]', done => {
+        cmp.gt([ 2, 3, 4 ], [ 4, 5, 6 ]).should.equal(false);
+        done();
+      });
     });
 
     suite('less than => false', () => {
@@ -293,6 +328,11 @@ suite('array x array', () => {
 
       test('Array() x Array()', done => {
         cmp.gt(Empty, A1).should.equal(false);
+        done();
+      });
+
+      test('array[1] x array[3]', done => {
+        cmp.gt([ 3 ], [ 2, 3, 4 ]).should.equal(false);
         done();
       });
     });
@@ -328,6 +368,11 @@ suite('array x array', () => {
         cmp.ge(A1, Empty).should.equal(true);
         done();
       });
+
+      test('array[3] x array[1]', done => {
+        cmp.ge([ 2, 3, 4 ], [ 3 ]).should.equal(true);
+        done();
+      });
     });
 
     suite('equal => true', () => {
@@ -353,6 +398,11 @@ suite('array x array', () => {
 
       test('null x null', done => {
         cmp.ge(null, null).should.equal(true);
+        done();
+      });
+
+      test('array[3] x array[3]', done => {
+        cmp.ge([ 2, 3, 4 ], [ 2, 3, 4 ]).should.equal(true);
         done();
       });
     });
@@ -397,6 +447,11 @@ suite('array x array', () => {
         cmp.ge(null, A1).should.equal(false);
         done();
       });
+
+      test('array[3] x array[3]', done => {
+        cmp.ge([ 2, 3, 4 ], [ 4, 5, 6 ]).should.equal(false);
+        done();
+      });
     });
 
     suite('less than => false', () => {
@@ -417,6 +472,11 @@ suite('array x array', () => {
 
       test('Array() x Array()', done => {
         cmp.ge(Empty, A1).should.equal(false);
+        done();
+      });
+
+      test('array[1] x array[3]', done => {
+        cmp.ge([ 3 ], [ 2, 3, 4 ]).should.equal(false);
         done();
       });
     });
@@ -452,6 +512,11 @@ suite('array x array', () => {
         cmp.lt(A1, Empty).should.equal(false);
         done();
       });
+
+      test('array[3] x array[1]', done => {
+        cmp.lt([ 2, 3, 4 ], [ 3 ]).should.equal(false);
+        done();
+      });
     });
 
     suite('equal => false', () => {
@@ -477,6 +542,11 @@ suite('array x array', () => {
 
       test('null x null', done => {
         cmp.lt(null, null).should.equal(false);
+        done();
+      });
+
+      test('array[3] x array[3]', done => {
+        cmp.lt([ 2, 3, 4 ], [ 2, 3, 4 ]).should.equal(false);
         done();
       });
     });
@@ -521,6 +591,11 @@ suite('array x array', () => {
         cmp.lt(null, A1).should.equal(false);
         done();
       });
+
+      test('array[3] x array[3]', done => {
+        cmp.lt([ 2, 3, 4 ], [ 4, 5, 6 ]).should.equal(false);
+        done();
+      });
     });
 
     suite('less than => true', () => {
@@ -541,6 +616,11 @@ suite('array x array', () => {
 
       test('Array() x Array()', done => {
         cmp.lt(Empty, A1).should.equal(true);
+        done();
+      });
+
+      test('array[1] x array[3]', done => {
+        cmp.lt([ 3 ], [ 2, 3, 4 ]).should.equal(true);
         done();
       });
     });
@@ -576,6 +656,11 @@ suite('array x array', () => {
         cmp.le(A1, Empty).should.equal(false);
         done();
       });
+
+      test('array[3] x array[1]', done => {
+        cmp.le([ 2, 3, 4 ], [ 3 ]).should.equal(false);
+        done();
+      });
     });
 
     suite('equal => true', () => {
@@ -601,6 +686,11 @@ suite('array x array', () => {
 
       test('null x null', done => {
         cmp.le(null, null).should.equal(true);
+        done();
+      });
+
+      test('array[3] x array[3]', done => {
+        cmp.le([ 2, 3, 4 ], [ 2, 3, 4 ]).should.equal(true);
         done();
       });
     });
@@ -645,6 +735,11 @@ suite('array x array', () => {
         cmp.le(null, A1).should.equal(false);
         done();
       });
+
+      test('array[3] x array[3]', done => {
+        cmp.le([ 2, 3, 4 ], [ 4, 5, 6 ]).should.equal(false);
+        done();
+      });
     });
 
     suite('less than => true', () => {
@@ -665,6 +760,11 @@ suite('array x array', () => {
 
       test('Array() x Array()', done => {
         cmp.le(Empty, A1).should.equal(true);
+        done();
+      });
+
+      test('array[1] x array[3]', done => {
+        cmp.le([ 3 ], [ 2, 3, 4 ]).should.equal(true);
         done();
       });
     });

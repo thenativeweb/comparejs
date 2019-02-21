@@ -22,7 +22,7 @@
   ],
   "main": "dist/compare.js",
   "devDependencies": {
-    "roboter": "3.0.3",
+    "roboter": "4.0.0",
     "should": "13.2.3"
   },
   "repository": {

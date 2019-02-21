@@ -17,36 +17,91 @@ const alias = {
   les: 'lessThanOrEqualByStructure'
 };
 
-const isSubset = function (derived, base, verified) {
-  if (!verified) {
-    verified = [];
+let cmp;
+
+const isSubset = function (potentialSubset, superset, visited = []) {
+  if (typeof potentialSubset !== 'object') {
+    throw new Error('Potential subset must be an object.');
+  }
+  if (typeof superset !== 'object') {
+    throw new Error('Superset must be an object.');
   }
 
-  for (const i in derived) {
-    if (verified.indexOf(derived[i]) === -1) {
-      if (typeof derived[i] === 'object') {
-        verified.push(derived[i]);
+  if (
+    (potentialSubset === null && superset !== null) ||
+    (potentialSubset !== null && superset === null)
+  ) {
+    return false;
+  }
+
+  if (potentialSubset === null && superset === null) {
+    return true;
+  }
+
+  if (
+    (Array.isArray(potentialSubset) && !Array.isArray(superset)) ||
+    (!Array.isArray(potentialSubset) && Array.isArray(superset))
+  ) {
+    return false;
+  }
+
+  if (Array.isArray(potentialSubset) && Array.isArray(superset)) {
+    if (potentialSubset.length > superset.length) {
+      return false;
+    }
+
+    for (const item of potentialSubset) {
+      if (typeof item === 'object') {
+        if (visited.includes(item)) {
+          continue;
+        }
+
+        visited.push(item);
+
+        /* eslint-disable no-loop-func */
+        const supersetHasItem = superset.some(superItem => cmp.eq(item, superItem));
+        /* eslint-enable no-loop-func */
+
+        if (!supersetHasItem) {
+          return false;
+        }
+
+        continue;
       }
 
-      if (!base.hasOwnProperty(i)) {
+      /* eslint-disable no-loop-func */
+      const supersetHasItem = superset.some(superItem => cmp.eq(item, superItem));
+      /* eslint-enable no-loop-func */
+
+      if (!supersetHasItem) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  if (Object.keys(potentialSubset).length > Object.keys(superset).length) {
+    return false;
+  }
+
+  for (const [ key, value ] of Object.entries(potentialSubset)) {
+    if (typeof value === 'object') {
+      if (visited.includes(value)) {
+        continue;
+      }
+
+      visited.push(value);
+
+      if (!isSubset(value, superset[key], visited)) {
         return false;
       }
 
-      /* eslint-disable no-use-before-define */
-      if (typeof derived[i] === 'object' && typeof base[i] === 'object' && derived[i] && base[i]) {
-        if (
-          (Array.isArray(derived[i]) && !Array.isArray(base[i])) ||
-          (!Array.isArray(derived[i]) && Array.isArray(base[i]))
-        ) {
-          return false;
-        }
-        if (!isSubset(derived[i], base[i], verified)) {
-          return false;
-        }
-      } else if (cmp.ne(derived[i], base[i])) {
-        return false;
-      }
-      /* eslint-enable no-use-before-define */
+      continue;
+    }
+
+    if (cmp.ne(value, superset[key])) {
+      return false;
     }
   }
 
@@ -110,7 +165,7 @@ const processTypesStructure = function (fn, first, second) {
   return fn(first, second);
 };
 
-const cmp = {
+cmp = {
   eq (first, second) {
     // If two functions shall be compared, compare their source code.
     if (typeof first === 'function' && typeof second === 'function') {
@@ -243,8 +298,10 @@ const cmp = {
 
   id (first, second) {
     // Functions and objects need to be compared by reference, all other types are compared by value.
-    if ((typeof first === 'function' && typeof second === 'function') ||
-        (typeof first === 'object' && typeof second === 'object')) {
+    if (
+      (typeof first === 'function' && typeof second === 'function') ||
+      (typeof first === 'object' && typeof second === 'object')
+    ) {
       return first === second;
     }
 
