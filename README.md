@@ -13,36 +13,33 @@ $ npm install comparejs
 To use comparejs you need to reference it from your application by adding the following line:
 
 ```javascript
-const cmp = require('comparejs');
+const compare = require('comparejs');
 ```
 
 ### Features
 
--   Supports comparison of `number`, `string`, `boolean`, `function`, `object`, `array` and `undefined`.
--   Supports comparison of native data types and constructor-created data types, such as `number` and `new Number()`.
--   Supports comparison of objects and arrays using deep-equal.
--   Supports comparison of objects and arrays with `<`, `<=`, `>` and `>=` by handling them as subsets.
--   Supports comparison of objects by structure.
--   Supports comparison with `undefined` correctly, as `<=` and `>=` are problematic in plain JavaScript.
--   Supports comparison in a perfectly type-safe way out-of-the-box.
--   Supports comparison by equality and identity, depending on what makes sense.
--   Developed using TDD and backed up by more than 930 unit tests.
+- Supports comparison of `array`, `boolean`, `function`, `null`, `number`, `object`, `string` and `undefined`.
+- Supports comparison of native data types and constructor-created data types, such as `number` and `new Number()`.
+- Supports comparison of objects and arrays using deep-equal.
+- Supports comparison of objects and arrays with `<`, `<=`, `>` and `>=` by handling them as subsets.
+- Supports comparison of objects by structure.
+- Supports comparison with `undefined` correctly, as `<=` and `>=` are problematic in plain JavaScript.
+- Supports comparison in a perfectly type-safe way out-of-the-box.
+- Supports comparison by equality and identity, depending on what makes sense.
 
 ### Basic usage
 
-Now you are able to use the various comparison operators. All you need to do is access the `cmp` object and
-use its functions:
+Now you are able to use the various comparison operators. All you need to do is access the `compare` object and use its functions:
 
-<table>
-  <tr><th>Operator</th><th>Alias</th><th>Description</th></tr>
-  <tr><td>cmp.eq(first, second)</td><td>cmp.equal(first, second)</td><td>equal</td></tr>
-  <tr><td>cmp.ne(first, second)</td><td>cmp.notEqual(first, second)</td><td>not equal</td></tr>
-  <tr><td>cmp.gt(first, second)</td><td>cmp.greaterThan(first, second)</td><td>greater than</td></tr>
-  <tr><td>cmp.ge(first, second)</td><td>cmp.greaterThanOrEqual(first, second)</td><td>greater than or equal</td></tr>
-  <tr><td>cmp.lt(first, second)</td><td>cmp.lessThan(first, second)</td><td>less than</td></tr>
-  <tr><td>cmp.le(first, second)</td><td>cmp.lessThanOrEqual(first, second)</td><td>less than or equal</td></tr>
-  <tr><td>cmp.id(first, second)</td><td>cmp.identical(first, second)</td><td>identical</td></tr>
-</table>
+| Operator | Alias | Description |
+|-|-|-|
+| `equal(left, right)` | `eq(left, right)` | equal |
+| `notEqual(left, right)` | `ne(left, right)` | not equal |
+| `lessThan(left, right)` | `lt(left, right)` | less than |
+| `lessThanOrEqual(left, right)` | `lte(left, right)` | less than or equal |
+| `greaterThan(left, right)` | `gt(left, right)` | greater than |
+| `greaterThanOrEqual(left, right)` | `gte(left, right)` | greater than or equal |
+| `identity(left, right)` | `id(left, right)` | identity |
 
 Please note that each comparison operator works on each combination of types and does what you would expect it to do.
 
@@ -50,15 +47,14 @@ Please note that each comparison operator works on each combination of types and
 
 For objects, there are special operators that compare by structure. Among other things, they can be used to verify objects against interfaces:
 
-<table>
-  <tr><th>Operator</th><th>Alias</th><th>Description</th></tr>
-  <tr><td>cmp.eqs(first, second)</td><td>cmp.equalByStructure(first, second)</td><td>equal by structure</td></tr>
-  <tr><td>cmp.nes(first, second)</td><td>cmp.notEqualByStructure(first, second)</td><td>not equal by structure</td></tr>
-  <tr><td>cmp.gts(first, second)</td><td>cmp.greaterThanByStructure(first, second)</td><td>greater than by structure</td></tr>
-  <tr><td>cmp.ges(first, second)</td><td>cmp.greaterThanOrEqualByStructure(first, second)</td><td>greater than or equal by structure</td></tr>
-  <tr><td>cmp.lts(first, second)</td><td>cmp.lessThanByStructure(first, second)</td><td>less than by structure</td></tr>
-  <tr><td>cmp.les(first, second)</td><td>cmp.lessThanOrEqualByStructure(first, second)</td><td>less than or equal by structure</td></tr>
-</table>
+| Operator | Alias | Description |
+|-|-|-|
+| `equalByStructure(left, right)` | `eqs(left, right)` | equal by structure |
+| `notEqualByStructure(left, right)` | `nes(left, right)` | not equal by structure |
+| `lessThanByStructure(left, right)` | `lts(left, right)` | less than by structure |
+| `lessThanOrEqualByStructure(left, right)` | `ltes(left, right)` | less than or equal by structure |
+| `greaterThanByStructure(left, right)` | `gts(left, right)` | greater than by structure |
+| `greaterThanOrEqualByStructure(left, right)` | `gtes(left, right)` | greater than or equal by structure |
 
 Please note that these operators only work for objects. For any other type, they return `false`.
 

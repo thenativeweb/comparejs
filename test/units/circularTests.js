@@ -277,7 +277,7 @@ suite('cmp', () => {
     });
   });
 
-  suite('ge', () => {
+  suite('gte', () => {
     test('first with self reference => true', done => {
       const first = {
         name: 'foo'
@@ -288,7 +288,7 @@ suite('cmp', () => {
       };
 
       first.mySelf = first;
-      cmp.ge(first, second).should.equal(true);
+      cmp.gte(first, second).should.equal(true);
       done();
     });
 
@@ -302,7 +302,7 @@ suite('cmp', () => {
       };
 
       second.mySelf = second;
-      cmp.ge(first, second).should.equal(false);
+      cmp.gte(first, second).should.equal(false);
       done();
     });
 
@@ -317,12 +317,12 @@ suite('cmp', () => {
 
       first.mySelf = first;
       second.mySelf = second;
-      cmp.ge(first, second).should.equal(true);
+      cmp.gte(first, second).should.equal(true);
       done();
     });
   });
 
-  suite('ges', () => {
+  suite('gtes', () => {
     test('first with self reference => true', done => {
       const first = {
         name: 'foo'
@@ -333,7 +333,7 @@ suite('cmp', () => {
       };
 
       first.mySelf = first;
-      cmp.ges(first, second).should.equal(true);
+      cmp.gtes(first, second).should.equal(true);
       done();
     });
 
@@ -347,7 +347,7 @@ suite('cmp', () => {
       };
 
       second.mySelf = second;
-      cmp.ges(first, second).should.equal(false);
+      cmp.gtes(first, second).should.equal(false);
       done();
     });
 
@@ -362,7 +362,7 @@ suite('cmp', () => {
 
       first.mySelf = first;
       second.mySelf = second;
-      cmp.ges(first, second).should.equal(true);
+      cmp.gtes(first, second).should.equal(true);
       done();
     });
   });
@@ -457,7 +457,7 @@ suite('cmp', () => {
     });
   });
 
-  suite('le', () => {
+  suite('lte', () => {
     test('first with self reference => false', done => {
       const first = {
         name: 'foo'
@@ -468,7 +468,7 @@ suite('cmp', () => {
       };
 
       first.mySelf = first;
-      cmp.le(first, second).should.equal(false);
+      cmp.lte(first, second).should.equal(false);
       done();
     });
 
@@ -482,7 +482,7 @@ suite('cmp', () => {
       };
 
       second.mySelf = second;
-      cmp.le(first, second).should.equal(true);
+      cmp.lte(first, second).should.equal(true);
       done();
     });
 
@@ -497,12 +497,12 @@ suite('cmp', () => {
 
       first.mySelf = first;
       second.mySelf = second;
-      cmp.le(first, second).should.equal(true);
+      cmp.lte(first, second).should.equal(true);
       done();
     });
   });
 
-  suite('les', () => {
+  suite('ltes', () => {
     test('first with self reference => false', done => {
       const first = {
         name: 'foo'
@@ -513,7 +513,7 @@ suite('cmp', () => {
       };
 
       first.mySelf = first;
-      cmp.les(first, second).should.equal(false);
+      cmp.ltes(first, second).should.equal(false);
       done();
     });
 
@@ -527,7 +527,7 @@ suite('cmp', () => {
       };
 
       second.mySelf = second;
-      cmp.les(first, second).should.equal(true);
+      cmp.ltes(first, second).should.equal(true);
       done();
     });
 
@@ -542,7 +542,7 @@ suite('cmp', () => {
 
       first.mySelf = first;
       second.mySelf = second;
-      cmp.les(first, second).should.equal(true);
+      cmp.ltes(first, second).should.equal(true);
       done();
     });
   });

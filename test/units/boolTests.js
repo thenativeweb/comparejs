@@ -299,98 +299,98 @@ suite('bool x bool', () => {
     });
   });
 
-  suite('ge', () => {
+  suite('gte', () => {
     suite('greater => true', () => {
       test('true x false', done => {
-        cmp.ge(true, false).should.equal(true);
+        cmp.gte(true, false).should.equal(true);
         done();
       });
 
       test('true x False()', done => {
-        cmp.ge(true, False).should.equal(true);
+        cmp.gte(true, False).should.equal(true);
         done();
       });
 
       test('True() x false', done => {
-        cmp.ge(True, false).should.equal(true);
+        cmp.gte(True, false).should.equal(true);
         done();
       });
 
       test('True() x False()', done => {
-        cmp.ge(True, False).should.equal(true);
+        cmp.gte(True, False).should.equal(true);
         done();
       });
     });
 
     suite('equal => true', () => {
       test('true x true', done => {
-        cmp.ge(true, true).should.equal(true);
+        cmp.gte(true, true).should.equal(true);
         done();
       });
 
       test('true x True()', done => {
-        cmp.ge(true, True).should.equal(true);
+        cmp.gte(true, True).should.equal(true);
         done();
       });
 
       test('True() x true', done => {
-        cmp.ge(True, true).should.equal(true);
+        cmp.gte(True, true).should.equal(true);
         done();
       });
 
       test('True() x True()', done => {
-        cmp.ge(True, True).should.equal(true);
+        cmp.gte(True, True).should.equal(true);
         done();
       });
 
       test('false x false', done => {
-        cmp.ge(false, false).should.equal(true);
+        cmp.gte(false, false).should.equal(true);
         done();
       });
 
       test('false x False()', done => {
-        cmp.ge(false, False).should.equal(true);
+        cmp.gte(false, False).should.equal(true);
         done();
       });
 
       test('False() x false', done => {
-        cmp.ge(False, false).should.equal(true);
+        cmp.gte(False, false).should.equal(true);
         done();
       });
 
       test('False() x False()', done => {
-        cmp.ge(False, False).should.equal(true);
+        cmp.gte(False, False).should.equal(true);
         done();
       });
     });
 
     suite('less => false', () => {
       test('false x true', done => {
-        cmp.ge(false, true).should.equal(false);
+        cmp.gte(false, true).should.equal(false);
         done();
       });
 
       test('false x True()', done => {
-        cmp.ge(false, True).should.equal(false);
+        cmp.gte(false, True).should.equal(false);
         done();
       });
 
       test('False() x true', done => {
-        cmp.ge(False, true).should.equal(false);
+        cmp.gte(False, true).should.equal(false);
         done();
       });
 
       test('False() x True()', done => {
-        cmp.ge(False, True).should.equal(false);
+        cmp.gte(False, True).should.equal(false);
         done();
       });
     });
   });
 
-  suite('ges', () => {
+  suite('gtes', () => {
     suite('any => false', () => {
       test('true x true', done => {
-        cmp.ges(true, true).should.equal(false);
+        cmp.gtes(true, true).should.equal(false);
         done();
       });
     });
@@ -493,98 +493,98 @@ suite('bool x bool', () => {
     });
   });
 
-  suite('le', () => {
+  suite('lte', () => {
     suite('greater => false', () => {
       test('true x false', done => {
-        cmp.le(true, false).should.equal(false);
+        cmp.lte(true, false).should.equal(false);
         done();
       });
 
       test('true x False()', done => {
-        cmp.le(true, False).should.equal(false);
+        cmp.lte(true, False).should.equal(false);
         done();
       });
 
       test('True() x false', done => {
-        cmp.le(True, false).should.equal(false);
+        cmp.lte(True, false).should.equal(false);
         done();
       });
 
       test('True() x False()', done => {
-        cmp.le(True, False).should.equal(false);
+        cmp.lte(True, False).should.equal(false);
         done();
       });
     });
 
     suite('equal => true', () => {
       test('true x true', done => {
-        cmp.le(true, true).should.equal(true);
+        cmp.lte(true, true).should.equal(true);
         done();
       });
 
       test('true x True()', done => {
-        cmp.le(true, True).should.equal(true);
+        cmp.lte(true, True).should.equal(true);
         done();
       });
 
       test('True() x true', done => {
-        cmp.le(True, true).should.equal(true);
+        cmp.lte(True, true).should.equal(true);
         done();
       });
 
       test('True() x True()', done => {
-        cmp.le(True, True).should.equal(true);
+        cmp.lte(True, True).should.equal(true);
         done();
       });
 
       test('false x false', done => {
-        cmp.le(false, false).should.equal(true);
+        cmp.lte(false, false).should.equal(true);
         done();
       });
 
       test('false x False()', done => {
-        cmp.le(false, False).should.equal(true);
+        cmp.lte(false, False).should.equal(true);
         done();
       });
 
       test('False() x false', done => {
-        cmp.le(False, false).should.equal(true);
+        cmp.lte(False, false).should.equal(true);
         done();
       });
 
       test('False() x False()', done => {
-        cmp.le(False, False).should.equal(true);
+        cmp.lte(False, False).should.equal(true);
         done();
       });
     });
 
     suite('less => true', () => {
       test('false x true', done => {
-        cmp.le(false, true).should.equal(true);
+        cmp.lte(false, true).should.equal(true);
         done();
       });
 
       test('false x True()', done => {
-        cmp.le(false, True).should.equal(true);
+        cmp.lte(false, True).should.equal(true);
         done();
       });
 
       test('False() x true', done => {
-        cmp.le(False, true).should.equal(true);
+        cmp.lte(False, true).should.equal(true);
         done();
       });
 
       test('False() x True()', done => {
-        cmp.le(False, True).should.equal(true);
+        cmp.lte(False, True).should.equal(true);
         done();
       });
     });
   });
 
-  suite('les', () => {
+  suite('ltes', () => {
     suite('any => false', () => {
       test('true x true', done => {
-        cmp.les(true, true).should.equal(false);
+        cmp.ltes(true, true).should.equal(false);
         done();
       });
     });
@@ -597,16 +597,6 @@ suite('bool x bool', () => {
         done();
       });
 
-      test('true x True()', done => {
-        cmp.id(true, True).should.equal(true);
-        done();
-      });
-
-      test('True() x true', done => {
-        cmp.id(True, true).should.equal(true);
-        done();
-      });
-
       test('True() x True()', done => {
         cmp.id(True, True).should.equal(true);
         done();
@@ -614,16 +604,6 @@ suite('bool x bool', () => {
 
       test('false x false', done => {
         cmp.id(false, false).should.equal(true);
-        done();
-      });
-
-      test('false x False()', done => {
-        cmp.id(false, False).should.equal(true);
-        done();
-      });
-
-      test('False() x false', done => {
-        cmp.id(False, false).should.equal(true);
         done();
       });
 
@@ -671,6 +651,26 @@ suite('bool x bool', () => {
 
       test('False() x True()', done => {
         cmp.id(False, True).should.equal(false);
+        done();
+      });
+
+      test('true x True()', done => {
+        cmp.id(true, True).should.equal(false);
+        done();
+      });
+
+      test('True() x true', done => {
+        cmp.id(True, true).should.equal(false);
+        done();
+      });
+
+      test('false x False()', done => {
+        cmp.id(false, False).should.equal(false);
+        done();
+      });
+
+      test('False() x false', done => {
+        cmp.id(False, false).should.equal(false);
         done();
       });
     });

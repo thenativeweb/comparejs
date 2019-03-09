@@ -149,13 +149,8 @@ suite('object x object', () => {
         done();
       });
 
-      test('null x null', done => {
-        cmp.eqs(null, null).should.equal(true);
-        done();
-      });
-
       test('falsy x falsy', done => {
-        cmp.eqs(r1, r2).should.equal(true);
+        cmp.eqs(r1, s1).should.equal(true);
         done();
       });
     });
@@ -201,6 +196,11 @@ suite('object x object', () => {
         done();
       });
 
+      test('null x null', done => {
+        cmp.eqs(null, null).should.equal(false);
+        done();
+      });
+
       test('object x falsy', done => {
         cmp.eqs(q1, r1).should.equal(false);
         done();
@@ -208,11 +208,6 @@ suite('object x object', () => {
 
       test('falsy x object', done => {
         cmp.eqs(r1, q1).should.equal(false);
-        done();
-      });
-
-      test('falsy x falsy', done => {
-        cmp.eqs(r1, s1).should.equal(false);
         done();
       });
     });
@@ -337,7 +332,7 @@ suite('object x object', () => {
       });
 
       test('falsy x falsy', done => {
-        cmp.nes(r1, r2).should.equal(false);
+        cmp.nes(r1, s1).should.equal(false);
         done();
       });
 
@@ -348,6 +343,26 @@ suite('object x object', () => {
 
       test('falsy x object', done => {
         cmp.nes(r1, o1).should.equal(false);
+        done();
+      });
+
+      test('object x null', done => {
+        cmp.nes(o1, null).should.equal(false);
+        done();
+      });
+
+      test('Object() x null', done => {
+        cmp.nes(O1, null).should.equal(false);
+        done();
+      });
+
+      test('null x object', done => {
+        cmp.nes(null, o1).should.equal(false);
+        done();
+      });
+
+      test('null x Object()', done => {
+        cmp.nes(null, O1).should.equal(false);
         done();
       });
     });
@@ -370,31 +385,6 @@ suite('object x object', () => {
 
       test('Object() x Object()', done => {
         cmp.nes(O1, Empty).should.equal(true);
-        done();
-      });
-
-      test('object x null', done => {
-        cmp.nes(o1, null).should.equal(true);
-        done();
-      });
-
-      test('Object() x null', done => {
-        cmp.nes(O1, null).should.equal(true);
-        done();
-      });
-
-      test('null x object', done => {
-        cmp.nes(null, o1).should.equal(true);
-        done();
-      });
-
-      test('null x Object()', done => {
-        cmp.nes(null, O1).should.equal(true);
-        done();
-      });
-
-      test('falsy x falsy', done => {
-        cmp.nes(r1, s1).should.equal(true);
         done();
       });
     });
@@ -566,16 +556,6 @@ suite('object x object', () => {
         cmp.gts(O1, Empty).should.equal(true);
         done();
       });
-
-      test('object x null', done => {
-        cmp.gts(o1, null).should.equal(true);
-        done();
-      });
-
-      test('Object() x null', done => {
-        cmp.gts(O1, null).should.equal(true);
-        done();
-      });
     });
 
     suite('equal => false', () => {
@@ -625,6 +605,16 @@ suite('object x object', () => {
         cmp.gts(O1, Q1).should.equal(false);
         done();
       });
+
+      test('object x null', done => {
+        cmp.gts(o1, null).should.equal(false);
+        done();
+      });
+
+      test('Object() x null', done => {
+        cmp.gts(O1, null).should.equal(false);
+        done();
+      });
     });
 
     suite('less than => false', () => {
@@ -660,276 +650,276 @@ suite('object x object', () => {
     });
   });
 
-  suite('ge', () => {
+  suite('gte', () => {
     suite('greater than => true', () => {
       test('object x object', done => {
-        cmp.ge(t2, t1).should.equal(true);
+        cmp.gte(t2, t1).should.equal(true);
         done();
       });
 
       test('object x empty', done => {
-        cmp.ge(o1, empty).should.equal(true);
+        cmp.gte(o1, empty).should.equal(true);
         done();
       });
 
       test('object x Object()', done => {
-        cmp.ge(o1, Empty).should.equal(true);
+        cmp.gte(o1, Empty).should.equal(true);
         done();
       });
 
       test('Object() x object', done => {
-        cmp.ge(O1, empty).should.equal(true);
+        cmp.gte(O1, empty).should.equal(true);
         done();
       });
 
       test('Object() x Object()', done => {
-        cmp.ge(O1, Empty).should.equal(true);
+        cmp.gte(O1, Empty).should.equal(true);
         done();
       });
 
       test('falsy x object', done => {
-        cmp.ge(r1, empty).should.equal(true);
+        cmp.gte(r1, empty).should.equal(true);
         done();
       });
     });
 
     suite('equal => true', () => {
       test('object x object', done => {
-        cmp.ge(o1, o2).should.equal(true);
+        cmp.gte(o1, o2).should.equal(true);
         done();
       });
 
       test('object x Object()', done => {
-        cmp.ge(o1, O1).should.equal(true);
+        cmp.gte(o1, O1).should.equal(true);
         done();
       });
 
       test('Object() x object', done => {
-        cmp.ge(O1, o1).should.equal(true);
+        cmp.gte(O1, o1).should.equal(true);
         done();
       });
 
       test('Object() x Object()', done => {
-        cmp.ge(O1, O2).should.equal(true);
+        cmp.gte(O1, O2).should.equal(true);
         done();
       });
 
       test('null x null', done => {
-        cmp.ge(null, null).should.equal(true);
+        cmp.gte(null, null).should.equal(true);
         done();
       });
 
       test('falsy x falsy', done => {
-        cmp.ge(r1, r1).should.equal(true);
+        cmp.gte(r1, r1).should.equal(true);
         done();
       });
     });
 
     suite('not equal => false', () => {
       test('object x object', done => {
-        cmp.ge(o1, p1).should.equal(false);
+        cmp.gte(o1, p1).should.equal(false);
         done();
       });
 
       test('object x Object()', done => {
-        cmp.ge(o1, P1).should.equal(false);
+        cmp.gte(o1, P1).should.equal(false);
         done();
       });
 
       test('Object() x object', done => {
-        cmp.ge(O1, p1).should.equal(false);
+        cmp.gte(O1, p1).should.equal(false);
         done();
       });
 
       test('Object() x Object()', done => {
-        cmp.ge(O1, P1).should.equal(false);
+        cmp.gte(O1, P1).should.equal(false);
         done();
       });
 
       test('object x null', done => {
-        cmp.ge(o1, null).should.equal(false);
+        cmp.gte(o1, null).should.equal(false);
         done();
       });
 
       test('Object() x null', done => {
-        cmp.ge(O1, null).should.equal(false);
+        cmp.gte(O1, null).should.equal(false);
         done();
       });
 
       test('null x object', done => {
-        cmp.ge(null, o1).should.equal(false);
+        cmp.gte(null, o1).should.equal(false);
         done();
       });
 
       test('null x Object()', done => {
-        cmp.ge(null, O1).should.equal(false);
+        cmp.gte(null, O1).should.equal(false);
         done();
       });
 
       test('null x falsy', done => {
-        cmp.ge(null, r1).should.equal(false);
+        cmp.gte(null, r1).should.equal(false);
         done();
       });
 
       test('falsy x null', done => {
-        cmp.ge(r1, null).should.equal(false);
+        cmp.gte(r1, null).should.equal(false);
         done();
       });
 
       test('object x falsy', done => {
-        cmp.ge(o1, r1).should.equal(false);
+        cmp.gte(o1, r1).should.equal(false);
         done();
       });
 
       test('falsy x object', done => {
-        cmp.ge(r1, o1).should.equal(false);
+        cmp.gte(r1, o1).should.equal(false);
         done();
       });
     });
 
     suite('less than => false', () => {
       test('object x object', done => {
-        cmp.ge(t1, t2).should.equal(false);
+        cmp.gte(t1, t2).should.equal(false);
         done();
       });
 
       test('empty x object', done => {
-        cmp.ge(empty, o1).should.equal(false);
+        cmp.gte(empty, o1).should.equal(false);
         done();
       });
 
       test('object x Object()', done => {
-        cmp.ge(Empty, o1).should.equal(false);
+        cmp.gte(Empty, o1).should.equal(false);
         done();
       });
 
       test('Object() x object', done => {
-        cmp.ge(empty, O1).should.equal(false);
+        cmp.gte(empty, O1).should.equal(false);
         done();
       });
 
       test('Object() x Object()', done => {
-        cmp.ge(Empty, O1).should.equal(false);
+        cmp.gte(Empty, O1).should.equal(false);
         done();
       });
 
       test('object x falsy', done => {
-        cmp.ge(empty, r1).should.equal(false);
+        cmp.gte(empty, r1).should.equal(false);
         done();
       });
     });
   });
 
-  suite('ges', () => {
+  suite('gtes', () => {
     suite('greater than => true', () => {
       test('object x object', done => {
-        cmp.ges(o1, empty).should.equal(true);
+        cmp.gtes(o1, empty).should.equal(true);
         done();
       });
 
       test('object x Object()', done => {
-        cmp.ges(o1, Empty).should.equal(true);
+        cmp.gtes(o1, Empty).should.equal(true);
         done();
       });
 
       test('Object() x object', done => {
-        cmp.ges(O1, empty).should.equal(true);
+        cmp.gtes(O1, empty).should.equal(true);
         done();
       });
 
       test('Object() x Object()', done => {
-        cmp.ges(O1, Empty).should.equal(true);
-        done();
-      });
-
-      test('object x null', done => {
-        cmp.ges(o1, null).should.equal(true);
-        done();
-      });
-
-      test('Object() x null', done => {
-        cmp.ges(O1, null).should.equal(true);
+        cmp.gtes(O1, Empty).should.equal(true);
         done();
       });
     });
 
     suite('equal => true', () => {
       test('object x object', done => {
-        cmp.ges(o1, o2).should.equal(true);
+        cmp.gtes(o1, o2).should.equal(true);
         done();
       });
 
       test('object x Object()', done => {
-        cmp.ges(o1, O1).should.equal(true);
+        cmp.gtes(o1, O1).should.equal(true);
         done();
       });
 
       test('Object() x object', done => {
-        cmp.ges(O1, o1).should.equal(true);
+        cmp.gtes(O1, o1).should.equal(true);
         done();
       });
 
       test('Object() x Object()', done => {
-        cmp.ges(O1, O2).should.equal(true);
-        done();
-      });
-
-      test('null x null', done => {
-        cmp.ges(null, null).should.equal(true);
+        cmp.gtes(O1, O2).should.equal(true);
         done();
       });
     });
 
     suite('not equal => false', () => {
       test('object x object', done => {
-        cmp.ges(o1, q1).should.equal(false);
+        cmp.gtes(o1, q1).should.equal(false);
         done();
       });
 
       test('object x Object()', done => {
-        cmp.ges(o1, Q1).should.equal(false);
+        cmp.gtes(o1, Q1).should.equal(false);
         done();
       });
 
       test('Object() x object', done => {
-        cmp.ges(O1, q1).should.equal(false);
+        cmp.gtes(O1, q1).should.equal(false);
         done();
       });
 
       test('Object() x Object()', done => {
-        cmp.ges(O1, Q1).should.equal(false);
+        cmp.gtes(O1, Q1).should.equal(false);
+        done();
+      });
+
+      test('object x null', done => {
+        cmp.gtes(o1, null).should.equal(false);
+        done();
+      });
+
+      test('Object() x null', done => {
+        cmp.gtes(O1, null).should.equal(false);
+        done();
+      });
+
+      test('null x null', done => {
+        cmp.gtes(null, null).should.equal(false);
         done();
       });
     });
 
     suite('less than => false', () => {
       test('object x object', done => {
-        cmp.ges(empty, o1).should.equal(false);
+        cmp.gtes(empty, o1).should.equal(false);
         done();
       });
 
       test('object x Object()', done => {
-        cmp.ges(Empty, o1).should.equal(false);
+        cmp.gtes(Empty, o1).should.equal(false);
         done();
       });
 
       test('Object() x object', done => {
-        cmp.ges(empty, O1).should.equal(false);
+        cmp.gtes(empty, O1).should.equal(false);
         done();
       });
 
       test('Object() x Object()', done => {
-        cmp.ges(Empty, O1).should.equal(false);
+        cmp.gtes(Empty, O1).should.equal(false);
         done();
       });
 
       test('null x object', done => {
-        cmp.ges(null, o1).should.equal(false);
+        cmp.gtes(null, o1).should.equal(false);
         done();
       });
 
       test('null x Object()', done => {
-        cmp.ges(null, O1).should.equal(false);
+        cmp.gtes(null, O1).should.equal(false);
         done();
       });
     });
@@ -1160,6 +1150,16 @@ suite('object x object', () => {
         cmp.lts(O1, Q1).should.equal(false);
         done();
       });
+
+      test('null x object', done => {
+        cmp.lts(null, o1).should.equal(false);
+        done();
+      });
+
+      test('null x Object()', done => {
+        cmp.lts(null, O1).should.equal(false);
+        done();
+      });
     });
 
     suite('less than => true', () => {
@@ -1182,289 +1182,279 @@ suite('object x object', () => {
         cmp.lts(Empty, O1).should.equal(true);
         done();
       });
-
-      test('null x object', done => {
-        cmp.lts(null, o1).should.equal(true);
-        done();
-      });
-
-      test('null x Object()', done => {
-        cmp.lts(null, O1).should.equal(true);
-        done();
-      });
     });
   });
 
-  suite('le', () => {
+  suite('lte', () => {
     suite('greater than => false', () => {
       test('object x object', done => {
-        cmp.le(t2, t1).should.equal(false);
+        cmp.lte(t2, t1).should.equal(false);
         done();
       });
 
       test('object x empty', done => {
-        cmp.le(o1, empty).should.equal(false);
+        cmp.lte(o1, empty).should.equal(false);
         done();
       });
 
       test('object x Object()', done => {
-        cmp.le(o1, Empty).should.equal(false);
+        cmp.lte(o1, Empty).should.equal(false);
         done();
       });
 
       test('Object() x object', done => {
-        cmp.le(O1, empty).should.equal(false);
+        cmp.lte(O1, empty).should.equal(false);
         done();
       });
 
       test('Object() x Object()', done => {
-        cmp.le(O1, Empty).should.equal(false);
+        cmp.lte(O1, Empty).should.equal(false);
         done();
       });
 
       test('falsy x object', done => {
-        cmp.le(r1, empty).should.equal(false);
+        cmp.lte(r1, empty).should.equal(false);
         done();
       });
     });
 
     suite('equal => true', () => {
       test('object x object', done => {
-        cmp.le(o1, o2).should.equal(true);
+        cmp.lte(o1, o2).should.equal(true);
         done();
       });
 
       test('object x Object()', done => {
-        cmp.le(o1, O1).should.equal(true);
+        cmp.lte(o1, O1).should.equal(true);
         done();
       });
 
       test('Object() x object', done => {
-        cmp.le(O1, o1).should.equal(true);
+        cmp.lte(O1, o1).should.equal(true);
         done();
       });
 
       test('Object() x Object()', done => {
-        cmp.le(O1, O2).should.equal(true);
+        cmp.lte(O1, O2).should.equal(true);
         done();
       });
 
       test('null x null', done => {
-        cmp.le(null, null).should.equal(true);
+        cmp.lte(null, null).should.equal(true);
         done();
       });
 
       test('falsy x falsy', done => {
-        cmp.le(r1, r1).should.equal(true);
+        cmp.lte(r1, r1).should.equal(true);
         done();
       });
     });
 
     suite('not equal => false', () => {
       test('object x object', done => {
-        cmp.le(o1, p1).should.equal(false);
+        cmp.lte(o1, p1).should.equal(false);
         done();
       });
 
       test('object x Object()', done => {
-        cmp.le(o1, P1).should.equal(false);
+        cmp.lte(o1, P1).should.equal(false);
         done();
       });
 
       test('Object() x object', done => {
-        cmp.le(O1, p1).should.equal(false);
+        cmp.lte(O1, p1).should.equal(false);
         done();
       });
 
       test('Object() x Object()', done => {
-        cmp.le(O1, P1).should.equal(false);
+        cmp.lte(O1, P1).should.equal(false);
         done();
       });
 
       test('object x null', done => {
-        cmp.le(o1, null).should.equal(false);
+        cmp.lte(o1, null).should.equal(false);
         done();
       });
 
       test('Object() x null', done => {
-        cmp.le(O1, null).should.equal(false);
+        cmp.lte(O1, null).should.equal(false);
         done();
       });
 
       test('null x object', done => {
-        cmp.le(null, o1).should.equal(false);
+        cmp.lte(null, o1).should.equal(false);
         done();
       });
 
       test('null x Object()', done => {
-        cmp.le(null, O1).should.equal(false);
+        cmp.lte(null, O1).should.equal(false);
         done();
       });
 
       test('null x falsy', done => {
-        cmp.le(null, r1).should.equal(false);
+        cmp.lte(null, r1).should.equal(false);
         done();
       });
 
       test('falsy x null', done => {
-        cmp.le(r1, null).should.equal(false);
+        cmp.lte(r1, null).should.equal(false);
         done();
       });
 
       test('object x falsy', done => {
-        cmp.le(o1, r1).should.equal(false);
+        cmp.lte(o1, r1).should.equal(false);
         done();
       });
 
       test('falsy x object', done => {
-        cmp.le(r1, o1).should.equal(false);
+        cmp.lte(r1, o1).should.equal(false);
         done();
       });
     });
 
     suite('less than => true', () => {
       test('object x object', done => {
-        cmp.le(t1, t2).should.equal(true);
+        cmp.lte(t1, t2).should.equal(true);
         done();
       });
 
       test('empty x object', done => {
-        cmp.le(empty, o1).should.equal(true);
+        cmp.lte(empty, o1).should.equal(true);
         done();
       });
 
       test('object x Object()', done => {
-        cmp.le(Empty, o1).should.equal(true);
+        cmp.lte(Empty, o1).should.equal(true);
         done();
       });
 
       test('Object() x object', done => {
-        cmp.le(empty, O1).should.equal(true);
+        cmp.lte(empty, O1).should.equal(true);
         done();
       });
 
       test('Object() x Object()', done => {
-        cmp.le(Empty, O1).should.equal(true);
+        cmp.lte(Empty, O1).should.equal(true);
         done();
       });
 
       test('object x falsy', done => {
-        cmp.le(empty, r1).should.equal(true);
+        cmp.lte(empty, r1).should.equal(true);
         done();
       });
     });
   });
 
-  suite('les', () => {
+  suite('ltes', () => {
     suite('greater than => false', () => {
       test('object x object', done => {
-        cmp.les(o1, empty).should.equal(false);
+        cmp.ltes(o1, empty).should.equal(false);
         done();
       });
 
       test('object x Object()', done => {
-        cmp.les(o1, Empty).should.equal(false);
+        cmp.ltes(o1, Empty).should.equal(false);
         done();
       });
 
       test('Object() x object', done => {
-        cmp.les(O1, empty).should.equal(false);
+        cmp.ltes(O1, empty).should.equal(false);
         done();
       });
 
       test('Object() x Object()', done => {
-        cmp.les(O1, Empty).should.equal(false);
+        cmp.ltes(O1, Empty).should.equal(false);
         done();
       });
 
       test('object x null', done => {
-        cmp.les(o1, null).should.equal(false);
+        cmp.ltes(o1, null).should.equal(false);
         done();
       });
 
       test('Object() x null', done => {
-        cmp.les(O1, null).should.equal(false);
+        cmp.ltes(O1, null).should.equal(false);
         done();
       });
     });
 
     suite('equal => true', () => {
       test('object x object', done => {
-        cmp.les(o1, o2).should.equal(true);
+        cmp.ltes(o1, o2).should.equal(true);
         done();
       });
 
       test('object x Object()', done => {
-        cmp.les(o1, O1).should.equal(true);
+        cmp.ltes(o1, O1).should.equal(true);
         done();
       });
 
       test('Object() x object', done => {
-        cmp.les(O1, o1).should.equal(true);
+        cmp.ltes(O1, o1).should.equal(true);
         done();
       });
 
       test('Object() x Object()', done => {
-        cmp.les(O1, O2).should.equal(true);
-        done();
-      });
-
-      test('null x null', done => {
-        cmp.les(null, null).should.equal(true);
+        cmp.ltes(O1, O2).should.equal(true);
         done();
       });
     });
 
     suite('not equal => false', () => {
       test('object x object', done => {
-        cmp.les(o1, q1).should.equal(false);
+        cmp.ltes(o1, q1).should.equal(false);
         done();
       });
 
       test('object x Object()', done => {
-        cmp.les(o1, Q1).should.equal(false);
+        cmp.ltes(o1, Q1).should.equal(false);
         done();
       });
 
       test('Object() x object', done => {
-        cmp.les(O1, q1).should.equal(false);
+        cmp.ltes(O1, q1).should.equal(false);
         done();
       });
 
       test('Object() x Object()', done => {
-        cmp.les(O1, Q1).should.equal(false);
+        cmp.ltes(O1, Q1).should.equal(false);
+        done();
+      });
+
+      test('null x null', done => {
+        cmp.ltes(null, null).should.equal(false);
+        done();
+      });
+
+      test('null x object', done => {
+        cmp.ltes(null, o1).should.equal(false);
+        done();
+      });
+
+      test('null x Object()', done => {
+        cmp.ltes(null, O1).should.equal(false);
         done();
       });
     });
 
     suite('less than => true', () => {
       test('object x object', done => {
-        cmp.les(empty, o1).should.equal(true);
+        cmp.ltes(empty, o1).should.equal(true);
         done();
       });
 
       test('object x Object()', done => {
-        cmp.les(Empty, o1).should.equal(true);
+        cmp.ltes(Empty, o1).should.equal(true);
         done();
       });
 
       test('Object() x object', done => {
-        cmp.les(empty, O1).should.equal(true);
+        cmp.ltes(empty, O1).should.equal(true);
         done();
       });
 
       test('Object() x Object()', done => {
-        cmp.les(Empty, O1).should.equal(true);
-        done();
-      });
-
-      test('null x object', done => {
-        cmp.les(null, o1).should.equal(true);
-        done();
-      });
-
-      test('null x Object()', done => {
-        cmp.les(null, O1).should.equal(true);
+        cmp.ltes(Empty, O1).should.equal(true);
         done();
       });
     });

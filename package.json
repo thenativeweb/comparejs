@@ -21,8 +21,12 @@
     }
   ],
   "main": "dist/compare.js",
+  "dependencies": {
+    "is-subset-of": "1.0.0",
+    "typedescriptor": "1.0.0"
+  },
   "devDependencies": {
-    "roboter": "4.0.0",
+    "roboter": "4.0.2",
     "should": "13.2.3"
   },
   "repository": {

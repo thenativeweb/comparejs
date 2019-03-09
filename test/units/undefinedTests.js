@@ -61,19 +61,19 @@ suite('undefined x undefined', () => {
     });
   });
 
-  suite('ge', () => {
+  suite('gte', () => {
     suite('equal => true', () => {
       test('undefined x undefined', done => {
-        cmp.ge(undefined, undefined).should.equal(true);
+        cmp.gte(undefined, undefined).should.equal(true);
         done();
       });
     });
   });
 
-  suite('ges', () => {
+  suite('gtes', () => {
     suite('any => false', () => {
       test('undefined x undefined', done => {
-        cmp.ges(undefined, undefined).should.equal(false);
+        cmp.gtes(undefined, undefined).should.equal(false);
         done();
       });
     });
@@ -97,19 +97,19 @@ suite('undefined x undefined', () => {
     });
   });
 
-  suite('le', () => {
+  suite('lte', () => {
     suite('equal => true', () => {
       test('undefined x undefined', done => {
-        cmp.le(undefined, undefined).should.equal(true);
+        cmp.lte(undefined, undefined).should.equal(true);
         done();
       });
     });
   });
 
-  suite('les', () => {
+  suite('ltes', () => {
     suite('any => false', () => {
       test('undefined x undefined', done => {
-        cmp.les(undefined, undefined).should.equal(false);
+        cmp.ltes(undefined, undefined).should.equal(false);
         done();
       });
     });

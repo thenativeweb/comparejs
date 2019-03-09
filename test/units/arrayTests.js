@@ -347,145 +347,145 @@ suite('array x array', () => {
     });
   });
 
-  suite('ge', () => {
+  suite('gte', () => {
     suite('greater than => true', () => {
       test('array x array', done => {
-        cmp.ge(a1, empty).should.equal(true);
+        cmp.gte(a1, empty).should.equal(true);
         done();
       });
 
       test('array x Array()', done => {
-        cmp.ge(a1, Empty).should.equal(true);
+        cmp.gte(a1, Empty).should.equal(true);
         done();
       });
 
       test('Array() x array', done => {
-        cmp.ge(A1, empty).should.equal(true);
+        cmp.gte(A1, empty).should.equal(true);
         done();
       });
 
       test('Array() x Array()', done => {
-        cmp.ge(A1, Empty).should.equal(true);
+        cmp.gte(A1, Empty).should.equal(true);
         done();
       });
 
       test('array[3] x array[1]', done => {
-        cmp.ge([ 2, 3, 4 ], [ 3 ]).should.equal(true);
+        cmp.gte([ 2, 3, 4 ], [ 3 ]).should.equal(true);
         done();
       });
     });
 
     suite('equal => true', () => {
       test('array x array', done => {
-        cmp.ge(a1, a2).should.equal(true);
+        cmp.gte(a1, a2).should.equal(true);
         done();
       });
 
       test('array x Array()', done => {
-        cmp.ge(a1, A1).should.equal(true);
+        cmp.gte(a1, A1).should.equal(true);
         done();
       });
 
       test('Array() x array', done => {
-        cmp.ge(A1, a1).should.equal(true);
+        cmp.gte(A1, a1).should.equal(true);
         done();
       });
 
       test('Array() x Array()', done => {
-        cmp.ge(A1, A2).should.equal(true);
+        cmp.gte(A1, A2).should.equal(true);
         done();
       });
 
       test('null x null', done => {
-        cmp.ge(null, null).should.equal(true);
+        cmp.gte(null, null).should.equal(true);
         done();
       });
 
       test('array[3] x array[3]', done => {
-        cmp.ge([ 2, 3, 4 ], [ 2, 3, 4 ]).should.equal(true);
+        cmp.gte([ 2, 3, 4 ], [ 2, 3, 4 ]).should.equal(true);
         done();
       });
     });
 
     suite('not equal => false', () => {
       test('array x array', done => {
-        cmp.ge(a1, b1).should.equal(false);
+        cmp.gte(a1, b1).should.equal(false);
         done();
       });
 
       test('array x Array()', done => {
-        cmp.ge(a1, B1).should.equal(false);
+        cmp.gte(a1, B1).should.equal(false);
         done();
       });
 
       test('Array() x array', done => {
-        cmp.ge(A1, b1).should.equal(false);
+        cmp.gte(A1, b1).should.equal(false);
         done();
       });
 
       test('Array() x Array()', done => {
-        cmp.ge(A1, B1).should.equal(false);
+        cmp.gte(A1, B1).should.equal(false);
         done();
       });
 
       test('array x null', done => {
-        cmp.ge(a1, null).should.equal(false);
+        cmp.gte(a1, null).should.equal(false);
         done();
       });
 
       test('Array() x null', done => {
-        cmp.ge(A1, null).should.equal(false);
+        cmp.gte(A1, null).should.equal(false);
         done();
       });
 
       test('null x array', done => {
-        cmp.ge(null, a1).should.equal(false);
+        cmp.gte(null, a1).should.equal(false);
         done();
       });
 
       test('null x Array()', done => {
-        cmp.ge(null, A1).should.equal(false);
+        cmp.gte(null, A1).should.equal(false);
         done();
       });
 
       test('array[3] x array[3]', done => {
-        cmp.ge([ 2, 3, 4 ], [ 4, 5, 6 ]).should.equal(false);
+        cmp.gte([ 2, 3, 4 ], [ 4, 5, 6 ]).should.equal(false);
         done();
       });
     });
 
     suite('less than => false', () => {
       test('array x array', done => {
-        cmp.ge(empty, a1).should.equal(false);
+        cmp.gte(empty, a1).should.equal(false);
         done();
       });
 
       test('array x Array()', done => {
-        cmp.ge(Empty, a1).should.equal(false);
+        cmp.gte(Empty, a1).should.equal(false);
         done();
       });
 
       test('Array() x array', done => {
-        cmp.ge(empty, A1).should.equal(false);
+        cmp.gte(empty, A1).should.equal(false);
         done();
       });
 
       test('Array() x Array()', done => {
-        cmp.ge(Empty, A1).should.equal(false);
+        cmp.gte(Empty, A1).should.equal(false);
         done();
       });
 
       test('array[1] x array[3]', done => {
-        cmp.ge([ 3 ], [ 2, 3, 4 ]).should.equal(false);
+        cmp.gte([ 3 ], [ 2, 3, 4 ]).should.equal(false);
         done();
       });
     });
   });
 
-  suite('ges', () => {
+  suite('gtes', () => {
     suite('any => false', () => {
       test('array x array', done => {
-        cmp.ges(a1, a1).should.equal(false);
+        cmp.gtes(a1, a1).should.equal(false);
         done();
       });
     });
@@ -635,145 +635,145 @@ suite('array x array', () => {
     });
   });
 
-  suite('le', () => {
+  suite('lte', () => {
     suite('greater than => false', () => {
       test('array x array', done => {
-        cmp.le(a1, empty).should.equal(false);
+        cmp.lte(a1, empty).should.equal(false);
         done();
       });
 
       test('array x Array()', done => {
-        cmp.le(a1, Empty).should.equal(false);
+        cmp.lte(a1, Empty).should.equal(false);
         done();
       });
 
       test('Array() x array', done => {
-        cmp.le(A1, empty).should.equal(false);
+        cmp.lte(A1, empty).should.equal(false);
         done();
       });
 
       test('Array() x Array()', done => {
-        cmp.le(A1, Empty).should.equal(false);
+        cmp.lte(A1, Empty).should.equal(false);
         done();
       });
 
       test('array[3] x array[1]', done => {
-        cmp.le([ 2, 3, 4 ], [ 3 ]).should.equal(false);
+        cmp.lte([ 2, 3, 4 ], [ 3 ]).should.equal(false);
         done();
       });
     });
 
     suite('equal => true', () => {
       test('array x array', done => {
-        cmp.le(a1, a2).should.equal(true);
+        cmp.lte(a1, a2).should.equal(true);
         done();
       });
 
       test('array x Array()', done => {
-        cmp.le(a1, A1).should.equal(true);
+        cmp.lte(a1, A1).should.equal(true);
         done();
       });
 
       test('Array() x array', done => {
-        cmp.le(A1, a1).should.equal(true);
+        cmp.lte(A1, a1).should.equal(true);
         done();
       });
 
       test('Array() x Array()', done => {
-        cmp.le(A1, A2).should.equal(true);
+        cmp.lte(A1, A2).should.equal(true);
         done();
       });
 
       test('null x null', done => {
-        cmp.le(null, null).should.equal(true);
+        cmp.lte(null, null).should.equal(true);
         done();
       });
 
       test('array[3] x array[3]', done => {
-        cmp.le([ 2, 3, 4 ], [ 2, 3, 4 ]).should.equal(true);
+        cmp.lte([ 2, 3, 4 ], [ 2, 3, 4 ]).should.equal(true);
         done();
       });
     });
 
     suite('not equal => false', () => {
       test('array x array', done => {
-        cmp.le(a1, b1).should.equal(false);
+        cmp.lte(a1, b1).should.equal(false);
         done();
       });
 
       test('array x Array()', done => {
-        cmp.le(a1, B1).should.equal(false);
+        cmp.lte(a1, B1).should.equal(false);
         done();
       });
 
       test('Array() x array', done => {
-        cmp.le(A1, b1).should.equal(false);
+        cmp.lte(A1, b1).should.equal(false);
         done();
       });
 
       test('Array() x Array()', done => {
-        cmp.le(A1, B1).should.equal(false);
+        cmp.lte(A1, B1).should.equal(false);
         done();
       });
 
       test('array x null', done => {
-        cmp.le(a1, null).should.equal(false);
+        cmp.lte(a1, null).should.equal(false);
         done();
       });
 
       test('Array() x null', done => {
-        cmp.le(A1, null).should.equal(false);
+        cmp.lte(A1, null).should.equal(false);
         done();
       });
 
       test('null x array', done => {
-        cmp.le(null, a1).should.equal(false);
+        cmp.lte(null, a1).should.equal(false);
         done();
       });
 
       test('null x Array()', done => {
-        cmp.le(null, A1).should.equal(false);
+        cmp.lte(null, A1).should.equal(false);
         done();
       });
 
       test('array[3] x array[3]', done => {
-        cmp.le([ 2, 3, 4 ], [ 4, 5, 6 ]).should.equal(false);
+        cmp.lte([ 2, 3, 4 ], [ 4, 5, 6 ]).should.equal(false);
         done();
       });
     });
 
     suite('less than => true', () => {
       test('array x array', done => {
-        cmp.le(empty, a1).should.equal(true);
+        cmp.lte(empty, a1).should.equal(true);
         done();
       });
 
       test('array x Array()', done => {
-        cmp.le(Empty, a1).should.equal(true);
+        cmp.lte(Empty, a1).should.equal(true);
         done();
       });
 
       test('Array() x array', done => {
-        cmp.le(empty, A1).should.equal(true);
+        cmp.lte(empty, A1).should.equal(true);
         done();
       });
 
       test('Array() x Array()', done => {
-        cmp.le(Empty, A1).should.equal(true);
+        cmp.lte(Empty, A1).should.equal(true);
         done();
       });
 
       test('array[1] x array[3]', done => {
-        cmp.le([ 3 ], [ 2, 3, 4 ]).should.equal(true);
+        cmp.lte([ 3 ], [ 2, 3, 4 ]).should.equal(true);
         done();
       });
     });
   });
 
-  suite('les', () => {
+  suite('ltes', () => {
     suite('any => false', () => {
       test('array x array', done => {
-        cmp.les(a1, a1).should.equal(false);
+        cmp.ltes(a1, a1).should.equal(false);
         done();
       });
     });

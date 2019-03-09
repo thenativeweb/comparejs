@@ -23,7 +23,7 @@ suite('alias', () => {
   });
 
   test('ge x greaterThanOrEqual', done => {
-    cmp.eq(cmp.ge(23, 23), cmp.greaterThanOrEqual(23, 23)).should.equal(true);
+    cmp.eq(cmp.gte(23, 23), cmp.greaterThanOrEqual(23, 23)).should.equal(true);
     done();
   });
 
@@ -33,12 +33,12 @@ suite('alias', () => {
   });
 
   test('le x lessThanOrEqual', done => {
-    cmp.eq(cmp.le(23, 23), cmp.lessThanOrEqual(23, 23)).should.equal(true);
+    cmp.eq(cmp.lte(23, 23), cmp.lessThanOrEqual(23, 23)).should.equal(true);
     done();
   });
 
   test('id x identical', done => {
-    cmp.eq(cmp.id(23, 23), cmp.identical(23, 23)).should.equal(true);
+    cmp.eq(cmp.id(23, 23), cmp.identity(23, 23)).should.equal(true);
     done();
   });
 
@@ -58,7 +58,7 @@ suite('alias', () => {
   });
 
   test('ges x greaterThanOrEqualByStructure', done => {
-    cmp.eq(cmp.ges({ }, { }), cmp.greaterThanOrEqualByStructure({ }, { })).should.equal(true);
+    cmp.eq(cmp.gtes({ }, { }), cmp.greaterThanOrEqualByStructure({ }, { })).should.equal(true);
     done();
   });
 
@@ -68,7 +68,7 @@ suite('alias', () => {
   });
 
   test('les x lessThanOrEqualByStructure', done => {
-    cmp.eq(cmp.les({ }, { }), cmp.lessThanOrEqualByStructure({ }, { })).should.equal(true);
+    cmp.eq(cmp.ltes({ }, { }), cmp.lessThanOrEqualByStructure({ }, { })).should.equal(true);
     done();
   });
 });

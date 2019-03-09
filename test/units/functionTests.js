@@ -156,46 +156,46 @@ suite('function x function', () => {
     });
   });
 
-  suite('ge', () => {
+  suite('gte', () => {
     suite('equal => true', () => {
       test('function x function', done => {
-        cmp.ge(f1, f2).should.equal(true);
+        cmp.gte(f1, f2).should.equal(true);
         done();
       });
 
       test('Function() x Function()', done => {
-        cmp.ge(F1, F2).should.equal(true);
+        cmp.gte(F1, F2).should.equal(true);
         done();
       });
     });
 
     suite('not equal => false', () => {
       test('function x function', done => {
-        cmp.ge(f1, g1).should.equal(false);
+        cmp.gte(f1, g1).should.equal(false);
         done();
       });
 
       test('function x Function()', done => {
-        cmp.ge(f1, F1).should.equal(false);
+        cmp.gte(f1, F1).should.equal(false);
         done();
       });
 
       test('Function() x function', done => {
-        cmp.ge(F1, f1).should.equal(false);
+        cmp.gte(F1, f1).should.equal(false);
         done();
       });
 
       test('Function() x Function()', done => {
-        cmp.ge(F1, G1).should.equal(false);
+        cmp.gte(F1, G1).should.equal(false);
         done();
       });
     });
   });
 
-  suite('ges', () => {
+  suite('gtes', () => {
     suite('any => false', () => {
       test('function x function', done => {
-        cmp.ges(f1, f1).should.equal(false);
+        cmp.gtes(f1, f1).should.equal(false);
         done();
       });
     });
@@ -244,46 +244,46 @@ suite('function x function', () => {
     });
   });
 
-  suite('le', () => {
+  suite('lte', () => {
     suite('equal => true', () => {
       test('function x function', done => {
-        cmp.le(f1, f2).should.equal(true);
+        cmp.lte(f1, f2).should.equal(true);
         done();
       });
 
       test('Function() x Function()', done => {
-        cmp.le(F1, F2).should.equal(true);
+        cmp.lte(F1, F2).should.equal(true);
         done();
       });
     });
 
     suite('not equal => false', () => {
       test('function x function', done => {
-        cmp.le(f1, g1).should.equal(false);
+        cmp.lte(f1, g1).should.equal(false);
         done();
       });
 
       test('function x Function()', done => {
-        cmp.le(f1, F1).should.equal(false);
+        cmp.lte(f1, F1).should.equal(false);
         done();
       });
 
       test('Function() x function', done => {
-        cmp.le(F1, f1).should.equal(false);
+        cmp.lte(F1, f1).should.equal(false);
         done();
       });
 
       test('Function() x Function()', done => {
-        cmp.le(F1, G1).should.equal(false);
+        cmp.lte(F1, G1).should.equal(false);
         done();
       });
     });
   });
 
-  suite('les', () => {
+  suite('ltes', () => {
     suite('any => false', () => {
       test('function x function', done => {
-        cmp.les(f1, f1).should.equal(false);
+        cmp.ltes(f1, f1).should.equal(false);
         done();
       });
     });

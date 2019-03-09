@@ -284,105 +284,105 @@ suite('number x number', () => {
     });
   });
 
-  suite('ge', () => {
+  suite('gte', () => {
     suite('greater => true', () => {
       test('number x number', done => {
-        cmp.ge(largeNumber, smallNumber).should.equal(true);
+        cmp.gte(largeNumber, smallNumber).should.equal(true);
         done();
       });
 
       test('number x Number()', done => {
-        cmp.ge(largeNumber, SmallNumber).should.equal(true);
+        cmp.gte(largeNumber, SmallNumber).should.equal(true);
         done();
       });
 
       test('Number() x number', done => {
-        cmp.ge(LargeNumber, smallNumber).should.equal(true);
+        cmp.gte(LargeNumber, smallNumber).should.equal(true);
         done();
       });
 
       test('Number() x Number()', done => {
-        cmp.ge(LargeNumber, SmallNumber).should.equal(true);
+        cmp.gte(LargeNumber, SmallNumber).should.equal(true);
         done();
       });
     });
 
     suite('equal => true', () => {
       test('number x number', done => {
-        cmp.ge(smallNumber, smallNumber).should.equal(true);
+        cmp.gte(smallNumber, smallNumber).should.equal(true);
         done();
       });
 
       test('number x Number()', done => {
-        cmp.ge(smallNumber, SmallNumber).should.equal(true);
+        cmp.gte(smallNumber, SmallNumber).should.equal(true);
         done();
       });
 
       test('Number() x number', done => {
-        cmp.ge(SmallNumber, smallNumber).should.equal(true);
+        cmp.gte(SmallNumber, smallNumber).should.equal(true);
         done();
       });
 
       test('Number() x Number()', done => {
-        cmp.ge(SmallNumber, SmallNumber).should.equal(true);
+        cmp.gte(SmallNumber, SmallNumber).should.equal(true);
         done();
       });
     });
 
     suite('less => false', () => {
       test('number x number', done => {
-        cmp.ge(smallNumber, largeNumber).should.equal(false);
+        cmp.gte(smallNumber, largeNumber).should.equal(false);
         done();
       });
 
       test('number x Number()', done => {
-        cmp.ge(smallNumber, LargeNumber).should.equal(false);
+        cmp.gte(smallNumber, LargeNumber).should.equal(false);
         done();
       });
 
       test('Number() x number', done => {
-        cmp.ge(SmallNumber, largeNumber).should.equal(false);
+        cmp.gte(SmallNumber, largeNumber).should.equal(false);
         done();
       });
 
       test('Number() x Number()', done => {
-        cmp.ge(SmallNumber, LargeNumber).should.equal(false);
+        cmp.gte(SmallNumber, LargeNumber).should.equal(false);
         done();
       });
     });
 
     suite('isNan => false', () => {
       test('number x isNaN', done => {
-        cmp.ge(smallNumber, notANumber).should.equal(false);
+        cmp.gte(smallNumber, notANumber).should.equal(false);
         done();
       });
 
       test('Number() x isNaN', done => {
-        cmp.ge(SmallNumber, notANumber).should.equal(false);
+        cmp.gte(SmallNumber, notANumber).should.equal(false);
         done();
       });
 
       test('isNaN x isNaN', done => {
-        cmp.ge(notANumber, notANumber).should.equal(false);
+        cmp.gte(notANumber, notANumber).should.equal(false);
         done();
       });
 
       test('isNan x number', done => {
-        cmp.ge(notANumber, smallNumber).should.equal(false);
+        cmp.gte(notANumber, smallNumber).should.equal(false);
         done();
       });
 
       test('isNan x Number()', done => {
-        cmp.ge(notANumber, SmallNumber).should.equal(false);
+        cmp.gte(notANumber, SmallNumber).should.equal(false);
         done();
       });
     });
   });
 
-  suite('ges', () => {
+  suite('gtes', () => {
     suite('any => false', () => {
       test('number x number', done => {
-        cmp.ges(smallNumber, smallNumber).should.equal(false);
+        cmp.gtes(smallNumber, smallNumber).should.equal(false);
         done();
       });
     });
@@ -492,105 +492,105 @@ suite('number x number', () => {
     });
   });
 
-  suite('le', () => {
+  suite('lte', () => {
     suite('greater => false', () => {
       test('number x number', done => {
-        cmp.le(largeNumber, smallNumber).should.equal(false);
+        cmp.lte(largeNumber, smallNumber).should.equal(false);
         done();
       });
 
       test('number x Number()', done => {
-        cmp.le(largeNumber, SmallNumber).should.equal(false);
+        cmp.lte(largeNumber, SmallNumber).should.equal(false);
         done();
       });
 
       test('Number() x number', done => {
-        cmp.le(LargeNumber, smallNumber).should.equal(false);
+        cmp.lte(LargeNumber, smallNumber).should.equal(false);
         done();
       });
 
       test('Number() x Number()', done => {
-        cmp.le(LargeNumber, SmallNumber).should.equal(false);
+        cmp.lte(LargeNumber, SmallNumber).should.equal(false);
         done();
       });
     });
 
     suite('equal => true', () => {
       test('number x number', done => {
-        cmp.le(smallNumber, smallNumber).should.equal(true);
+        cmp.lte(smallNumber, smallNumber).should.equal(true);
         done();
       });
 
       test('number x Number()', done => {
-        cmp.le(smallNumber, SmallNumber).should.equal(true);
+        cmp.lte(smallNumber, SmallNumber).should.equal(true);
         done();
       });
 
       test('Number() x number', done => {
-        cmp.le(SmallNumber, smallNumber).should.equal(true);
+        cmp.lte(SmallNumber, smallNumber).should.equal(true);
         done();
       });
 
       test('Number() x Number()', done => {
-        cmp.le(SmallNumber, SmallNumber).should.equal(true);
+        cmp.lte(SmallNumber, SmallNumber).should.equal(true);
         done();
       });
     });
 
     suite('less => true', () => {
       test('number x number', done => {
-        cmp.le(smallNumber, largeNumber).should.equal(true);
+        cmp.lte(smallNumber, largeNumber).should.equal(true);
         done();
       });
 
       test('number x Number()', done => {
-        cmp.le(smallNumber, LargeNumber).should.equal(true);
+        cmp.lte(smallNumber, LargeNumber).should.equal(true);
         done();
       });
 
       test('Number() x number', done => {
-        cmp.le(SmallNumber, largeNumber).should.equal(true);
+        cmp.lte(SmallNumber, largeNumber).should.equal(true);
         done();
       });
 
       test('Number() x Number()', done => {
-        cmp.le(SmallNumber, LargeNumber).should.equal(true);
+        cmp.lte(SmallNumber, LargeNumber).should.equal(true);
         done();
       });
     });
 
     suite('isNan => false', () => {
       test('number x isNaN', done => {
-        cmp.le(smallNumber, notANumber).should.equal(false);
+        cmp.lte(smallNumber, notANumber).should.equal(false);
         done();
       });
 
       test('Number() x isNaN', done => {
-        cmp.le(SmallNumber, notANumber).should.equal(false);
+        cmp.lte(SmallNumber, notANumber).should.equal(false);
         done();
       });
 
       test('isNaN x isNaN', done => {
-        cmp.le(notANumber, notANumber).should.equal(false);
+        cmp.lte(notANumber, notANumber).should.equal(false);
         done();
       });
 
       test('isNan x number', done => {
-        cmp.le(notANumber, smallNumber).should.equal(false);
+        cmp.lte(notANumber, smallNumber).should.equal(false);
         done();
       });
 
       test('isNan x Number()', done => {
-        cmp.le(notANumber, SmallNumber).should.equal(false);
+        cmp.lte(notANumber, SmallNumber).should.equal(false);
         done();
       });
     });
   });
 
-  suite('les', () => {
+  suite('ltes', () => {
     suite('any => false', () => {
       test('number x number', done => {
-        cmp.les(smallNumber, smallNumber).should.equal(false);
+        cmp.ltes(smallNumber, smallNumber).should.equal(false);
         done();
       });
     });
@@ -600,16 +600,6 @@ suite('number x number', () => {
     suite('identical => true', () => {
       test('number x number', done => {
         cmp.id(smallNumber, smallNumber).should.equal(true);
-        done();
-      });
-
-      test('number x Number()', done => {
-        cmp.id(smallNumber, SmallNumber).should.equal(true);
-        done();
-      });
-
-      test('Number() x number', done => {
-        cmp.id(SmallNumber, smallNumber).should.equal(true);
         done();
       });
 
@@ -626,12 +616,12 @@ suite('number x number', () => {
       });
 
       test('number x Number()', done => {
-        cmp.id(smallNumber, LargeNumber).should.equal(false);
+        cmp.id(smallNumber, SmallNumber).should.equal(false);
         done();
       });
 
       test('Number() x number', done => {
-        cmp.id(SmallNumber, largeNumber).should.equal(false);
+        cmp.id(SmallNumber, smallNumber).should.equal(false);
         done();
       });
 

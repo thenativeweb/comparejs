@@ -384,138 +384,138 @@ suite('string x string', () => {
     });
   });
 
-  suite('ge', () => {
+  suite('gte', () => {
     suite('greater => true', () => {
       test('string x string', done => {
-        cmp.ge(foo, bar).should.equal(true);
+        cmp.gte(foo, bar).should.equal(true);
         done();
       });
 
       test('string x String()', done => {
-        cmp.ge(foo, Bar).should.equal(true);
+        cmp.gte(foo, Bar).should.equal(true);
         done();
       });
 
       test('String() x string', done => {
-        cmp.ge(Foo, bar).should.equal(true);
+        cmp.gte(Foo, bar).should.equal(true);
         done();
       });
 
       test('String() x String()', done => {
-        cmp.ge(Foo, Bar).should.equal(true);
+        cmp.gte(Foo, Bar).should.equal(true);
         done();
       });
 
       test('string x empty', done => {
-        cmp.ge(foo, empty).should.equal(true);
+        cmp.gte(foo, empty).should.equal(true);
         done();
       });
 
       test('string x Empty()', done => {
-        cmp.ge(foo, Empty).should.equal(true);
+        cmp.gte(foo, Empty).should.equal(true);
         done();
       });
 
       test('String() x empty', done => {
-        cmp.ge(Foo, empty).should.equal(true);
+        cmp.gte(Foo, empty).should.equal(true);
         done();
       });
 
       test('String() x Empty()', done => {
-        cmp.ge(Foo, Empty).should.equal(true);
+        cmp.gte(Foo, Empty).should.equal(true);
         done();
       });
     });
 
     suite('equal => true', () => {
       test('string x string', done => {
-        cmp.ge(foo, foo).should.equal(true);
+        cmp.gte(foo, foo).should.equal(true);
         done();
       });
 
       test('string x String()', done => {
-        cmp.ge(foo, Foo).should.equal(true);
+        cmp.gte(foo, Foo).should.equal(true);
         done();
       });
 
       test('String() x string', done => {
-        cmp.ge(Foo, foo).should.equal(true);
+        cmp.gte(Foo, foo).should.equal(true);
         done();
       });
 
       test('String() x String()', done => {
-        cmp.ge(Foo, Foo).should.equal(true);
+        cmp.gte(Foo, Foo).should.equal(true);
         done();
       });
 
       test('empty x empty', done => {
-        cmp.ge(empty, empty).should.equal(true);
+        cmp.gte(empty, empty).should.equal(true);
         done();
       });
 
       test('empty x Empty()', done => {
-        cmp.ge(empty, Empty).should.equal(true);
+        cmp.gte(empty, Empty).should.equal(true);
         done();
       });
 
       test('Empty() x empty', done => {
-        cmp.ge(Empty, empty).should.equal(true);
+        cmp.gte(Empty, empty).should.equal(true);
         done();
       });
 
       test('Empty() x Empty()', done => {
-        cmp.ge(Empty, Empty).should.equal(true);
+        cmp.gte(Empty, Empty).should.equal(true);
         done();
       });
     });
 
     suite('less => false', () => {
       test('string x string', done => {
-        cmp.ge(bar, foo).should.equal(false);
+        cmp.gte(bar, foo).should.equal(false);
         done();
       });
 
       test('string x String()', done => {
-        cmp.ge(bar, Foo).should.equal(false);
+        cmp.gte(bar, Foo).should.equal(false);
         done();
       });
 
       test('String() x string', done => {
-        cmp.ge(Bar, foo).should.equal(false);
+        cmp.gte(Bar, foo).should.equal(false);
         done();
       });
 
       test('String() x String()', done => {
-        cmp.ge(Bar, Foo).should.equal(false);
+        cmp.gte(Bar, Foo).should.equal(false);
         done();
       });
 
       test('empty x string', done => {
-        cmp.ge(empty, foo).should.equal(false);
+        cmp.gte(empty, foo).should.equal(false);
         done();
       });
 
       test('empty x String()', done => {
-        cmp.ge(empty, Foo).should.equal(false);
+        cmp.gte(empty, Foo).should.equal(false);
         done();
       });
 
       test('Empty() x string', done => {
-        cmp.ge(Empty, foo).should.equal(false);
+        cmp.gte(Empty, foo).should.equal(false);
         done();
       });
 
       test('Empty() x String()', done => {
-        cmp.ge(Empty, Foo).should.equal(false);
+        cmp.gte(Empty, Foo).should.equal(false);
         done();
       });
     });
   });
 
-  suite('ges', () => {
+  suite('gtes', () => {
     suite('any => false', () => {
       test('string x string', done => {
-        cmp.ges(foo, foo).should.equal(false);
+        cmp.gtes(foo, foo).should.equal(false);
         done();
       });
     });
@@ -658,138 +658,138 @@ suite('string x string', () => {
     });
   });
 
-  suite('le', () => {
+  suite('lte', () => {
     suite('greater => false', () => {
       test('string x string', done => {
-        cmp.le(foo, bar).should.equal(false);
+        cmp.lte(foo, bar).should.equal(false);
         done();
       });
 
       test('string x String()', done => {
-        cmp.le(foo, Bar).should.equal(false);
+        cmp.lte(foo, Bar).should.equal(false);
         done();
       });
 
       test('String() x string', done => {
-        cmp.le(Foo, bar).should.equal(false);
+        cmp.lte(Foo, bar).should.equal(false);
         done();
       });
 
       test('String() x String()', done => {
-        cmp.le(Foo, Bar).should.equal(false);
+        cmp.lte(Foo, Bar).should.equal(false);
         done();
       });
 
       test('string x empty', done => {
-        cmp.le(foo, empty).should.equal(false);
+        cmp.lte(foo, empty).should.equal(false);
         done();
       });
 
       test('string x Empty()', done => {
-        cmp.le(foo, Empty).should.equal(false);
+        cmp.lte(foo, Empty).should.equal(false);
         done();
       });
 
       test('String() x empty', done => {
-        cmp.le(Foo, empty).should.equal(false);
+        cmp.lte(Foo, empty).should.equal(false);
         done();
       });
 
       test('String() x Empty()', done => {
-        cmp.le(Foo, Empty).should.equal(false);
+        cmp.lte(Foo, Empty).should.equal(false);
         done();
       });
     });
 
     suite('equal => true', () => {
       test('string x string', done => {
-        cmp.le(foo, foo).should.equal(true);
+        cmp.lte(foo, foo).should.equal(true);
         done();
       });
 
       test('string x String()', done => {
-        cmp.le(foo, Foo).should.equal(true);
+        cmp.lte(foo, Foo).should.equal(true);
         done();
       });
 
       test('String() x string', done => {
-        cmp.le(Foo, foo).should.equal(true);
+        cmp.lte(Foo, foo).should.equal(true);
         done();
       });
 
       test('String() x String()', done => {
-        cmp.le(Foo, Foo).should.equal(true);
+        cmp.lte(Foo, Foo).should.equal(true);
         done();
       });
 
       test('empty x empty', done => {
-        cmp.le(empty, empty).should.equal(true);
+        cmp.lte(empty, empty).should.equal(true);
         done();
       });
 
       test('empty x Empty()', done => {
-        cmp.le(empty, Empty).should.equal(true);
+        cmp.lte(empty, Empty).should.equal(true);
         done();
       });
 
       test('Empty() x empty', done => {
-        cmp.le(Empty, empty).should.equal(true);
+        cmp.lte(Empty, empty).should.equal(true);
         done();
       });
 
       test('Empty() x Empty()', done => {
-        cmp.le(Empty, Empty).should.equal(true);
+        cmp.lte(Empty, Empty).should.equal(true);
         done();
       });
     });
 
     suite('less => true', () => {
       test('string x string', done => {
-        cmp.le(bar, foo).should.equal(true);
+        cmp.lte(bar, foo).should.equal(true);
         done();
       });
 
       test('string x String()', done => {
-        cmp.le(bar, Foo).should.equal(true);
+        cmp.lte(bar, Foo).should.equal(true);
         done();
       });
 
       test('String() x string', done => {
-        cmp.le(Bar, foo).should.equal(true);
+        cmp.lte(Bar, foo).should.equal(true);
         done();
       });
 
       test('String() x String()', done => {
-        cmp.le(Bar, Foo).should.equal(true);
+        cmp.lte(Bar, Foo).should.equal(true);
         done();
       });
 
       test('empty x string', done => {
-        cmp.le(empty, foo).should.equal(true);
+        cmp.lte(empty, foo).should.equal(true);
         done();
       });
 
       test('empty x String()', done => {
-        cmp.le(empty, Foo).should.equal(true);
+        cmp.lte(empty, Foo).should.equal(true);
         done();
       });
 
       test('Empty() x string', done => {
-        cmp.le(Empty, foo).should.equal(true);
+        cmp.lte(Empty, foo).should.equal(true);
         done();
       });
 
       test('Empty() x String()', done => {
-        cmp.le(Empty, Foo).should.equal(true);
+        cmp.lte(Empty, Foo).should.equal(true);
         done();
       });
     });
   });
 
-  suite('les', () => {
+  suite('ltes', () => {
     suite('any => false', () => {
       test('string x string', done => {
-        cmp.les(foo, foo).should.equal(false);
+        cmp.ltes(foo, foo).should.equal(false);
         done();
       });
     });
@@ -802,16 +802,6 @@ suite('string x string', () => {
         done();
       });
 
-      test('string x String()', done => {
-        cmp.id(foo, Foo).should.equal(true);
-        done();
-      });
-
-      test('String() x string', done => {
-        cmp.id(Foo, foo).should.equal(true);
-        done();
-      });
-
       test('String() x String()', done => {
         cmp.id(Foo, Foo).should.equal(true);
         done();
@@ -819,16 +809,6 @@ suite('string x string', () => {
 
       test('empty x empty', done => {
         cmp.id(empty, empty).should.equal(true);
-        done();
-      });
-
-      test('empty x Empty()', done => {
-        cmp.id(empty, Empty).should.equal(true);
-        done();
-      });
-
-      test('Empty() x empty', done => {
-        cmp.id(Empty, empty).should.equal(true);
         done();
       });
 
@@ -845,12 +825,12 @@ suite('string x string', () => {
       });
 
       test('string x String()', done => {
-        cmp.id(foo, Bar).should.equal(false);
+        cmp.id(foo, Foo).should.equal(false);
         done();
       });
 
       test('String() x string', done => {
-        cmp.id(Foo, bar).should.equal(false);
+        cmp.id(Foo, foo).should.equal(false);
         done();
       });
 
@@ -896,6 +876,16 @@ suite('string x string', () => {
 
       test('Empty() x String()', done => {
         cmp.id(Empty, Foo).should.equal(false);
+        done();
+      });
+
+      test('empty x Empty()', done => {
+        cmp.id(empty, Empty).should.equal(false);
+        done();
+      });
+
+      test('Empty() x empty', done => {
+        cmp.id(Empty, empty).should.equal(false);
         done();
       });
     });
