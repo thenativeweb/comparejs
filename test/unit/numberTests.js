@@ -4,13 +4,13 @@
 const should = require('should');
 /* eslint-enable no-unused-vars */
 
-const cmp = require('../../src/compare');
+const cmp = require('../../lib/compare');
 
 suite('number x number', () => {
-  /* eslint-disable no-new-wrappers */
+  /* eslint-disable no-new-wrappers, unicorn/new-for-builtins */
   const LargeNumber = new Number(42),
         SmallNumber = new Number(23);
-  /* eslint-enable no-new-wrappers */
+  /* eslint-enable no-new-wrappers, unicorn/new-for-builtins */
 
   const largeNumber = 42,
         notANumber = Number.NaN,

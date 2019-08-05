@@ -4,14 +4,14 @@
 const should = require('should');
 /* eslint-enable no-unused-vars */
 
-const cmp = require('../../src/compare');
+const cmp = require('../../lib/compare');
 
 suite('string x string', () => {
-  /* eslint-disable no-new-wrappers */
+  /* eslint-disable no-new-wrappers, unicorn/new-for-builtins */
   const Bar = new String('bar'),
         Empty = new String(''),
         Foo = new String('foo');
-  /* eslint-enable no-new-wrappers */
+  /* eslint-enable no-new-wrappers, unicorn/new-for-builtins */
 
   const bar = 'bar',
         empty = '',

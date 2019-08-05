@@ -4,13 +4,13 @@
 const should = require('should');
 /* eslint-enable no-unused-vars */
 
-const cmp = require('../../src/compare');
+const cmp = require('../../lib/compare');
 
 suite('bool x bool', () => {
-  /* eslint-disable no-new-wrappers */
+  /* eslint-disable no-new-wrappers, unicorn/new-for-builtins */
   const False = new Boolean(false),
         True = new Boolean(true);
-  /* eslint-enable no-new-wrappers */
+  /* eslint-enable no-new-wrappers, unicorn/new-for-builtins */
 
   suite('eq', () => {
     suite('equal => true', () => {

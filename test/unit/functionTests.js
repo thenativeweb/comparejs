@@ -4,7 +4,7 @@
 const should = require('should');
 /* eslint-enable no-unused-vars */
 
-const cmp = require('../../src/compare');
+const cmp = require('../../lib/compare');
 
 suite('function x function', () => {
   /* eslint-disable no-new-func */

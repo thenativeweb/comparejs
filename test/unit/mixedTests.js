@@ -4,7 +4,7 @@
 const should = require('should');
 /* eslint-enable no-unused-vars */
 
-const cmp = require('../../src/compare');
+const cmp = require('../../lib/compare');
 
 suite('mixed types', () => {
   const fn = function () {
