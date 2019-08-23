@@ -18,15 +18,20 @@
     {
       "name": "Jan-Hendrik Grundhöfer",
       "email": "jan-hendrik.grundhoefer@thenativeweb.io"
+    },
+    {
+      "name": "Hannes Leutloff",
+      "email": "hannes.leutloff@thenativeweb.io"
     }
   ],
-  "main": "lib/compare.js",
+  "main": "build/lib/compare.js",
+  "types": "build/lib/compare.d.ts",
   "dependencies": {
-    "is-subset-of": "1.0.1",
-    "typedescriptor": "1.0.0"
+    "is-subset-of": "2.0.0",
+    "typedescriptor": "2.0.0"
   },
   "devDependencies": {
-    "roboter": "6.1.0",
+    "roboter": "7.0.0",
     "should": "13.2.3"
   },
   "repository": {
