@@ -26,6 +26,8 @@ To use comparejs you need to reference it from your application by adding the fo
 const compare = require('comparejs').default;
 ```
 
+If you use TypeScript, use the following code instead:
+
 ```typescript
 import compare from 'comparejs';
 ```
