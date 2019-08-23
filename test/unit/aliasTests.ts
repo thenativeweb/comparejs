@@ -1,7 +1,6 @@
 import cmp from '../../lib/compare';
 import 'should';
 
-
 suite('alias', (): void => {
   test('eq x equal', async (): Promise<void> => {
     cmp.eq(cmp.eq(23, 23), cmp.equal(23, 23)).should.equal(true);
