@@ -1,23 +1,16 @@
-'use strict';
-
-const isSubsetOf = require('is-subset-of'),
-      Type = require('typedescriptor');
-
-const unbox = require('./unbox');
+import isSubsetOf from 'is-subset-of';
+import Type from 'typedescriptor';
+import unbox from './unbox';
 
 const compare = {
-  equal (left, right) {
-    const leftType = Type.of(left),
-          rightType = Type.of(right);
-
-    if (leftType === 'array' && rightType === 'array') {
+  equal (left: any, right: any): boolean {
+    if (Type.isArray(left) && Type.isArray(right)) {
       if (left.length !== right.length) {
         return false;
       }
 
-      for (let i = 0; i < left.length; i++) {
-        const leftItem = left[i],
-              rightItem = right[i];
+      for (const [ i, leftItem ] of left.entries()) {
+        const rightItem = right[i];
 
         const areEqual = compare.equal(leftItem, rightItem);
 
@@ -29,13 +22,13 @@ const compare = {
       return true;
     }
 
-    if (leftType === 'object' && rightType === 'object') {
+    if (Type.isObject(left) && Type.isObject(right)) {
       const areEqual = isSubsetOf(left, right) && isSubsetOf(right, left);
 
       return areEqual;
     }
 
-    if (leftType === 'function' && rightType === 'function') {
+    if (Type.isFunction(left) && Type.isFunction(right)) {
       const leftSource = left.toString(),
             rightSource = right.toString();
 
@@ -47,23 +40,23 @@ const compare = {
 
     return leftUnboxed === rightUnboxed;
   },
-  notEqual (left, right) {
+  notEqual (left: any, right: any): boolean {
     return !compare.equal(left, right);
   },
-  lessThan (left, right) {
+  lessThan (left: any, right: any): boolean {
     const leftType = Type.of(left),
           rightType = Type.of(right);
 
     if (
       (leftType !== rightType) ||
-      (leftType === 'function' && rightType === 'function')
+      (Type.isFunction(left) && Type.isFunction(right))
     ) {
       return false;
     }
 
     if (
-      (leftType === 'array' && rightType === 'array') ||
-      (leftType === 'object' && rightType === 'object')
+      (Type.isArray(left) && Type.isArray(right)) ||
+      (Type.isObject(left) && Type.isObject(right))
     ) {
       const isLessThan = isSubsetOf(left, right) && !isSubsetOf(right, left);
 
@@ -75,20 +68,20 @@ const compare = {
 
     return leftUnboxed < rightUnboxed;
   },
-  lessThanOrEqual (left, right) {
+  lessThanOrEqual (left: any, right: any): boolean {
     return compare.lessThan(left, right) || compare.equal(left, right);
   },
-  greaterThan (left, right) {
+  greaterThan (left: any, right: any): boolean {
     return compare.lessThan(right, left);
   },
-  greaterThanOrEqual (left, right) {
+  greaterThanOrEqual (left: any, right: any): boolean {
     return compare.lessThan(right, left) || compare.equal(right, left);
   },
-  identity (left, right) {
+  identity (left: any, right: any): boolean {
     return left === right;
   },
 
-  equalByStructure (left, right) {
+  equalByStructure (left: any, right: any): boolean {
     const leftType = Type.of(left),
           rightType = Type.of(right);
 
@@ -102,7 +95,7 @@ const compare = {
 
     return areEqualByStructure;
   },
-  notEqualByStructure (left, right) {
+  notEqualByStructure (left: any, right: any): boolean {
     const leftType = Type.of(left),
           rightType = Type.of(right);
 
@@ -112,7 +105,7 @@ const compare = {
 
     return !compare.equalByStructure(left, right);
   },
-  lessThanByStructure (left, right) {
+  lessThanByStructure (left: any, right: any): boolean {
     const leftType = Type.of(left),
           rightType = Type.of(right);
 
@@ -126,7 +119,7 @@ const compare = {
 
     return isLessThanByStructure;
   },
-  lessThanOrEqualByStructure (left, right) {
+  lessThanOrEqualByStructure (left: any, right: any): boolean {
     const leftType = Type.of(left),
           rightType = Type.of(right);
 
@@ -136,7 +129,7 @@ const compare = {
 
     return compare.lessThanByStructure(left, right) || compare.equalByStructure(left, right);
   },
-  greaterThanByStructure (left, right) {
+  greaterThanByStructure (left: any, right: any): boolean {
     const leftType = Type.of(left),
           rightType = Type.of(right);
 
@@ -146,7 +139,7 @@ const compare = {
 
     return compare.lessThanByStructure(right, left);
   },
-  greaterThanOrEqualByStructure (left, right) {
+  greaterThanOrEqualByStructure (left: any, right: any): boolean {
     const leftType = Type.of(left),
           rightType = Type.of(right);
 
@@ -157,46 +150,46 @@ const compare = {
     return compare.lessThanByStructure(right, left) || compare.equalByStructure(right, left);
   },
 
-  eq (left, right) {
+  eq (left: any, right: any): boolean {
     return compare.equal(left, right);
   },
-  ne (left, right) {
+  ne (left: any, right: any): boolean {
     return compare.notEqual(left, right);
   },
-  lt (left, right) {
+  lt (left: any, right: any): boolean {
     return compare.lessThan(left, right);
   },
-  lte (left, right) {
+  lte (left: any, right: any): boolean {
     return compare.lessThanOrEqual(left, right);
   },
-  gt (left, right) {
+  gt (left: any, right: any): boolean {
     return compare.greaterThan(left, right);
   },
-  gte (left, right) {
+  gte (left: any, right: any): boolean {
     return compare.greaterThanOrEqual(left, right);
   },
-  id (left, right) {
+  id (left: any, right: any): boolean {
     return compare.identity(left, right);
   },
 
-  eqs (left, right) {
+  eqs (left: any, right: any): boolean {
     return compare.equalByStructure(left, right);
   },
-  nes (left, right) {
+  nes (left: any, right: any): boolean {
     return compare.notEqualByStructure(left, right);
   },
-  lts (left, right) {
+  lts (left: any, right: any): boolean {
     return compare.lessThanByStructure(left, right);
   },
-  ltes (left, right) {
+  ltes (left: any, right: any): boolean {
     return compare.lessThanOrEqualByStructure(left, right);
   },
-  gts (left, right) {
+  gts (left: any, right: any): boolean {
     return compare.greaterThanByStructure(left, right);
   },
-  gtes (left, right) {
+  gtes (left: any, right: any): boolean {
     return compare.greaterThanOrEqualByStructure(left, right);
   }
 };
 
-module.exports = compare;
+export default compare;

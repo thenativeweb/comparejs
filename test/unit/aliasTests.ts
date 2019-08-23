@@ -1,74 +1,57 @@
-'use strict';
+import cmp from '../../lib/compare';
+import 'should';
 
-/* eslint-disable no-unused-vars */
-const should = require('should');
-/* eslint-enable no-unused-vars */
 
-const cmp = require('../../lib/compare');
-
-suite('alias', () => {
-  test('eq x equal', done => {
+suite('alias', (): void => {
+  test('eq x equal', async (): Promise<void> => {
     cmp.eq(cmp.eq(23, 23), cmp.equal(23, 23)).should.equal(true);
-    done();
   });
 
-  test('ne x notEqual', done => {
+  test('ne x notEqual', async (): Promise<void> => {
     cmp.eq(cmp.ne(23, 23), cmp.notEqual(23, 23)).should.equal(true);
-    done();
   });
 
-  test('gt x greaterThan', done => {
+  test('gt x greaterThan', async (): Promise<void> => {
     cmp.eq(cmp.gt(23, 23), cmp.greaterThan(23, 23)).should.equal(true);
-    done();
   });
 
-  test('ge x greaterThanOrEqual', done => {
+  test('ge x greaterThanOrEqual', async (): Promise<void> => {
     cmp.eq(cmp.gte(23, 23), cmp.greaterThanOrEqual(23, 23)).should.equal(true);
-    done();
   });
 
-  test('lt x lessThan', done => {
+  test('lt x lessThan', async (): Promise<void> => {
     cmp.eq(cmp.lt(23, 23), cmp.lessThan(23, 23)).should.equal(true);
-    done();
   });
 
-  test('le x lessThanOrEqual', done => {
+  test('le x lessThanOrEqual', async (): Promise<void> => {
     cmp.eq(cmp.lte(23, 23), cmp.lessThanOrEqual(23, 23)).should.equal(true);
-    done();
   });
 
-  test('id x identical', done => {
+  test('id x identical', async (): Promise<void> => {
     cmp.eq(cmp.id(23, 23), cmp.identity(23, 23)).should.equal(true);
-    done();
   });
 
-  test('eqs x equalByStructure', done => {
+  test('eqs x equalByStructure', async (): Promise<void> => {
     cmp.eq(cmp.eqs({ }, { }), cmp.equalByStructure({ }, { })).should.equal(true);
-    done();
   });
 
-  test('nes x notEqualByStructure', done => {
+  test('nes x notEqualByStructure', async (): Promise<void> => {
     cmp.eq(cmp.nes({ }, { }), cmp.notEqualByStructure({ }, { })).should.equal(true);
-    done();
   });
 
-  test('gts x greaterThanByStructure', done => {
+  test('gts x greaterThanByStructure', async (): Promise<void> => {
     cmp.eq(cmp.gts({ }, { }), cmp.greaterThanByStructure({ }, { })).should.equal(true);
-    done();
   });
 
-  test('ges x greaterThanOrEqualByStructure', done => {
+  test('ges x greaterThanOrEqualByStructure', async (): Promise<void> => {
     cmp.eq(cmp.gtes({ }, { }), cmp.greaterThanOrEqualByStructure({ }, { })).should.equal(true);
-    done();
   });
 
-  test('lts x lessThanByStructure', done => {
+  test('lts x lessThanByStructure', async (): Promise<void> => {
     cmp.eq(cmp.lts({ }, { }), cmp.lessThanByStructure({ }, { })).should.equal(true);
-    done();
   });
 
-  test('les x lessThanOrEqualByStructure', done => {
+  test('les x lessThanOrEqualByStructure', async (): Promise<void> => {
     cmp.eq(cmp.ltes({ }, { }), cmp.lessThanOrEqualByStructure({ }, { })).should.equal(true);
-    done();
   });
 });
