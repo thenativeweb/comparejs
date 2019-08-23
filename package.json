@@ -27,8 +27,8 @@
   "main": "build/lib/compare.js",
   "types": "build/lib/compare.d.ts",
   "dependencies": {
-    "is-subset-of": "git+ssh://git@github.com/thenativeweb/is-subset-of.git#migrate-to-typescript",
-    "typedescriptor": "1.2.0"
+    "is-subset-of": "2.0.0",
+    "typedescriptor": "2.0.0"
   },
   "devDependencies": {
     "roboter": "7.0.0",
