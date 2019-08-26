@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/promise-function-async */
 const unbox = function (value: any): any {
   if (typeof value !== 'object') {
     return value;
@@ -15,6 +14,5 @@ const unbox = function (value: any): any {
 
   return value.valueOf();
 };
-/* eslint-enable @typescript-eslint/promise-function-async */
 
 export default unbox;

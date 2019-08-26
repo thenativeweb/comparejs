@@ -1,6 +1,5 @@
 {
   "extends": "es/node",
-
   "rules": {
     "mocha/valid-test-description": "off"
   }
