@@ -31,7 +31,7 @@
     "typedescriptor": "2.0.4"
   },
   "devDependencies": {
-    "roboter": "7.5.0",
+    "roboter": "8.0.0",
     "should": "13.2.3"
   },
   "repository": {
