@@ -1,4 +1,4 @@
-import cmp from '../../lib/compare';
+import { compare } from '../../lib/compare';
 import 'should';
 
 suite('function x function', (): void => {
@@ -21,29 +21,29 @@ suite('function x function', (): void => {
   suite('eq', (): void => {
     suite('equal => true', (): void => {
       test('function x function', async (): Promise<void> => {
-        cmp.eq(f1, f2).should.equal(true);
+        compare.eq(f1, f2).should.equal(true);
       });
 
       test('Function() x Function()', async (): Promise<void> => {
-        cmp.eq(F1, F2).should.equal(true);
+        compare.eq(F1, F2).should.equal(true);
       });
     });
 
     suite('not equal => false', (): void => {
       test('function x function', async (): Promise<void> => {
-        cmp.eq(f1, g1).should.equal(false);
+        compare.eq(f1, g1).should.equal(false);
       });
 
       test('function x Function()', async (): Promise<void> => {
-        cmp.eq(f1, F1).should.equal(false);
+        compare.eq(f1, F1).should.equal(false);
       });
 
       test('Function() x function', async (): Promise<void> => {
-        cmp.eq(F1, f1).should.equal(false);
+        compare.eq(F1, f1).should.equal(false);
       });
 
       test('Function() x Function()', async (): Promise<void> => {
-        cmp.eq(F1, G1).should.equal(false);
+        compare.eq(F1, G1).should.equal(false);
       });
     });
   });
@@ -51,7 +51,7 @@ suite('function x function', (): void => {
   suite('eqs', (): void => {
     suite('any => false', (): void => {
       test('function x function', async (): Promise<void> => {
-        cmp.eqs(f1, f1).should.equal(false);
+        compare.eqs(f1, f1).should.equal(false);
       });
     });
   });
@@ -59,29 +59,29 @@ suite('function x function', (): void => {
   suite('ne', (): void => {
     suite('equal => false', (): void => {
       test('function x function', async (): Promise<void> => {
-        cmp.ne(f1, f2).should.equal(false);
+        compare.ne(f1, f2).should.equal(false);
       });
 
       test('Function() x Function()', async (): Promise<void> => {
-        cmp.ne(F1, F2).should.equal(false);
+        compare.ne(F1, F2).should.equal(false);
       });
     });
 
     suite('not equal => true', (): void => {
       test('function x function', async (): Promise<void> => {
-        cmp.ne(f1, g1).should.equal(true);
+        compare.ne(f1, g1).should.equal(true);
       });
 
       test('function x Function()', async (): Promise<void> => {
-        cmp.ne(f1, F1).should.equal(true);
+        compare.ne(f1, F1).should.equal(true);
       });
 
       test('Function() x function', async (): Promise<void> => {
-        cmp.ne(F1, f1).should.equal(true);
+        compare.ne(F1, f1).should.equal(true);
       });
 
       test('Function() x Function()', async (): Promise<void> => {
-        cmp.ne(F1, G1).should.equal(true);
+        compare.ne(F1, G1).should.equal(true);
       });
     });
   });
@@ -89,7 +89,7 @@ suite('function x function', (): void => {
   suite('nes', (): void => {
     suite('any => false', (): void => {
       test('function x function', async (): Promise<void> => {
-        cmp.nes(f1, f1).should.equal(false);
+        compare.nes(f1, f1).should.equal(false);
       });
     });
   });
@@ -97,27 +97,27 @@ suite('function x function', (): void => {
   suite('gt', (): void => {
     suite('any => false', (): void => {
       test('function x function (same body)', async (): Promise<void> => {
-        cmp.gt(f1, f2).should.equal(false);
+        compare.gt(f1, f2).should.equal(false);
       });
 
       test('function x function (different body)', async (): Promise<void> => {
-        cmp.gt(f1, g1).should.equal(false);
+        compare.gt(f1, g1).should.equal(false);
       });
 
       test('function x Function()', async (): Promise<void> => {
-        cmp.gt(f1, F1).should.equal(false);
+        compare.gt(f1, F1).should.equal(false);
       });
 
       test('Function() x function', async (): Promise<void> => {
-        cmp.gt(F1, f1).should.equal(false);
+        compare.gt(F1, f1).should.equal(false);
       });
 
       test('Function() x Function() (same body)', async (): Promise<void> => {
-        cmp.gt(F1, F2).should.equal(false);
+        compare.gt(F1, F2).should.equal(false);
       });
 
       test('Function() x Function() (different body)', async (): Promise<void> => {
-        cmp.gt(F1, G1).should.equal(false);
+        compare.gt(F1, G1).should.equal(false);
       });
     });
   });
@@ -125,7 +125,7 @@ suite('function x function', (): void => {
   suite('gts', (): void => {
     suite('any => false', (): void => {
       test('function x function', async (): Promise<void> => {
-        cmp.gts(f1, f1).should.equal(false);
+        compare.gts(f1, f1).should.equal(false);
       });
     });
   });
@@ -133,29 +133,29 @@ suite('function x function', (): void => {
   suite('gte', (): void => {
     suite('equal => true', (): void => {
       test('function x function', async (): Promise<void> => {
-        cmp.gte(f1, f2).should.equal(true);
+        compare.gte(f1, f2).should.equal(true);
       });
 
       test('Function() x Function()', async (): Promise<void> => {
-        cmp.gte(F1, F2).should.equal(true);
+        compare.gte(F1, F2).should.equal(true);
       });
     });
 
     suite('not equal => false', (): void => {
       test('function x function', async (): Promise<void> => {
-        cmp.gte(f1, g1).should.equal(false);
+        compare.gte(f1, g1).should.equal(false);
       });
 
       test('function x Function()', async (): Promise<void> => {
-        cmp.gte(f1, F1).should.equal(false);
+        compare.gte(f1, F1).should.equal(false);
       });
 
       test('Function() x function', async (): Promise<void> => {
-        cmp.gte(F1, f1).should.equal(false);
+        compare.gte(F1, f1).should.equal(false);
       });
 
       test('Function() x Function()', async (): Promise<void> => {
-        cmp.gte(F1, G1).should.equal(false);
+        compare.gte(F1, G1).should.equal(false);
       });
     });
   });
@@ -163,7 +163,7 @@ suite('function x function', (): void => {
   suite('gtes', (): void => {
     suite('any => false', (): void => {
       test('function x function', async (): Promise<void> => {
-        cmp.gtes(f1, f1).should.equal(false);
+        compare.gtes(f1, f1).should.equal(false);
       });
     });
   });
@@ -171,27 +171,27 @@ suite('function x function', (): void => {
   suite('lt', (): void => {
     suite('any => false', (): void => {
       test('function x function (same body)', async (): Promise<void> => {
-        cmp.lt(f1, f2).should.equal(false);
+        compare.lt(f1, f2).should.equal(false);
       });
 
       test('function x function (different body)', async (): Promise<void> => {
-        cmp.lt(f1, g1).should.equal(false);
+        compare.lt(f1, g1).should.equal(false);
       });
 
       test('function x Function()', async (): Promise<void> => {
-        cmp.lt(f1, F1).should.equal(false);
+        compare.lt(f1, F1).should.equal(false);
       });
 
       test('Function() x function', async (): Promise<void> => {
-        cmp.lt(F1, f1).should.equal(false);
+        compare.lt(F1, f1).should.equal(false);
       });
 
       test('Function() x Function() (same body)', async (): Promise<void> => {
-        cmp.lt(F1, F2).should.equal(false);
+        compare.lt(F1, F2).should.equal(false);
       });
 
       test('Function() x Function() (different body)', async (): Promise<void> => {
-        cmp.lt(F1, G1).should.equal(false);
+        compare.lt(F1, G1).should.equal(false);
       });
     });
   });
@@ -199,7 +199,7 @@ suite('function x function', (): void => {
   suite('lts', (): void => {
     suite('any => false', (): void => {
       test('function x function', async (): Promise<void> => {
-        cmp.lts(f1, f1).should.equal(false);
+        compare.lts(f1, f1).should.equal(false);
       });
     });
   });
@@ -207,29 +207,29 @@ suite('function x function', (): void => {
   suite('lte', (): void => {
     suite('equal => true', (): void => {
       test('function x function', async (): Promise<void> => {
-        cmp.lte(f1, f2).should.equal(true);
+        compare.lte(f1, f2).should.equal(true);
       });
 
       test('Function() x Function()', async (): Promise<void> => {
-        cmp.lte(F1, F2).should.equal(true);
+        compare.lte(F1, F2).should.equal(true);
       });
     });
 
     suite('not equal => false', (): void => {
       test('function x function', async (): Promise<void> => {
-        cmp.lte(f1, g1).should.equal(false);
+        compare.lte(f1, g1).should.equal(false);
       });
 
       test('function x Function()', async (): Promise<void> => {
-        cmp.lte(f1, F1).should.equal(false);
+        compare.lte(f1, F1).should.equal(false);
       });
 
       test('Function() x function', async (): Promise<void> => {
-        cmp.lte(F1, f1).should.equal(false);
+        compare.lte(F1, f1).should.equal(false);
       });
 
       test('Function() x Function()', async (): Promise<void> => {
-        cmp.lte(F1, G1).should.equal(false);
+        compare.lte(F1, G1).should.equal(false);
       });
     });
   });
@@ -237,7 +237,7 @@ suite('function x function', (): void => {
   suite('ltes', (): void => {
     suite('any => false', (): void => {
       test('function x function', async (): Promise<void> => {
-        cmp.ltes(f1, f1).should.equal(false);
+        compare.ltes(f1, f1).should.equal(false);
       });
     });
   });
@@ -245,37 +245,37 @@ suite('function x function', (): void => {
   suite('id', (): void => {
     suite('equal => true', (): void => {
       test('function x function', async (): Promise<void> => {
-        cmp.id(f1, f1).should.equal(true);
+        compare.id(f1, f1).should.equal(true);
       });
 
       test('Function() x Function()', async (): Promise<void> => {
-        cmp.id(F1, F1).should.equal(true);
+        compare.id(F1, F1).should.equal(true);
       });
     });
 
     suite('not equal => false', (): void => {
       test('function x function (same body)', async (): Promise<void> => {
-        cmp.id(f1, f2).should.equal(false);
+        compare.id(f1, f2).should.equal(false);
       });
 
       test('function x function (different body)', async (): Promise<void> => {
-        cmp.id(f1, g1).should.equal(false);
+        compare.id(f1, g1).should.equal(false);
       });
 
       test('function x Function()', async (): Promise<void> => {
-        cmp.id(f1, F1).should.equal(false);
+        compare.id(f1, F1).should.equal(false);
       });
 
       test('Function() x function', async (): Promise<void> => {
-        cmp.id(F1, f1).should.equal(false);
+        compare.id(F1, f1).should.equal(false);
       });
 
       test('Function() x Function() (same body)', async (): Promise<void> => {
-        cmp.id(F1, F2).should.equal(false);
+        compare.id(F1, F2).should.equal(false);
       });
 
       test('Function() x Function() (different body)', async (): Promise<void> => {
-        cmp.id(F1, G1).should.equal(false);
+        compare.id(F1, G1).should.equal(false);
       });
     });
   });

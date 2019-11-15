@@ -1,4 +1,4 @@
-import cmp from '../../lib/compare';
+import { compare } from '../../lib/compare';
 import 'should';
 
 suite('cmp', (): void => {
@@ -14,7 +14,7 @@ suite('cmp', (): void => {
       };
 
       first.mySelf = first;
-      cmp.eq(first, second).should.equal(false);
+      compare.eq(first, second).should.equal(false);
     });
 
     test('second with self reference => false', async (): Promise<void> => {
@@ -28,7 +28,7 @@ suite('cmp', (): void => {
       };
 
       second.mySelf = second;
-      cmp.eq(first, second).should.equal(false);
+      compare.eq(first, second).should.equal(false);
     });
 
     test('both with self reference => true', async (): Promise<void> => {
@@ -44,7 +44,7 @@ suite('cmp', (): void => {
 
       first.mySelf = first;
       second.mySelf = second;
-      cmp.eq(first, second).should.equal(true);
+      compare.eq(first, second).should.equal(true);
     });
   });
 
@@ -60,7 +60,7 @@ suite('cmp', (): void => {
       };
 
       first.mySelf = first;
-      cmp.eqs(first, second).should.equal(false);
+      compare.eqs(first, second).should.equal(false);
     });
 
     test('second with self reference => false', async (): Promise<void> => {
@@ -74,7 +74,7 @@ suite('cmp', (): void => {
       };
 
       second.mySelf = second;
-      cmp.eqs(first, second).should.equal(false);
+      compare.eqs(first, second).should.equal(false);
     });
 
     test('both with self reference => true', async (): Promise<void> => {
@@ -90,7 +90,7 @@ suite('cmp', (): void => {
 
       first.mySelf = first;
       second.mySelf = second;
-      cmp.eqs(first, second).should.equal(true);
+      compare.eqs(first, second).should.equal(true);
     });
   });
 
@@ -106,7 +106,7 @@ suite('cmp', (): void => {
       };
 
       first.mySelf = first;
-      cmp.ne(first, second).should.equal(true);
+      compare.ne(first, second).should.equal(true);
     });
 
     test('second with self reference => true', async (): Promise<void> => {
@@ -120,7 +120,7 @@ suite('cmp', (): void => {
       };
 
       second.mySelf = second;
-      cmp.ne(first, second).should.equal(true);
+      compare.ne(first, second).should.equal(true);
     });
 
     test('both with self reference => false', async (): Promise<void> => {
@@ -136,7 +136,7 @@ suite('cmp', (): void => {
 
       first.mySelf = first;
       second.mySelf = second;
-      cmp.ne(first, second).should.equal(false);
+      compare.ne(first, second).should.equal(false);
     });
   });
 
@@ -152,7 +152,7 @@ suite('cmp', (): void => {
       };
 
       first.mySelf = first;
-      cmp.nes(first, second).should.equal(true);
+      compare.nes(first, second).should.equal(true);
     });
 
     test('second with self reference => true', async (): Promise<void> => {
@@ -166,7 +166,7 @@ suite('cmp', (): void => {
       };
 
       second.mySelf = second;
-      cmp.nes(first, second).should.equal(true);
+      compare.nes(first, second).should.equal(true);
     });
 
     test('both with self reference => false', async (): Promise<void> => {
@@ -182,7 +182,7 @@ suite('cmp', (): void => {
 
       first.mySelf = first;
       second.mySelf = second;
-      cmp.nes(first, second).should.equal(false);
+      compare.nes(first, second).should.equal(false);
     });
   });
 
@@ -198,7 +198,7 @@ suite('cmp', (): void => {
       };
 
       first.mySelf = first;
-      cmp.gt(first, second).should.equal(true);
+      compare.gt(first, second).should.equal(true);
     });
 
     test('second with self reference => false', async (): Promise<void> => {
@@ -212,7 +212,7 @@ suite('cmp', (): void => {
       };
 
       second.mySelf = second;
-      cmp.gt(first, second).should.equal(false);
+      compare.gt(first, second).should.equal(false);
     });
 
     test('both with self reference => false', async (): Promise<void> => {
@@ -228,7 +228,7 @@ suite('cmp', (): void => {
 
       first.mySelf = first;
       second.mySelf = second;
-      cmp.gt(first, second).should.equal(false);
+      compare.gt(first, second).should.equal(false);
     });
   });
 
@@ -244,7 +244,7 @@ suite('cmp', (): void => {
       };
 
       first.mySelf = first;
-      cmp.gts(first, second).should.equal(true);
+      compare.gts(first, second).should.equal(true);
     });
 
     test('second with self reference => false', async (): Promise<void> => {
@@ -258,7 +258,7 @@ suite('cmp', (): void => {
       };
 
       second.mySelf = second;
-      cmp.gts(first, second).should.equal(false);
+      compare.gts(first, second).should.equal(false);
     });
 
     test('both with self reference => false', async (): Promise<void> => {
@@ -274,7 +274,7 @@ suite('cmp', (): void => {
 
       first.mySelf = first;
       second.mySelf = second;
-      cmp.gts(first, second).should.equal(false);
+      compare.gts(first, second).should.equal(false);
     });
   });
 
@@ -290,7 +290,7 @@ suite('cmp', (): void => {
       };
 
       first.mySelf = first;
-      cmp.gte(first, second).should.equal(true);
+      compare.gte(first, second).should.equal(true);
     });
 
     test('second with self reference => false', async (): Promise<void> => {
@@ -304,7 +304,7 @@ suite('cmp', (): void => {
       };
 
       second.mySelf = second;
-      cmp.gte(first, second).should.equal(false);
+      compare.gte(first, second).should.equal(false);
     });
 
     test('both with self reference => true', async (): Promise<void> => {
@@ -320,7 +320,7 @@ suite('cmp', (): void => {
 
       first.mySelf = first;
       second.mySelf = second;
-      cmp.gte(first, second).should.equal(true);
+      compare.gte(first, second).should.equal(true);
     });
   });
 
@@ -336,7 +336,7 @@ suite('cmp', (): void => {
       };
 
       first.mySelf = first;
-      cmp.gtes(first, second).should.equal(true);
+      compare.gtes(first, second).should.equal(true);
     });
 
     test('second with self reference => false', async (): Promise<void> => {
@@ -350,7 +350,7 @@ suite('cmp', (): void => {
       };
 
       second.mySelf = second;
-      cmp.gtes(first, second).should.equal(false);
+      compare.gtes(first, second).should.equal(false);
     });
 
     test('both with self reference => true', async (): Promise<void> => {
@@ -366,7 +366,7 @@ suite('cmp', (): void => {
 
       first.mySelf = first;
       second.mySelf = second;
-      cmp.gtes(first, second).should.equal(true);
+      compare.gtes(first, second).should.equal(true);
     });
   });
 
@@ -382,7 +382,7 @@ suite('cmp', (): void => {
       };
 
       first.mySelf = first;
-      cmp.lt(first, second).should.equal(false);
+      compare.lt(first, second).should.equal(false);
     });
 
     test('second with self reference => true', async (): Promise<void> => {
@@ -396,7 +396,7 @@ suite('cmp', (): void => {
       };
 
       second.mySelf = second;
-      cmp.lt(first, second).should.equal(true);
+      compare.lt(first, second).should.equal(true);
     });
 
     test('both with self reference => false', async (): Promise<void> => {
@@ -412,7 +412,7 @@ suite('cmp', (): void => {
 
       first.mySelf = first;
       second.mySelf = second;
-      cmp.lt(first, second).should.equal(false);
+      compare.lt(first, second).should.equal(false);
     });
   });
 
@@ -428,7 +428,7 @@ suite('cmp', (): void => {
       };
 
       first.mySelf = first;
-      cmp.lts(first, second).should.equal(false);
+      compare.lts(first, second).should.equal(false);
     });
 
     test('second with self reference => true', async (): Promise<void> => {
@@ -442,7 +442,7 @@ suite('cmp', (): void => {
       };
 
       second.mySelf = second;
-      cmp.lts(first, second).should.equal(true);
+      compare.lts(first, second).should.equal(true);
     });
 
     test('both with self reference => false', async (): Promise<void> => {
@@ -458,7 +458,7 @@ suite('cmp', (): void => {
 
       first.mySelf = first;
       second.mySelf = second;
-      cmp.lts(first, second).should.equal(false);
+      compare.lts(first, second).should.equal(false);
     });
   });
 
@@ -474,7 +474,7 @@ suite('cmp', (): void => {
       };
 
       first.mySelf = first;
-      cmp.lte(first, second).should.equal(false);
+      compare.lte(first, second).should.equal(false);
     });
 
     test('second with self reference => true', async (): Promise<void> => {
@@ -488,7 +488,7 @@ suite('cmp', (): void => {
       };
 
       second.mySelf = second;
-      cmp.lte(first, second).should.equal(true);
+      compare.lte(first, second).should.equal(true);
     });
 
     test('both with self reference => true', async (): Promise<void> => {
@@ -504,7 +504,7 @@ suite('cmp', (): void => {
 
       first.mySelf = first;
       second.mySelf = second;
-      cmp.lte(first, second).should.equal(true);
+      compare.lte(first, second).should.equal(true);
     });
   });
 
@@ -520,7 +520,7 @@ suite('cmp', (): void => {
       };
 
       first.mySelf = first;
-      cmp.ltes(first, second).should.equal(false);
+      compare.ltes(first, second).should.equal(false);
     });
 
     test('second with self reference => true', async (): Promise<void> => {
@@ -534,7 +534,7 @@ suite('cmp', (): void => {
       };
 
       second.mySelf = second;
-      cmp.ltes(first, second).should.equal(true);
+      compare.ltes(first, second).should.equal(true);
     });
 
     test('both with self reference => true', async (): Promise<void> => {
@@ -550,7 +550,7 @@ suite('cmp', (): void => {
 
       first.mySelf = first;
       second.mySelf = second;
-      cmp.ltes(first, second).should.equal(true);
+      compare.ltes(first, second).should.equal(true);
     });
   });
 
@@ -566,7 +566,7 @@ suite('cmp', (): void => {
       };
 
       first.mySelf = first;
-      cmp.id(first, second).should.equal(false);
+      compare.id(first, second).should.equal(false);
     });
 
     test('second with self reference => false', async (): Promise<void> => {
@@ -580,7 +580,7 @@ suite('cmp', (): void => {
       };
 
       second.mySelf = second;
-      cmp.id(first, second).should.equal(false);
+      compare.id(first, second).should.equal(false);
     });
 
     test('both with self reference => false', async (): Promise<void> => {
@@ -596,7 +596,7 @@ suite('cmp', (): void => {
 
       first.mySelf = first;
       second.mySelf = second;
-      cmp.id(first, second).should.equal(false);
+      compare.id(first, second).should.equal(false);
     });
 
     test('identical with self reference => true', async (): Promise<void> => {
@@ -606,7 +606,7 @@ suite('cmp', (): void => {
       };
 
       first.mySelf = first;
-      cmp.id(first, first).should.equal(true);
+      compare.id(first, first).should.equal(true);
     });
   });
 });

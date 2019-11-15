@@ -15,4 +15,4 @@ const unbox = function (value: any): any {
   return value.valueOf();
 };
 
-export default unbox;
+export { unbox };

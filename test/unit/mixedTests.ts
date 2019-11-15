@@ -1,4 +1,4 @@
-import cmp from '../../lib/compare';
+import { compare } from '../../lib/compare';
 import 'should';
 
 suite('mixed types', (): void => {
@@ -11,19 +11,19 @@ suite('mixed types', (): void => {
   suite('eq', (): void => {
     suite('any => false', (): void => {
       test('number x string', async (): Promise<void> => {
-        cmp.eq(0, '').should.equal(false);
+        compare.eq(0, '').should.equal(false);
       });
 
       test('number x boolean', async (): Promise<void> => {
-        cmp.eq(0, false).should.equal(false);
+        compare.eq(0, false).should.equal(false);
       });
 
       test('string x boolean', async (): Promise<void> => {
-        cmp.eq('', false).should.equal(false);
+        compare.eq('', false).should.equal(false);
       });
 
       test('function x string', async (): Promise<void> => {
-        cmp.eq(fn, fAsString).should.equal(false);
+        compare.eq(fn, fAsString).should.equal(false);
       });
     });
   });
@@ -31,19 +31,19 @@ suite('mixed types', (): void => {
   suite('eqs', (): void => {
     suite('any => false', (): void => {
       test('number x string', async (): Promise<void> => {
-        cmp.eqs(0, '').should.equal(false);
+        compare.eqs(0, '').should.equal(false);
       });
 
       test('number x boolean', async (): Promise<void> => {
-        cmp.eqs(0, false).should.equal(false);
+        compare.eqs(0, false).should.equal(false);
       });
 
       test('string x boolean', async (): Promise<void> => {
-        cmp.eqs('', false).should.equal(false);
+        compare.eqs('', false).should.equal(false);
       });
 
       test('function x string', async (): Promise<void> => {
-        cmp.eqs(fn, fAsString).should.equal(false);
+        compare.eqs(fn, fAsString).should.equal(false);
       });
     });
   });
@@ -51,19 +51,19 @@ suite('mixed types', (): void => {
   suite('ne', (): void => {
     suite('any => true', (): void => {
       test('number x string', async (): Promise<void> => {
-        cmp.ne(0, '').should.equal(true);
+        compare.ne(0, '').should.equal(true);
       });
 
       test('number x boolean', async (): Promise<void> => {
-        cmp.ne(0, false).should.equal(true);
+        compare.ne(0, false).should.equal(true);
       });
 
       test('string x boolean', async (): Promise<void> => {
-        cmp.ne('', false).should.equal(true);
+        compare.ne('', false).should.equal(true);
       });
 
       test('function x string', async (): Promise<void> => {
-        cmp.ne(fn, fAsString).should.equal(true);
+        compare.ne(fn, fAsString).should.equal(true);
       });
     });
   });
@@ -71,19 +71,19 @@ suite('mixed types', (): void => {
   suite('nes', (): void => {
     suite('any => false', (): void => {
       test('number x string', async (): Promise<void> => {
-        cmp.nes(0, '').should.equal(false);
+        compare.nes(0, '').should.equal(false);
       });
 
       test('number x boolean', async (): Promise<void> => {
-        cmp.nes(0, false).should.equal(false);
+        compare.nes(0, false).should.equal(false);
       });
 
       test('string x boolean', async (): Promise<void> => {
-        cmp.nes('', false).should.equal(false);
+        compare.nes('', false).should.equal(false);
       });
 
       test('function x string', async (): Promise<void> => {
-        cmp.nes(fn, fAsString).should.equal(false);
+        compare.nes(fn, fAsString).should.equal(false);
       });
     });
   });
@@ -91,19 +91,19 @@ suite('mixed types', (): void => {
   suite('gt', (): void => {
     suite('any => false', (): void => {
       test('number x string', async (): Promise<void> => {
-        cmp.gt(0, '').should.equal(false);
+        compare.gt(0, '').should.equal(false);
       });
 
       test('number x boolean', async (): Promise<void> => {
-        cmp.gt(0, false).should.equal(false);
+        compare.gt(0, false).should.equal(false);
       });
 
       test('string x boolean', async (): Promise<void> => {
-        cmp.gt('', false).should.equal(false);
+        compare.gt('', false).should.equal(false);
       });
 
       test('function x string', async (): Promise<void> => {
-        cmp.gt(fn, fAsString).should.equal(false);
+        compare.gt(fn, fAsString).should.equal(false);
       });
     });
   });
@@ -111,19 +111,19 @@ suite('mixed types', (): void => {
   suite('gts', (): void => {
     suite('any => false', (): void => {
       test('number x string', async (): Promise<void> => {
-        cmp.gts(0, '').should.equal(false);
+        compare.gts(0, '').should.equal(false);
       });
 
       test('number x boolean', async (): Promise<void> => {
-        cmp.gts(0, false).should.equal(false);
+        compare.gts(0, false).should.equal(false);
       });
 
       test('string x boolean', async (): Promise<void> => {
-        cmp.gts('', false).should.equal(false);
+        compare.gts('', false).should.equal(false);
       });
 
       test('function x string', async (): Promise<void> => {
-        cmp.gts(fn, fAsString).should.equal(false);
+        compare.gts(fn, fAsString).should.equal(false);
       });
     });
   });
@@ -131,19 +131,19 @@ suite('mixed types', (): void => {
   suite('gte', (): void => {
     suite('any => false', (): void => {
       test('number x string', async (): Promise<void> => {
-        cmp.gte(0, '').should.equal(false);
+        compare.gte(0, '').should.equal(false);
       });
 
       test('number x boolean', async (): Promise<void> => {
-        cmp.gte(0, false).should.equal(false);
+        compare.gte(0, false).should.equal(false);
       });
 
       test('string x boolean', async (): Promise<void> => {
-        cmp.gte('', false).should.equal(false);
+        compare.gte('', false).should.equal(false);
       });
 
       test('function x string', async (): Promise<void> => {
-        cmp.gte(fn, fAsString).should.equal(false);
+        compare.gte(fn, fAsString).should.equal(false);
       });
     });
   });
@@ -151,19 +151,19 @@ suite('mixed types', (): void => {
   suite('gtes', (): void => {
     suite('any => false', (): void => {
       test('number x string', async (): Promise<void> => {
-        cmp.gtes(0, '').should.equal(false);
+        compare.gtes(0, '').should.equal(false);
       });
 
       test('number x boolean', async (): Promise<void> => {
-        cmp.gtes(0, false).should.equal(false);
+        compare.gtes(0, false).should.equal(false);
       });
 
       test('string x boolean', async (): Promise<void> => {
-        cmp.gtes('', false).should.equal(false);
+        compare.gtes('', false).should.equal(false);
       });
 
       test('function x string', async (): Promise<void> => {
-        cmp.gtes(fn, fAsString).should.equal(false);
+        compare.gtes(fn, fAsString).should.equal(false);
       });
     });
   });
@@ -171,19 +171,19 @@ suite('mixed types', (): void => {
   suite('lt', (): void => {
     suite('any => false', (): void => {
       test('number x string', async (): Promise<void> => {
-        cmp.lt(0, '').should.equal(false);
+        compare.lt(0, '').should.equal(false);
       });
 
       test('number x boolean', async (): Promise<void> => {
-        cmp.lt(0, false).should.equal(false);
+        compare.lt(0, false).should.equal(false);
       });
 
       test('string x boolean', async (): Promise<void> => {
-        cmp.lt('', false).should.equal(false);
+        compare.lt('', false).should.equal(false);
       });
 
       test('function x string', async (): Promise<void> => {
-        cmp.lt(fn, fAsString).should.equal(false);
+        compare.lt(fn, fAsString).should.equal(false);
       });
     });
   });
@@ -191,19 +191,19 @@ suite('mixed types', (): void => {
   suite('lts', (): void => {
     suite('any => false', (): void => {
       test('number x string', async (): Promise<void> => {
-        cmp.lts(0, '').should.equal(false);
+        compare.lts(0, '').should.equal(false);
       });
 
       test('number x boolean', async (): Promise<void> => {
-        cmp.lts(0, false).should.equal(false);
+        compare.lts(0, false).should.equal(false);
       });
 
       test('string x boolean', async (): Promise<void> => {
-        cmp.lts('', false).should.equal(false);
+        compare.lts('', false).should.equal(false);
       });
 
       test('function x string', async (): Promise<void> => {
-        cmp.lts(fn, fAsString).should.equal(false);
+        compare.lts(fn, fAsString).should.equal(false);
       });
     });
   });
@@ -211,19 +211,19 @@ suite('mixed types', (): void => {
   suite('lte', (): void => {
     suite('any => false', (): void => {
       test('number x string', async (): Promise<void> => {
-        cmp.lte(0, '').should.equal(false);
+        compare.lte(0, '').should.equal(false);
       });
 
       test('number x boolean', async (): Promise<void> => {
-        cmp.lte(0, false).should.equal(false);
+        compare.lte(0, false).should.equal(false);
       });
 
       test('string x boolean', async (): Promise<void> => {
-        cmp.lte('', false).should.equal(false);
+        compare.lte('', false).should.equal(false);
       });
 
       test('function x string', async (): Promise<void> => {
-        cmp.lte(fn, fAsString).should.equal(false);
+        compare.lte(fn, fAsString).should.equal(false);
       });
     });
   });
@@ -231,19 +231,19 @@ suite('mixed types', (): void => {
   suite('ltes', (): void => {
     suite('any => false', (): void => {
       test('number x string', async (): Promise<void> => {
-        cmp.ltes(0, '').should.equal(false);
+        compare.ltes(0, '').should.equal(false);
       });
 
       test('number x boolean', async (): Promise<void> => {
-        cmp.ltes(0, false).should.equal(false);
+        compare.ltes(0, false).should.equal(false);
       });
 
       test('string x boolean', async (): Promise<void> => {
-        cmp.ltes('', false).should.equal(false);
+        compare.ltes('', false).should.equal(false);
       });
 
       test('function x string', async (): Promise<void> => {
-        cmp.ltes(fn, fAsString).should.equal(false);
+        compare.ltes(fn, fAsString).should.equal(false);
       });
     });
   });
@@ -251,19 +251,19 @@ suite('mixed types', (): void => {
   suite('id', (): void => {
     suite('any => false', (): void => {
       test('number x string', async (): Promise<void> => {
-        cmp.id(0, '').should.equal(false);
+        compare.id(0, '').should.equal(false);
       });
 
       test('number x boolean', async (): Promise<void> => {
-        cmp.id(0, false).should.equal(false);
+        compare.id(0, false).should.equal(false);
       });
 
       test('string x boolean', async (): Promise<void> => {
-        cmp.id('', false).should.equal(false);
+        compare.id('', false).should.equal(false);
       });
 
       test('function x string', async (): Promise<void> => {
-        cmp.id(fn, fAsString).should.equal(false);
+        compare.id(fn, fAsString).should.equal(false);
       });
     });
   });

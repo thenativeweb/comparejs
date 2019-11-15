@@ -1,4 +1,4 @@
-import cmp from '../../lib/compare';
+import { compare } from '../../lib/compare';
 import 'should';
 
 suite('string x string', (): void => {
@@ -15,85 +15,85 @@ suite('string x string', (): void => {
   suite('eq', (): void => {
     suite('equal => true', (): void => {
       test('string x string', async (): Promise<void> => {
-        cmp.eq(foo, foo).should.equal(true);
+        compare.eq(foo, foo).should.equal(true);
       });
 
       test('string x String()', async (): Promise<void> => {
-        cmp.eq(foo, Foo).should.equal(true);
+        compare.eq(foo, Foo).should.equal(true);
       });
 
       test('String() x string', async (): Promise<void> => {
-        cmp.eq(Foo, foo).should.equal(true);
+        compare.eq(Foo, foo).should.equal(true);
       });
 
       test('String() x String()', async (): Promise<void> => {
-        cmp.eq(Foo, Foo).should.equal(true);
+        compare.eq(Foo, Foo).should.equal(true);
       });
 
       test('empty x empty', async (): Promise<void> => {
-        cmp.eq(empty, empty).should.equal(true);
+        compare.eq(empty, empty).should.equal(true);
       });
 
       test('empty x Empty()', async (): Promise<void> => {
-        cmp.eq(empty, Empty).should.equal(true);
+        compare.eq(empty, Empty).should.equal(true);
       });
 
       test('Empty() x empty', async (): Promise<void> => {
-        cmp.eq(Empty, empty).should.equal(true);
+        compare.eq(Empty, empty).should.equal(true);
       });
 
       test('Empty() x Empty()', async (): Promise<void> => {
-        cmp.eq(Empty, Empty).should.equal(true);
+        compare.eq(Empty, Empty).should.equal(true);
       });
     });
 
     suite('not equal => false', (): void => {
       test('string x string', async (): Promise<void> => {
-        cmp.eq(foo, bar).should.equal(false);
+        compare.eq(foo, bar).should.equal(false);
       });
 
       test('string x String()', async (): Promise<void> => {
-        cmp.eq(foo, Bar).should.equal(false);
+        compare.eq(foo, Bar).should.equal(false);
       });
 
       test('String() x string', async (): Promise<void> => {
-        cmp.eq(Foo, bar).should.equal(false);
+        compare.eq(Foo, bar).should.equal(false);
       });
 
       test('String() x String()', async (): Promise<void> => {
-        cmp.eq(Foo, Bar).should.equal(false);
+        compare.eq(Foo, Bar).should.equal(false);
       });
 
       test('string x empty', async (): Promise<void> => {
-        cmp.eq(foo, empty).should.equal(false);
+        compare.eq(foo, empty).should.equal(false);
       });
 
       test('string x Empty()', async (): Promise<void> => {
-        cmp.eq(foo, Empty).should.equal(false);
+        compare.eq(foo, Empty).should.equal(false);
       });
 
       test('String() x empty', async (): Promise<void> => {
-        cmp.eq(Foo, empty).should.equal(false);
+        compare.eq(Foo, empty).should.equal(false);
       });
 
       test('String() x Empty()', async (): Promise<void> => {
-        cmp.eq(Foo, Empty).should.equal(false);
+        compare.eq(Foo, Empty).should.equal(false);
       });
 
       test('empty x string', async (): Promise<void> => {
-        cmp.eq(empty, foo).should.equal(false);
+        compare.eq(empty, foo).should.equal(false);
       });
 
       test('empty x String()', async (): Promise<void> => {
-        cmp.eq(empty, Foo).should.equal(false);
+        compare.eq(empty, Foo).should.equal(false);
       });
 
       test('Empty() x string', async (): Promise<void> => {
-        cmp.eq(Empty, foo).should.equal(false);
+        compare.eq(Empty, foo).should.equal(false);
       });
 
       test('Empty() x String()', async (): Promise<void> => {
-        cmp.eq(Empty, Foo).should.equal(false);
+        compare.eq(Empty, Foo).should.equal(false);
       });
     });
   });
@@ -101,7 +101,7 @@ suite('string x string', (): void => {
   suite('eqs', (): void => {
     suite('any => false', (): void => {
       test('string x string', async (): Promise<void> => {
-        cmp.eqs(foo, foo).should.equal(false);
+        compare.eqs(foo, foo).should.equal(false);
       });
     });
   });
@@ -109,85 +109,85 @@ suite('string x string', (): void => {
   suite('ne', (): void => {
     suite('equal => false', (): void => {
       test('string x string', async (): Promise<void> => {
-        cmp.ne(foo, foo).should.equal(false);
+        compare.ne(foo, foo).should.equal(false);
       });
 
       test('string x String()', async (): Promise<void> => {
-        cmp.ne(foo, Foo).should.equal(false);
+        compare.ne(foo, Foo).should.equal(false);
       });
 
       test('String() x string', async (): Promise<void> => {
-        cmp.ne(Foo, foo).should.equal(false);
+        compare.ne(Foo, foo).should.equal(false);
       });
 
       test('String() x String()', async (): Promise<void> => {
-        cmp.ne(Foo, Foo).should.equal(false);
+        compare.ne(Foo, Foo).should.equal(false);
       });
 
       test('empty x empty', async (): Promise<void> => {
-        cmp.ne(empty, empty).should.equal(false);
+        compare.ne(empty, empty).should.equal(false);
       });
 
       test('empty x Empty()', async (): Promise<void> => {
-        cmp.ne(empty, Empty).should.equal(false);
+        compare.ne(empty, Empty).should.equal(false);
       });
 
       test('Empty() x empty', async (): Promise<void> => {
-        cmp.ne(Empty, empty).should.equal(false);
+        compare.ne(Empty, empty).should.equal(false);
       });
 
       test('Empty() x Empty()', async (): Promise<void> => {
-        cmp.ne(Empty, Empty).should.equal(false);
+        compare.ne(Empty, Empty).should.equal(false);
       });
     });
 
     suite('not equal => true', (): void => {
       test('string x string', async (): Promise<void> => {
-        cmp.ne(foo, bar).should.equal(true);
+        compare.ne(foo, bar).should.equal(true);
       });
 
       test('string x String()', async (): Promise<void> => {
-        cmp.ne(foo, Bar).should.equal(true);
+        compare.ne(foo, Bar).should.equal(true);
       });
 
       test('String() x string', async (): Promise<void> => {
-        cmp.ne(Foo, bar).should.equal(true);
+        compare.ne(Foo, bar).should.equal(true);
       });
 
       test('String() x String()', async (): Promise<void> => {
-        cmp.ne(Foo, Bar).should.equal(true);
+        compare.ne(Foo, Bar).should.equal(true);
       });
 
       test('string x empty', async (): Promise<void> => {
-        cmp.ne(foo, empty).should.equal(true);
+        compare.ne(foo, empty).should.equal(true);
       });
 
       test('string x Empty()', async (): Promise<void> => {
-        cmp.ne(foo, Empty).should.equal(true);
+        compare.ne(foo, Empty).should.equal(true);
       });
 
       test('String() x empty', async (): Promise<void> => {
-        cmp.ne(Foo, empty).should.equal(true);
+        compare.ne(Foo, empty).should.equal(true);
       });
 
       test('String() x Empty()', async (): Promise<void> => {
-        cmp.ne(Foo, Empty).should.equal(true);
+        compare.ne(Foo, Empty).should.equal(true);
       });
 
       test('empty x string', async (): Promise<void> => {
-        cmp.ne(empty, foo).should.equal(true);
+        compare.ne(empty, foo).should.equal(true);
       });
 
       test('empty x String()', async (): Promise<void> => {
-        cmp.ne(empty, Foo).should.equal(true);
+        compare.ne(empty, Foo).should.equal(true);
       });
 
       test('Empty() x string', async (): Promise<void> => {
-        cmp.ne(Empty, foo).should.equal(true);
+        compare.ne(Empty, foo).should.equal(true);
       });
 
       test('Empty() x String()', async (): Promise<void> => {
-        cmp.ne(Empty, Foo).should.equal(true);
+        compare.ne(Empty, Foo).should.equal(true);
       });
     });
   });
@@ -195,7 +195,7 @@ suite('string x string', (): void => {
   suite('nes', (): void => {
     suite('any => false', (): void => {
       test('string x string', async (): Promise<void> => {
-        cmp.nes(foo, foo).should.equal(false);
+        compare.nes(foo, foo).should.equal(false);
       });
     });
   });
@@ -203,103 +203,103 @@ suite('string x string', (): void => {
   suite('gt', (): void => {
     suite('greater => true', (): void => {
       test('string x string', async (): Promise<void> => {
-        cmp.gt(foo, bar).should.equal(true);
+        compare.gt(foo, bar).should.equal(true);
       });
 
       test('string x String()', async (): Promise<void> => {
-        cmp.gt(foo, Bar).should.equal(true);
+        compare.gt(foo, Bar).should.equal(true);
       });
 
       test('String() x string', async (): Promise<void> => {
-        cmp.gt(Foo, bar).should.equal(true);
+        compare.gt(Foo, bar).should.equal(true);
       });
 
       test('String() x String()', async (): Promise<void> => {
-        cmp.gt(Foo, Bar).should.equal(true);
+        compare.gt(Foo, Bar).should.equal(true);
       });
 
       test('string x empty', async (): Promise<void> => {
-        cmp.gt(foo, empty).should.equal(true);
+        compare.gt(foo, empty).should.equal(true);
       });
 
       test('string x Empty()', async (): Promise<void> => {
-        cmp.gt(foo, Empty).should.equal(true);
+        compare.gt(foo, Empty).should.equal(true);
       });
 
       test('String() x empty', async (): Promise<void> => {
-        cmp.gt(Foo, empty).should.equal(true);
+        compare.gt(Foo, empty).should.equal(true);
       });
 
       test('String() x Empty()', async (): Promise<void> => {
-        cmp.gt(Foo, Empty).should.equal(true);
+        compare.gt(Foo, Empty).should.equal(true);
       });
     });
 
     suite('equal => false', (): void => {
       test('string x string', async (): Promise<void> => {
-        cmp.gt(foo, foo).should.equal(false);
+        compare.gt(foo, foo).should.equal(false);
       });
 
       test('string x String()', async (): Promise<void> => {
-        cmp.gt(foo, Foo).should.equal(false);
+        compare.gt(foo, Foo).should.equal(false);
       });
 
       test('String() x string', async (): Promise<void> => {
-        cmp.gt(Foo, foo).should.equal(false);
+        compare.gt(Foo, foo).should.equal(false);
       });
 
       test('String() x String()', async (): Promise<void> => {
-        cmp.gt(Foo, Foo).should.equal(false);
+        compare.gt(Foo, Foo).should.equal(false);
       });
 
       test('empty x empty', async (): Promise<void> => {
-        cmp.gt(empty, empty).should.equal(false);
+        compare.gt(empty, empty).should.equal(false);
       });
 
       test('empty x Empty()', async (): Promise<void> => {
-        cmp.gt(empty, Empty).should.equal(false);
+        compare.gt(empty, Empty).should.equal(false);
       });
 
       test('Empty() x empty', async (): Promise<void> => {
-        cmp.gt(Empty, empty).should.equal(false);
+        compare.gt(Empty, empty).should.equal(false);
       });
 
       test('Empty() x Empty()', async (): Promise<void> => {
-        cmp.gt(Empty, Empty).should.equal(false);
+        compare.gt(Empty, Empty).should.equal(false);
       });
     });
 
     suite('less => false', (): void => {
       test('string x string', async (): Promise<void> => {
-        cmp.gt(bar, foo).should.equal(false);
+        compare.gt(bar, foo).should.equal(false);
       });
 
       test('string x String()', async (): Promise<void> => {
-        cmp.gt(bar, Foo).should.equal(false);
+        compare.gt(bar, Foo).should.equal(false);
       });
 
       test('String() x string', async (): Promise<void> => {
-        cmp.gt(Bar, foo).should.equal(false);
+        compare.gt(Bar, foo).should.equal(false);
       });
 
       test('String() x String()', async (): Promise<void> => {
-        cmp.gt(Bar, Foo).should.equal(false);
+        compare.gt(Bar, Foo).should.equal(false);
       });
 
       test('empty x string', async (): Promise<void> => {
-        cmp.gt(empty, foo).should.equal(false);
+        compare.gt(empty, foo).should.equal(false);
       });
 
       test('empty x String()', async (): Promise<void> => {
-        cmp.gt(empty, Foo).should.equal(false);
+        compare.gt(empty, Foo).should.equal(false);
       });
 
       test('Empty() x string', async (): Promise<void> => {
-        cmp.gt(Empty, foo).should.equal(false);
+        compare.gt(Empty, foo).should.equal(false);
       });
 
       test('Empty() x String()', async (): Promise<void> => {
-        cmp.gt(Empty, Foo).should.equal(false);
+        compare.gt(Empty, Foo).should.equal(false);
       });
     });
   });
@@ -307,7 +307,7 @@ suite('string x string', (): void => {
   suite('gts', (): void => {
     suite('any => false', (): void => {
       test('string x string', async (): Promise<void> => {
-        cmp.gts(foo, foo).should.equal(false);
+        compare.gts(foo, foo).should.equal(false);
       });
     });
   });
@@ -315,103 +315,103 @@ suite('string x string', (): void => {
   suite('gte', (): void => {
     suite('greater => true', (): void => {
       test('string x string', async (): Promise<void> => {
-        cmp.gte(foo, bar).should.equal(true);
+        compare.gte(foo, bar).should.equal(true);
       });
 
       test('string x String()', async (): Promise<void> => {
-        cmp.gte(foo, Bar).should.equal(true);
+        compare.gte(foo, Bar).should.equal(true);
       });
 
       test('String() x string', async (): Promise<void> => {
-        cmp.gte(Foo, bar).should.equal(true);
+        compare.gte(Foo, bar).should.equal(true);
       });
 
       test('String() x String()', async (): Promise<void> => {
-        cmp.gte(Foo, Bar).should.equal(true);
+        compare.gte(Foo, Bar).should.equal(true);
       });
 
       test('string x empty', async (): Promise<void> => {
-        cmp.gte(foo, empty).should.equal(true);
+        compare.gte(foo, empty).should.equal(true);
       });
 
       test('string x Empty()', async (): Promise<void> => {
-        cmp.gte(foo, Empty).should.equal(true);
+        compare.gte(foo, Empty).should.equal(true);
       });
 
       test('String() x empty', async (): Promise<void> => {
-        cmp.gte(Foo, empty).should.equal(true);
+        compare.gte(Foo, empty).should.equal(true);
       });
 
       test('String() x Empty()', async (): Promise<void> => {
-        cmp.gte(Foo, Empty).should.equal(true);
+        compare.gte(Foo, Empty).should.equal(true);
       });
     });
 
     suite('equal => true', (): void => {
       test('string x string', async (): Promise<void> => {
-        cmp.gte(foo, foo).should.equal(true);
+        compare.gte(foo, foo).should.equal(true);
       });
 
       test('string x String()', async (): Promise<void> => {
-        cmp.gte(foo, Foo).should.equal(true);
+        compare.gte(foo, Foo).should.equal(true);
       });
 
       test('String() x string', async (): Promise<void> => {
-        cmp.gte(Foo, foo).should.equal(true);
+        compare.gte(Foo, foo).should.equal(true);
       });
 
       test('String() x String()', async (): Promise<void> => {
-        cmp.gte(Foo, Foo).should.equal(true);
+        compare.gte(Foo, Foo).should.equal(true);
       });
 
       test('empty x empty', async (): Promise<void> => {
-        cmp.gte(empty, empty).should.equal(true);
+        compare.gte(empty, empty).should.equal(true);
       });
 
       test('empty x Empty()', async (): Promise<void> => {
-        cmp.gte(empty, Empty).should.equal(true);
+        compare.gte(empty, Empty).should.equal(true);
       });
 
       test('Empty() x empty', async (): Promise<void> => {
-        cmp.gte(Empty, empty).should.equal(true);
+        compare.gte(Empty, empty).should.equal(true);
       });
 
       test('Empty() x Empty()', async (): Promise<void> => {
-        cmp.gte(Empty, Empty).should.equal(true);
+        compare.gte(Empty, Empty).should.equal(true);
       });
     });
 
     suite('less => false', (): void => {
       test('string x string', async (): Promise<void> => {
-        cmp.gte(bar, foo).should.equal(false);
+        compare.gte(bar, foo).should.equal(false);
       });
 
       test('string x String()', async (): Promise<void> => {
-        cmp.gte(bar, Foo).should.equal(false);
+        compare.gte(bar, Foo).should.equal(false);
       });
 
       test('String() x string', async (): Promise<void> => {
-        cmp.gte(Bar, foo).should.equal(false);
+        compare.gte(Bar, foo).should.equal(false);
       });
 
       test('String() x String()', async (): Promise<void> => {
-        cmp.gte(Bar, Foo).should.equal(false);
+        compare.gte(Bar, Foo).should.equal(false);
       });
 
       test('empty x string', async (): Promise<void> => {
-        cmp.gte(empty, foo).should.equal(false);
+        compare.gte(empty, foo).should.equal(false);
       });
 
       test('empty x String()', async (): Promise<void> => {
-        cmp.gte(empty, Foo).should.equal(false);
+        compare.gte(empty, Foo).should.equal(false);
       });
 
       test('Empty() x string', async (): Promise<void> => {
-        cmp.gte(Empty, foo).should.equal(false);
+        compare.gte(Empty, foo).should.equal(false);
       });
 
       test('Empty() x String()', async (): Promise<void> => {
-        cmp.gte(Empty, Foo).should.equal(false);
+        compare.gte(Empty, Foo).should.equal(false);
       });
     });
   });
@@ -419,7 +419,7 @@ suite('string x string', (): void => {
   suite('gtes', (): void => {
     suite('any => false', (): void => {
       test('string x string', async (): Promise<void> => {
-        cmp.gtes(foo, foo).should.equal(false);
+        compare.gtes(foo, foo).should.equal(false);
       });
     });
   });
@@ -427,103 +427,103 @@ suite('string x string', (): void => {
   suite('lt', (): void => {
     suite('greater => false', (): void => {
       test('string x string', async (): Promise<void> => {
-        cmp.lt(foo, bar).should.equal(false);
+        compare.lt(foo, bar).should.equal(false);
       });
 
       test('string x String()', async (): Promise<void> => {
-        cmp.lt(foo, Bar).should.equal(false);
+        compare.lt(foo, Bar).should.equal(false);
       });
 
       test('String() x string', async (): Promise<void> => {
-        cmp.lt(Foo, bar).should.equal(false);
+        compare.lt(Foo, bar).should.equal(false);
       });
 
       test('String() x String()', async (): Promise<void> => {
-        cmp.lt(Foo, Bar).should.equal(false);
+        compare.lt(Foo, Bar).should.equal(false);
       });
 
       test('string x empty', async (): Promise<void> => {
-        cmp.lt(foo, empty).should.equal(false);
+        compare.lt(foo, empty).should.equal(false);
       });
 
       test('string x Empty()', async (): Promise<void> => {
-        cmp.lt(foo, Empty).should.equal(false);
+        compare.lt(foo, Empty).should.equal(false);
       });
 
       test('String() x empty', async (): Promise<void> => {
-        cmp.lt(Foo, empty).should.equal(false);
+        compare.lt(Foo, empty).should.equal(false);
       });
 
       test('String() x Empty()', async (): Promise<void> => {
-        cmp.lt(Foo, Empty).should.equal(false);
+        compare.lt(Foo, Empty).should.equal(false);
       });
     });
 
     suite('equal => false', (): void => {
       test('string x string', async (): Promise<void> => {
-        cmp.lt(foo, foo).should.equal(false);
+        compare.lt(foo, foo).should.equal(false);
       });
 
       test('string x String()', async (): Promise<void> => {
-        cmp.lt(foo, Foo).should.equal(false);
+        compare.lt(foo, Foo).should.equal(false);
       });
 
       test('String() x string', async (): Promise<void> => {
-        cmp.lt(Foo, foo).should.equal(false);
+        compare.lt(Foo, foo).should.equal(false);
       });
 
       test('String() x String()', async (): Promise<void> => {
-        cmp.lt(Foo, Foo).should.equal(false);
+        compare.lt(Foo, Foo).should.equal(false);
       });
 
       test('empty x empty', async (): Promise<void> => {
-        cmp.lt(empty, empty).should.equal(false);
+        compare.lt(empty, empty).should.equal(false);
       });
 
       test('empty x Empty()', async (): Promise<void> => {
-        cmp.lt(empty, Empty).should.equal(false);
+        compare.lt(empty, Empty).should.equal(false);
       });
 
       test('Empty() x empty', async (): Promise<void> => {
-        cmp.lt(Empty, empty).should.equal(false);
+        compare.lt(Empty, empty).should.equal(false);
       });
 
       test('Empty() x Empty()', async (): Promise<void> => {
-        cmp.lt(Empty, Empty).should.equal(false);
+        compare.lt(Empty, Empty).should.equal(false);
       });
     });
 
     suite('less => true', (): void => {
       test('string x string', async (): Promise<void> => {
-        cmp.lt(bar, foo).should.equal(true);
+        compare.lt(bar, foo).should.equal(true);
       });
 
       test('string x String()', async (): Promise<void> => {
-        cmp.lt(bar, Foo).should.equal(true);
+        compare.lt(bar, Foo).should.equal(true);
       });
 
       test('String() x string', async (): Promise<void> => {
-        cmp.lt(Bar, foo).should.equal(true);
+        compare.lt(Bar, foo).should.equal(true);
       });
 
       test('String() x String()', async (): Promise<void> => {
-        cmp.lt(Bar, Foo).should.equal(true);
+        compare.lt(Bar, Foo).should.equal(true);
       });
 
       test('empty x string', async (): Promise<void> => {
-        cmp.lt(empty, foo).should.equal(true);
+        compare.lt(empty, foo).should.equal(true);
       });
 
       test('empty x String()', async (): Promise<void> => {
-        cmp.lt(empty, Foo).should.equal(true);
+        compare.lt(empty, Foo).should.equal(true);
       });
 
       test('Empty() x string', async (): Promise<void> => {
-        cmp.lt(Empty, foo).should.equal(true);
+        compare.lt(Empty, foo).should.equal(true);
       });
 
       test('Empty() x String()', async (): Promise<void> => {
-        cmp.lt(Empty, Foo).should.equal(true);
+        compare.lt(Empty, Foo).should.equal(true);
       });
     });
   });
@@ -531,7 +531,7 @@ suite('string x string', (): void => {
   suite('lts', (): void => {
     suite('any => false', (): void => {
       test('string x string', async (): Promise<void> => {
-        cmp.lts(foo, foo).should.equal(false);
+        compare.lts(foo, foo).should.equal(false);
       });
     });
   });
@@ -539,103 +539,103 @@ suite('string x string', (): void => {
   suite('lte', (): void => {
     suite('greater => false', (): void => {
       test('string x string', async (): Promise<void> => {
-        cmp.lte(foo, bar).should.equal(false);
+        compare.lte(foo, bar).should.equal(false);
       });
 
       test('string x String()', async (): Promise<void> => {
-        cmp.lte(foo, Bar).should.equal(false);
+        compare.lte(foo, Bar).should.equal(false);
       });
 
       test('String() x string', async (): Promise<void> => {
-        cmp.lte(Foo, bar).should.equal(false);
+        compare.lte(Foo, bar).should.equal(false);
       });
 
       test('String() x String()', async (): Promise<void> => {
-        cmp.lte(Foo, Bar).should.equal(false);
+        compare.lte(Foo, Bar).should.equal(false);
       });
 
       test('string x empty', async (): Promise<void> => {
-        cmp.lte(foo, empty).should.equal(false);
+        compare.lte(foo, empty).should.equal(false);
       });
 
       test('string x Empty()', async (): Promise<void> => {
-        cmp.lte(foo, Empty).should.equal(false);
+        compare.lte(foo, Empty).should.equal(false);
       });
 
       test('String() x empty', async (): Promise<void> => {
-        cmp.lte(Foo, empty).should.equal(false);
+        compare.lte(Foo, empty).should.equal(false);
       });
 
       test('String() x Empty()', async (): Promise<void> => {
-        cmp.lte(Foo, Empty).should.equal(false);
+        compare.lte(Foo, Empty).should.equal(false);
       });
     });
 
     suite('equal => true', (): void => {
       test('string x string', async (): Promise<void> => {
-        cmp.lte(foo, foo).should.equal(true);
+        compare.lte(foo, foo).should.equal(true);
       });
 
       test('string x String()', async (): Promise<void> => {
-        cmp.lte(foo, Foo).should.equal(true);
+        compare.lte(foo, Foo).should.equal(true);
       });
 
       test('String() x string', async (): Promise<void> => {
-        cmp.lte(Foo, foo).should.equal(true);
+        compare.lte(Foo, foo).should.equal(true);
       });
 
       test('String() x String()', async (): Promise<void> => {
-        cmp.lte(Foo, Foo).should.equal(true);
+        compare.lte(Foo, Foo).should.equal(true);
       });
 
       test('empty x empty', async (): Promise<void> => {
-        cmp.lte(empty, empty).should.equal(true);
+        compare.lte(empty, empty).should.equal(true);
       });
 
       test('empty x Empty()', async (): Promise<void> => {
-        cmp.lte(empty, Empty).should.equal(true);
+        compare.lte(empty, Empty).should.equal(true);
       });
 
       test('Empty() x empty', async (): Promise<void> => {
-        cmp.lte(Empty, empty).should.equal(true);
+        compare.lte(Empty, empty).should.equal(true);
       });
 
       test('Empty() x Empty()', async (): Promise<void> => {
-        cmp.lte(Empty, Empty).should.equal(true);
+        compare.lte(Empty, Empty).should.equal(true);
       });
     });
 
     suite('less => true', (): void => {
       test('string x string', async (): Promise<void> => {
-        cmp.lte(bar, foo).should.equal(true);
+        compare.lte(bar, foo).should.equal(true);
       });
 
       test('string x String()', async (): Promise<void> => {
-        cmp.lte(bar, Foo).should.equal(true);
+        compare.lte(bar, Foo).should.equal(true);
       });
 
       test('String() x string', async (): Promise<void> => {
-        cmp.lte(Bar, foo).should.equal(true);
+        compare.lte(Bar, foo).should.equal(true);
       });
 
       test('String() x String()', async (): Promise<void> => {
-        cmp.lte(Bar, Foo).should.equal(true);
+        compare.lte(Bar, Foo).should.equal(true);
       });
 
       test('empty x string', async (): Promise<void> => {
-        cmp.lte(empty, foo).should.equal(true);
+        compare.lte(empty, foo).should.equal(true);
       });
 
       test('empty x String()', async (): Promise<void> => {
-        cmp.lte(empty, Foo).should.equal(true);
+        compare.lte(empty, Foo).should.equal(true);
       });
 
       test('Empty() x string', async (): Promise<void> => {
-        cmp.lte(Empty, foo).should.equal(true);
+        compare.lte(Empty, foo).should.equal(true);
       });
 
       test('Empty() x String()', async (): Promise<void> => {
-        cmp.lte(Empty, Foo).should.equal(true);
+        compare.lte(Empty, Foo).should.equal(true);
       });
     });
   });
@@ -643,7 +643,7 @@ suite('string x string', (): void => {
   suite('ltes', (): void => {
     suite('any => false', (): void => {
       test('string x string', async (): Promise<void> => {
-        cmp.ltes(foo, foo).should.equal(false);
+        compare.ltes(foo, foo).should.equal(false);
       });
     });
   });
@@ -651,77 +651,77 @@ suite('string x string', (): void => {
   suite('id', (): void => {
     suite('identical => true', (): void => {
       test('string x string', async (): Promise<void> => {
-        cmp.id(foo, foo).should.equal(true);
+        compare.id(foo, foo).should.equal(true);
       });
 
       test('String() x String()', async (): Promise<void> => {
-        cmp.id(Foo, Foo).should.equal(true);
+        compare.id(Foo, Foo).should.equal(true);
       });
 
       test('empty x empty', async (): Promise<void> => {
-        cmp.id(empty, empty).should.equal(true);
+        compare.id(empty, empty).should.equal(true);
       });
 
       test('Empty() x Empty()', async (): Promise<void> => {
-        cmp.id(Empty, Empty).should.equal(true);
+        compare.id(Empty, Empty).should.equal(true);
       });
     });
 
     suite('not identical => false', (): void => {
       test('string x string', async (): Promise<void> => {
-        cmp.id(foo, bar).should.equal(false);
+        compare.id(foo, bar).should.equal(false);
       });
 
       test('string x String()', async (): Promise<void> => {
-        cmp.id(foo, Foo).should.equal(false);
+        compare.id(foo, Foo).should.equal(false);
       });
 
       test('String() x string', async (): Promise<void> => {
-        cmp.id(Foo, foo).should.equal(false);
+        compare.id(Foo, foo).should.equal(false);
       });
 
       test('String() x String()', async (): Promise<void> => {
-        cmp.id(Foo, Bar).should.equal(false);
+        compare.id(Foo, Bar).should.equal(false);
       });
 
       test('string x empty', async (): Promise<void> => {
-        cmp.id(foo, empty).should.equal(false);
+        compare.id(foo, empty).should.equal(false);
       });
 
       test('string x Empty()', async (): Promise<void> => {
-        cmp.id(foo, Empty).should.equal(false);
+        compare.id(foo, Empty).should.equal(false);
       });
 
       test('String() x empty', async (): Promise<void> => {
-        cmp.id(Foo, empty).should.equal(false);
+        compare.id(Foo, empty).should.equal(false);
       });
 
       test('String() x Empty()', async (): Promise<void> => {
-        cmp.id(Foo, Empty).should.equal(false);
+        compare.id(Foo, Empty).should.equal(false);
       });
 
       test('empty x string', async (): Promise<void> => {
-        cmp.id(empty, foo).should.equal(false);
+        compare.id(empty, foo).should.equal(false);
       });
 
       test('empty x String()', async (): Promise<void> => {
-        cmp.id(empty, Foo).should.equal(false);
+        compare.id(empty, Foo).should.equal(false);
       });
 
       test('Empty() x string', async (): Promise<void> => {
-        cmp.id(Empty, foo).should.equal(false);
+        compare.id(Empty, foo).should.equal(false);
       });
 
       test('Empty() x String()', async (): Promise<void> => {
-        cmp.id(Empty, Foo).should.equal(false);
+        compare.id(Empty, Foo).should.equal(false);
       });
 
       test('empty x Empty()', async (): Promise<void> => {
-        cmp.id(empty, Empty).should.equal(false);
+        compare.id(empty, Empty).should.equal(false);
       });
 
       test('Empty() x empty', async (): Promise<void> => {
-        cmp.id(Empty, empty).should.equal(false);
+        compare.id(Empty, empty).should.equal(false);
       });
     });
   });

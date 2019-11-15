@@ -1,4 +1,4 @@
-import cmp from '../../lib/compare';
+import { compare } from '../../lib/compare';
 import 'should';
 
 suite('array x array', (): void => {
@@ -21,65 +21,65 @@ suite('array x array', (): void => {
   suite('eq', (): void => {
     suite('equal => true', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.eq(a1, a2).should.equal(true);
+        compare.eq(a1, a2).should.equal(true);
       });
 
       test('array x Array()', async (): Promise<void> => {
-        cmp.eq(a1, A1).should.equal(true);
+        compare.eq(a1, A1).should.equal(true);
       });
 
       test('Array() x array', async (): Promise<void> => {
-        cmp.eq(A1, a1).should.equal(true);
+        compare.eq(A1, a1).should.equal(true);
       });
 
       test('Array() x Array()', async (): Promise<void> => {
-        cmp.eq(A1, A2).should.equal(true);
+        compare.eq(A1, A2).should.equal(true);
       });
 
       test('null x null', async (): Promise<void> => {
-        cmp.eq(null, null).should.equal(true);
+        compare.eq(null, null).should.equal(true);
       });
 
       test('array[3] x array[3]', async (): Promise<void> => {
-        cmp.eq([ 2, 3, 4 ], [ 2, 3, 4 ]).should.equal(true);
+        compare.eq([ 2, 3, 4 ], [ 2, 3, 4 ]).should.equal(true);
       });
     });
 
     suite('not equal => false', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.eq(a1, b1).should.equal(false);
+        compare.eq(a1, b1).should.equal(false);
       });
 
       test('array x Array()', async (): Promise<void> => {
-        cmp.eq(a1, B1).should.equal(false);
+        compare.eq(a1, B1).should.equal(false);
       });
 
       test('Array() x array', async (): Promise<void> => {
-        cmp.eq(A1, b1).should.equal(false);
+        compare.eq(A1, b1).should.equal(false);
       });
 
       test('Array() x Array()', async (): Promise<void> => {
-        cmp.eq(A1, B1).should.equal(false);
+        compare.eq(A1, B1).should.equal(false);
       });
 
       test('array x null', async (): Promise<void> => {
-        cmp.eq(a1, null).should.equal(false);
+        compare.eq(a1, null).should.equal(false);
       });
 
       test('Array() x null', async (): Promise<void> => {
-        cmp.eq(A1, null).should.equal(false);
+        compare.eq(A1, null).should.equal(false);
       });
 
       test('null x array', async (): Promise<void> => {
-        cmp.eq(null, a1).should.equal(false);
+        compare.eq(null, a1).should.equal(false);
       });
 
       test('null x Array()', async (): Promise<void> => {
-        cmp.eq(null, A1).should.equal(false);
+        compare.eq(null, A1).should.equal(false);
       });
 
       test('array[3] x array[3]', async (): Promise<void> => {
-        cmp.eq([ 2, 3, 4 ], [ 4, 5, 6 ]).should.equal(false);
+        compare.eq([ 2, 3, 4 ], [ 4, 5, 6 ]).should.equal(false);
       });
     });
   });
@@ -87,7 +87,7 @@ suite('array x array', (): void => {
   suite('eqs', (): void => {
     suite('any => false', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.eqs(a1, a1).should.equal(false);
+        compare.eqs(a1, a1).should.equal(false);
       });
     });
   });
@@ -95,65 +95,65 @@ suite('array x array', (): void => {
   suite('ne', (): void => {
     suite('equal => false', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.ne(a1, a2).should.equal(false);
+        compare.ne(a1, a2).should.equal(false);
       });
 
       test('array x Array()', async (): Promise<void> => {
-        cmp.ne(a1, A1).should.equal(false);
+        compare.ne(a1, A1).should.equal(false);
       });
 
       test('Array() x array', async (): Promise<void> => {
-        cmp.ne(A1, a1).should.equal(false);
+        compare.ne(A1, a1).should.equal(false);
       });
 
       test('Array() x Array()', async (): Promise<void> => {
-        cmp.ne(A1, A2).should.equal(false);
+        compare.ne(A1, A2).should.equal(false);
       });
 
       test('null x null', async (): Promise<void> => {
-        cmp.ne(null, null).should.equal(false);
+        compare.ne(null, null).should.equal(false);
       });
 
       test('array[3] x array[3]', async (): Promise<void> => {
-        cmp.ne([ 2, 3, 4 ], [ 2, 3, 4 ]).should.equal(false);
+        compare.ne([ 2, 3, 4 ], [ 2, 3, 4 ]).should.equal(false);
       });
     });
 
     suite('not equal => true', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.ne(a1, b1).should.equal(true);
+        compare.ne(a1, b1).should.equal(true);
       });
 
       test('array x Array()', async (): Promise<void> => {
-        cmp.ne(a1, B1).should.equal(true);
+        compare.ne(a1, B1).should.equal(true);
       });
 
       test('Array() x array', async (): Promise<void> => {
-        cmp.ne(A1, b1).should.equal(true);
+        compare.ne(A1, b1).should.equal(true);
       });
 
       test('Array() x Array()', async (): Promise<void> => {
-        cmp.ne(A1, B1).should.equal(true);
+        compare.ne(A1, B1).should.equal(true);
       });
 
       test('array x null', async (): Promise<void> => {
-        cmp.ne(a1, null).should.equal(true);
+        compare.ne(a1, null).should.equal(true);
       });
 
       test('Array() x null', async (): Promise<void> => {
-        cmp.ne(A1, null).should.equal(true);
+        compare.ne(A1, null).should.equal(true);
       });
 
       test('null x array', async (): Promise<void> => {
-        cmp.ne(null, a1).should.equal(true);
+        compare.ne(null, a1).should.equal(true);
       });
 
       test('null x Array()', async (): Promise<void> => {
-        cmp.ne(null, A1).should.equal(true);
+        compare.ne(null, A1).should.equal(true);
       });
 
       test('array[3] x array[3]', async (): Promise<void> => {
-        cmp.ne([ 2, 3, 4 ], [ 4, 5, 6 ]).should.equal(true);
+        compare.ne([ 2, 3, 4 ], [ 4, 5, 6 ]).should.equal(true);
       });
     });
   });
@@ -161,7 +161,7 @@ suite('array x array', (): void => {
   suite('nes', (): void => {
     suite('any => false', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.nes(a1, a1).should.equal(false);
+        compare.nes(a1, a1).should.equal(false);
       });
     });
   });
@@ -169,109 +169,109 @@ suite('array x array', (): void => {
   suite('gt', (): void => {
     suite('greater than => true', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.gt(a1, empty).should.equal(true);
+        compare.gt(a1, empty).should.equal(true);
       });
 
       test('array x Array()', async (): Promise<void> => {
-        cmp.gt(a1, Empty).should.equal(true);
+        compare.gt(a1, Empty).should.equal(true);
       });
 
       test('Array() x array', async (): Promise<void> => {
-        cmp.gt(A1, empty).should.equal(true);
+        compare.gt(A1, empty).should.equal(true);
       });
 
       test('Array() x Array()', async (): Promise<void> => {
-        cmp.gt(A1, Empty).should.equal(true);
+        compare.gt(A1, Empty).should.equal(true);
       });
 
       test('array[3] x array[1]', async (): Promise<void> => {
-        cmp.gt([ 2, 3, 4 ], [ 3 ]).should.equal(true);
+        compare.gt([ 2, 3, 4 ], [ 3 ]).should.equal(true);
       });
     });
 
     suite('equal => false', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.gt(a1, a2).should.equal(false);
+        compare.gt(a1, a2).should.equal(false);
       });
 
       test('array x Array()', async (): Promise<void> => {
-        cmp.gt(a1, A1).should.equal(false);
+        compare.gt(a1, A1).should.equal(false);
       });
 
       test('Array() x array', async (): Promise<void> => {
-        cmp.gt(A1, a1).should.equal(false);
+        compare.gt(A1, a1).should.equal(false);
       });
 
       test('Array() x Array()', async (): Promise<void> => {
-        cmp.gt(A1, A2).should.equal(false);
+        compare.gt(A1, A2).should.equal(false);
       });
 
       test('null x null', async (): Promise<void> => {
-        cmp.gt(null, null).should.equal(false);
+        compare.gt(null, null).should.equal(false);
       });
 
       test('array[3] x array[3]', async (): Promise<void> => {
-        cmp.gt([ 2, 3, 4 ], [ 2, 3, 4 ]).should.equal(false);
+        compare.gt([ 2, 3, 4 ], [ 2, 3, 4 ]).should.equal(false);
       });
     });
 
     suite('not equal => false', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.gt(a1, b1).should.equal(false);
+        compare.gt(a1, b1).should.equal(false);
       });
 
       test('array x Array()', async (): Promise<void> => {
-        cmp.gt(a1, B1).should.equal(false);
+        compare.gt(a1, B1).should.equal(false);
       });
 
       test('Array() x array', async (): Promise<void> => {
-        cmp.gt(A1, b1).should.equal(false);
+        compare.gt(A1, b1).should.equal(false);
       });
 
       test('Array() x Array()', async (): Promise<void> => {
-        cmp.gt(A1, B1).should.equal(false);
+        compare.gt(A1, B1).should.equal(false);
       });
 
       test('array x null', async (): Promise<void> => {
-        cmp.gt(a1, null).should.equal(false);
+        compare.gt(a1, null).should.equal(false);
       });
 
       test('Array() x null', async (): Promise<void> => {
-        cmp.gt(A1, null).should.equal(false);
+        compare.gt(A1, null).should.equal(false);
       });
 
       test('null x array', async (): Promise<void> => {
-        cmp.gt(null, a1).should.equal(false);
+        compare.gt(null, a1).should.equal(false);
       });
 
       test('null x Array()', async (): Promise<void> => {
-        cmp.gt(null, A1).should.equal(false);
+        compare.gt(null, A1).should.equal(false);
       });
 
       test('array[3] x array[3]', async (): Promise<void> => {
-        cmp.gt([ 2, 3, 4 ], [ 4, 5, 6 ]).should.equal(false);
+        compare.gt([ 2, 3, 4 ], [ 4, 5, 6 ]).should.equal(false);
       });
     });
 
     suite('less than => false', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.gt(empty, a1).should.equal(false);
+        compare.gt(empty, a1).should.equal(false);
       });
 
       test('array x Array()', async (): Promise<void> => {
-        cmp.gt(Empty, a1).should.equal(false);
+        compare.gt(Empty, a1).should.equal(false);
       });
 
       test('Array() x array', async (): Promise<void> => {
-        cmp.gt(empty, A1).should.equal(false);
+        compare.gt(empty, A1).should.equal(false);
       });
 
       test('Array() x Array()', async (): Promise<void> => {
-        cmp.gt(Empty, A1).should.equal(false);
+        compare.gt(Empty, A1).should.equal(false);
       });
 
       test('array[1] x array[3]', async (): Promise<void> => {
-        cmp.gt([ 3 ], [ 2, 3, 4 ]).should.equal(false);
+        compare.gt([ 3 ], [ 2, 3, 4 ]).should.equal(false);
       });
     });
   });
@@ -279,7 +279,7 @@ suite('array x array', (): void => {
   suite('gts', (): void => {
     suite('any => false', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.gts(a1, a1).should.equal(false);
+        compare.gts(a1, a1).should.equal(false);
       });
     });
   });
@@ -287,109 +287,109 @@ suite('array x array', (): void => {
   suite('gte', (): void => {
     suite('greater than => true', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.gte(a1, empty).should.equal(true);
+        compare.gte(a1, empty).should.equal(true);
       });
 
       test('array x Array()', async (): Promise<void> => {
-        cmp.gte(a1, Empty).should.equal(true);
+        compare.gte(a1, Empty).should.equal(true);
       });
 
       test('Array() x array', async (): Promise<void> => {
-        cmp.gte(A1, empty).should.equal(true);
+        compare.gte(A1, empty).should.equal(true);
       });
 
       test('Array() x Array()', async (): Promise<void> => {
-        cmp.gte(A1, Empty).should.equal(true);
+        compare.gte(A1, Empty).should.equal(true);
       });
 
       test('array[3] x array[1]', async (): Promise<void> => {
-        cmp.gte([ 2, 3, 4 ], [ 3 ]).should.equal(true);
+        compare.gte([ 2, 3, 4 ], [ 3 ]).should.equal(true);
       });
     });
 
     suite('equal => true', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.gte(a1, a2).should.equal(true);
+        compare.gte(a1, a2).should.equal(true);
       });
 
       test('array x Array()', async (): Promise<void> => {
-        cmp.gte(a1, A1).should.equal(true);
+        compare.gte(a1, A1).should.equal(true);
       });
 
       test('Array() x array', async (): Promise<void> => {
-        cmp.gte(A1, a1).should.equal(true);
+        compare.gte(A1, a1).should.equal(true);
       });
 
       test('Array() x Array()', async (): Promise<void> => {
-        cmp.gte(A1, A2).should.equal(true);
+        compare.gte(A1, A2).should.equal(true);
       });
 
       test('null x null', async (): Promise<void> => {
-        cmp.gte(null, null).should.equal(true);
+        compare.gte(null, null).should.equal(true);
       });
 
       test('array[3] x array[3]', async (): Promise<void> => {
-        cmp.gte([ 2, 3, 4 ], [ 2, 3, 4 ]).should.equal(true);
+        compare.gte([ 2, 3, 4 ], [ 2, 3, 4 ]).should.equal(true);
       });
     });
 
     suite('not equal => false', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.gte(a1, b1).should.equal(false);
+        compare.gte(a1, b1).should.equal(false);
       });
 
       test('array x Array()', async (): Promise<void> => {
-        cmp.gte(a1, B1).should.equal(false);
+        compare.gte(a1, B1).should.equal(false);
       });
 
       test('Array() x array', async (): Promise<void> => {
-        cmp.gte(A1, b1).should.equal(false);
+        compare.gte(A1, b1).should.equal(false);
       });
 
       test('Array() x Array()', async (): Promise<void> => {
-        cmp.gte(A1, B1).should.equal(false);
+        compare.gte(A1, B1).should.equal(false);
       });
 
       test('array x null', async (): Promise<void> => {
-        cmp.gte(a1, null).should.equal(false);
+        compare.gte(a1, null).should.equal(false);
       });
 
       test('Array() x null', async (): Promise<void> => {
-        cmp.gte(A1, null).should.equal(false);
+        compare.gte(A1, null).should.equal(false);
       });
 
       test('null x array', async (): Promise<void> => {
-        cmp.gte(null, a1).should.equal(false);
+        compare.gte(null, a1).should.equal(false);
       });
 
       test('null x Array()', async (): Promise<void> => {
-        cmp.gte(null, A1).should.equal(false);
+        compare.gte(null, A1).should.equal(false);
       });
 
       test('array[3] x array[3]', async (): Promise<void> => {
-        cmp.gte([ 2, 3, 4 ], [ 4, 5, 6 ]).should.equal(false);
+        compare.gte([ 2, 3, 4 ], [ 4, 5, 6 ]).should.equal(false);
       });
     });
 
     suite('less than => false', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.gte(empty, a1).should.equal(false);
+        compare.gte(empty, a1).should.equal(false);
       });
 
       test('array x Array()', async (): Promise<void> => {
-        cmp.gte(Empty, a1).should.equal(false);
+        compare.gte(Empty, a1).should.equal(false);
       });
 
       test('Array() x array', async (): Promise<void> => {
-        cmp.gte(empty, A1).should.equal(false);
+        compare.gte(empty, A1).should.equal(false);
       });
 
       test('Array() x Array()', async (): Promise<void> => {
-        cmp.gte(Empty, A1).should.equal(false);
+        compare.gte(Empty, A1).should.equal(false);
       });
 
       test('array[1] x array[3]', async (): Promise<void> => {
-        cmp.gte([ 3 ], [ 2, 3, 4 ]).should.equal(false);
+        compare.gte([ 3 ], [ 2, 3, 4 ]).should.equal(false);
       });
     });
   });
@@ -397,7 +397,7 @@ suite('array x array', (): void => {
   suite('gtes', (): void => {
     suite('any => false', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.gtes(a1, a1).should.equal(false);
+        compare.gtes(a1, a1).should.equal(false);
       });
     });
   });
@@ -405,109 +405,109 @@ suite('array x array', (): void => {
   suite('lt', (): void => {
     suite('greater than => false', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.lt(a1, empty).should.equal(false);
+        compare.lt(a1, empty).should.equal(false);
       });
 
       test('array x Array()', async (): Promise<void> => {
-        cmp.lt(a1, Empty).should.equal(false);
+        compare.lt(a1, Empty).should.equal(false);
       });
 
       test('Array() x array', async (): Promise<void> => {
-        cmp.lt(A1, empty).should.equal(false);
+        compare.lt(A1, empty).should.equal(false);
       });
 
       test('Array() x Array()', async (): Promise<void> => {
-        cmp.lt(A1, Empty).should.equal(false);
+        compare.lt(A1, Empty).should.equal(false);
       });
 
       test('array[3] x array[1]', async (): Promise<void> => {
-        cmp.lt([ 2, 3, 4 ], [ 3 ]).should.equal(false);
+        compare.lt([ 2, 3, 4 ], [ 3 ]).should.equal(false);
       });
     });
 
     suite('equal => false', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.lt(a1, a2).should.equal(false);
+        compare.lt(a1, a2).should.equal(false);
       });
 
       test('array x Array()', async (): Promise<void> => {
-        cmp.lt(a1, A1).should.equal(false);
+        compare.lt(a1, A1).should.equal(false);
       });
 
       test('Array() x array', async (): Promise<void> => {
-        cmp.lt(A1, a1).should.equal(false);
+        compare.lt(A1, a1).should.equal(false);
       });
 
       test('Array() x Array()', async (): Promise<void> => {
-        cmp.lt(A1, A2).should.equal(false);
+        compare.lt(A1, A2).should.equal(false);
       });
 
       test('null x null', async (): Promise<void> => {
-        cmp.lt(null, null).should.equal(false);
+        compare.lt(null, null).should.equal(false);
       });
 
       test('array[3] x array[3]', async (): Promise<void> => {
-        cmp.lt([ 2, 3, 4 ], [ 2, 3, 4 ]).should.equal(false);
+        compare.lt([ 2, 3, 4 ], [ 2, 3, 4 ]).should.equal(false);
       });
     });
 
     suite('not equal => false', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.lt(a1, b1).should.equal(false);
+        compare.lt(a1, b1).should.equal(false);
       });
 
       test('array x Array()', async (): Promise<void> => {
-        cmp.lt(a1, B1).should.equal(false);
+        compare.lt(a1, B1).should.equal(false);
       });
 
       test('Array() x array', async (): Promise<void> => {
-        cmp.lt(A1, b1).should.equal(false);
+        compare.lt(A1, b1).should.equal(false);
       });
 
       test('Array() x Array()', async (): Promise<void> => {
-        cmp.lt(A1, B1).should.equal(false);
+        compare.lt(A1, B1).should.equal(false);
       });
 
       test('array x null', async (): Promise<void> => {
-        cmp.lt(a1, null).should.equal(false);
+        compare.lt(a1, null).should.equal(false);
       });
 
       test('Array() x null', async (): Promise<void> => {
-        cmp.lt(A1, null).should.equal(false);
+        compare.lt(A1, null).should.equal(false);
       });
 
       test('null x array', async (): Promise<void> => {
-        cmp.lt(null, a1).should.equal(false);
+        compare.lt(null, a1).should.equal(false);
       });
 
       test('null x Array()', async (): Promise<void> => {
-        cmp.lt(null, A1).should.equal(false);
+        compare.lt(null, A1).should.equal(false);
       });
 
       test('array[3] x array[3]', async (): Promise<void> => {
-        cmp.lt([ 2, 3, 4 ], [ 4, 5, 6 ]).should.equal(false);
+        compare.lt([ 2, 3, 4 ], [ 4, 5, 6 ]).should.equal(false);
       });
     });
 
     suite('less than => true', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.lt(empty, a1).should.equal(true);
+        compare.lt(empty, a1).should.equal(true);
       });
 
       test('array x Array()', async (): Promise<void> => {
-        cmp.lt(Empty, a1).should.equal(true);
+        compare.lt(Empty, a1).should.equal(true);
       });
 
       test('Array() x array', async (): Promise<void> => {
-        cmp.lt(empty, A1).should.equal(true);
+        compare.lt(empty, A1).should.equal(true);
       });
 
       test('Array() x Array()', async (): Promise<void> => {
-        cmp.lt(Empty, A1).should.equal(true);
+        compare.lt(Empty, A1).should.equal(true);
       });
 
       test('array[1] x array[3]', async (): Promise<void> => {
-        cmp.lt([ 3 ], [ 2, 3, 4 ]).should.equal(true);
+        compare.lt([ 3 ], [ 2, 3, 4 ]).should.equal(true);
       });
     });
   });
@@ -515,7 +515,7 @@ suite('array x array', (): void => {
   suite('lts', (): void => {
     suite('any => false', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.lts(a1, a1).should.equal(false);
+        compare.lts(a1, a1).should.equal(false);
       });
     });
   });
@@ -523,109 +523,109 @@ suite('array x array', (): void => {
   suite('lte', (): void => {
     suite('greater than => false', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.lte(a1, empty).should.equal(false);
+        compare.lte(a1, empty).should.equal(false);
       });
 
       test('array x Array()', async (): Promise<void> => {
-        cmp.lte(a1, Empty).should.equal(false);
+        compare.lte(a1, Empty).should.equal(false);
       });
 
       test('Array() x array', async (): Promise<void> => {
-        cmp.lte(A1, empty).should.equal(false);
+        compare.lte(A1, empty).should.equal(false);
       });
 
       test('Array() x Array()', async (): Promise<void> => {
-        cmp.lte(A1, Empty).should.equal(false);
+        compare.lte(A1, Empty).should.equal(false);
       });
 
       test('array[3] x array[1]', async (): Promise<void> => {
-        cmp.lte([ 2, 3, 4 ], [ 3 ]).should.equal(false);
+        compare.lte([ 2, 3, 4 ], [ 3 ]).should.equal(false);
       });
     });
 
     suite('equal => true', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.lte(a1, a2).should.equal(true);
+        compare.lte(a1, a2).should.equal(true);
       });
 
       test('array x Array()', async (): Promise<void> => {
-        cmp.lte(a1, A1).should.equal(true);
+        compare.lte(a1, A1).should.equal(true);
       });
 
       test('Array() x array', async (): Promise<void> => {
-        cmp.lte(A1, a1).should.equal(true);
+        compare.lte(A1, a1).should.equal(true);
       });
 
       test('Array() x Array()', async (): Promise<void> => {
-        cmp.lte(A1, A2).should.equal(true);
+        compare.lte(A1, A2).should.equal(true);
       });
 
       test('null x null', async (): Promise<void> => {
-        cmp.lte(null, null).should.equal(true);
+        compare.lte(null, null).should.equal(true);
       });
 
       test('array[3] x array[3]', async (): Promise<void> => {
-        cmp.lte([ 2, 3, 4 ], [ 2, 3, 4 ]).should.equal(true);
+        compare.lte([ 2, 3, 4 ], [ 2, 3, 4 ]).should.equal(true);
       });
     });
 
     suite('not equal => false', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.lte(a1, b1).should.equal(false);
+        compare.lte(a1, b1).should.equal(false);
       });
 
       test('array x Array()', async (): Promise<void> => {
-        cmp.lte(a1, B1).should.equal(false);
+        compare.lte(a1, B1).should.equal(false);
       });
 
       test('Array() x array', async (): Promise<void> => {
-        cmp.lte(A1, b1).should.equal(false);
+        compare.lte(A1, b1).should.equal(false);
       });
 
       test('Array() x Array()', async (): Promise<void> => {
-        cmp.lte(A1, B1).should.equal(false);
+        compare.lte(A1, B1).should.equal(false);
       });
 
       test('array x null', async (): Promise<void> => {
-        cmp.lte(a1, null).should.equal(false);
+        compare.lte(a1, null).should.equal(false);
       });
 
       test('Array() x null', async (): Promise<void> => {
-        cmp.lte(A1, null).should.equal(false);
+        compare.lte(A1, null).should.equal(false);
       });
 
       test('null x array', async (): Promise<void> => {
-        cmp.lte(null, a1).should.equal(false);
+        compare.lte(null, a1).should.equal(false);
       });
 
       test('null x Array()', async (): Promise<void> => {
-        cmp.lte(null, A1).should.equal(false);
+        compare.lte(null, A1).should.equal(false);
       });
 
       test('array[3] x array[3]', async (): Promise<void> => {
-        cmp.lte([ 2, 3, 4 ], [ 4, 5, 6 ]).should.equal(false);
+        compare.lte([ 2, 3, 4 ], [ 4, 5, 6 ]).should.equal(false);
       });
     });
 
     suite('less than => true', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.lte(empty, a1).should.equal(true);
+        compare.lte(empty, a1).should.equal(true);
       });
 
       test('array x Array()', async (): Promise<void> => {
-        cmp.lte(Empty, a1).should.equal(true);
+        compare.lte(Empty, a1).should.equal(true);
       });
 
       test('Array() x array', async (): Promise<void> => {
-        cmp.lte(empty, A1).should.equal(true);
+        compare.lte(empty, A1).should.equal(true);
       });
 
       test('Array() x Array()', async (): Promise<void> => {
-        cmp.lte(Empty, A1).should.equal(true);
+        compare.lte(Empty, A1).should.equal(true);
       });
 
       test('array[1] x array[3]', async (): Promise<void> => {
-        cmp.lte([ 3 ], [ 2, 3, 4 ]).should.equal(true);
+        compare.lte([ 3 ], [ 2, 3, 4 ]).should.equal(true);
       });
     });
   });
@@ -633,7 +633,7 @@ suite('array x array', (): void => {
   suite('ltes', (): void => {
     suite('any => false', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.ltes(a1, a1).should.equal(false);
+        compare.ltes(a1, a1).should.equal(false);
       });
     });
   });
@@ -641,33 +641,33 @@ suite('array x array', (): void => {
   suite('id', (): void => {
     suite('identical => true', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.id(a1, a1).should.equal(true);
+        compare.id(a1, a1).should.equal(true);
       });
 
       test('Array() x Array()', async (): Promise<void> => {
-        cmp.id(A1, A1).should.equal(true);
+        compare.id(A1, A1).should.equal(true);
       });
 
       test('null x null', async (): Promise<void> => {
-        cmp.id(null, null).should.equal(true);
+        compare.id(null, null).should.equal(true);
       });
     });
 
     suite('not identical => false', (): void => {
       test('array x array', async (): Promise<void> => {
-        cmp.id(a1, a2).should.equal(false);
+        compare.id(a1, a2).should.equal(false);
       });
 
       test('array x Array()', async (): Promise<void> => {
-        cmp.id(a1, A1).should.equal(false);
+        compare.id(a1, A1).should.equal(false);
       });
 
       test('Array() x array', async (): Promise<void> => {
-        cmp.id(A1, a1).should.equal(false);
+        compare.id(A1, a1).should.equal(false);
       });
 
       test('Array() x Array()', async (): Promise<void> => {
-        cmp.id(A1, A2).should.equal(false);
+        compare.id(A1, A2).should.equal(false);
       });
     });
   });

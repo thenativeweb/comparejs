@@ -23,13 +23,13 @@ $ npm install comparejs
 To use comparejs you need to reference it from your application by adding the following line:
 
 ```javascript
-const compare = require('comparejs').default;
+const { compare } = require('comparejs');
 ```
 
 If you use TypeScript, use the following code instead:
 
 ```typescript
-import compare from 'comparejs';
+import { compare } from 'comparejs';
 ```
 
 ### Features

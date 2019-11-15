@@ -1,6 +1,6 @@
-import isSubsetOf from 'is-subset-of';
-import Type from 'typedescriptor';
-import unbox from './unbox';
+import { isSubsetOf } from 'is-subset-of';
+import { Type } from 'typedescriptor';
+import { unbox } from './unbox';
 
 const compare = {
   equal (left: any, right: any): boolean {
@@ -192,4 +192,4 @@ const compare = {
   }
 };
 
-export default compare;
+export { compare };

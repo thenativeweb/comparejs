@@ -1,4 +1,4 @@
-import cmp from '../../lib/compare';
+import { compare } from '../../lib/compare';
 import 'should';
 
 suite('cmp', (): void => {
@@ -24,7 +24,7 @@ suite('cmp', (): void => {
         }
       };
 
-      cmp.eq(first, second).should.equal(true);
+      compare.eq(first, second).should.equal(true);
     });
 
     test('not equal on first level => false', async (): Promise<void> => {
@@ -48,7 +48,7 @@ suite('cmp', (): void => {
         }
       };
 
-      cmp.eq(first, second).should.equal(false);
+      compare.eq(first, second).should.equal(false);
     });
 
     test('missing property on first level => false', async (): Promise<void> => {
@@ -71,7 +71,7 @@ suite('cmp', (): void => {
         }
       };
 
-      cmp.eq(first, second).should.equal(false);
+      compare.eq(first, second).should.equal(false);
     });
 
     test('not equal on second level => false', async (): Promise<void> => {
@@ -95,7 +95,7 @@ suite('cmp', (): void => {
         }
       };
 
-      cmp.eq(first, second).should.equal(false);
+      compare.eq(first, second).should.equal(false);
     });
 
     test('missing property on second level => false', async (): Promise<void> => {
@@ -118,14 +118,14 @@ suite('cmp', (): void => {
         }
       };
 
-      cmp.eq(first, second).should.equal(false);
+      compare.eq(first, second).should.equal(false);
     });
 
     test('empty object and empty array on second level => false', async (): Promise<void> => {
       const first = { foo: 'bar', baz: {}};
       const second = { foo: 'bar', baz: []};
 
-      cmp.eq(first, second).should.equal(false);
+      compare.eq(first, second).should.equal(false);
     });
   });
 
@@ -151,7 +151,7 @@ suite('cmp', (): void => {
         }
       };
 
-      cmp.eqs(first, second).should.equal(true);
+      compare.eqs(first, second).should.equal(true);
     });
 
     test('not equal on first level => true', async (): Promise<void> => {
@@ -175,7 +175,7 @@ suite('cmp', (): void => {
         }
       };
 
-      cmp.eqs(first, second).should.equal(true);
+      compare.eqs(first, second).should.equal(true);
     });
 
     test('missing property on first level => false', async (): Promise<void> => {
@@ -198,7 +198,7 @@ suite('cmp', (): void => {
         }
       };
 
-      cmp.eqs(first, second).should.equal(false);
+      compare.eqs(first, second).should.equal(false);
     });
 
     test('not equal on second level => true', async (): Promise<void> => {
@@ -222,7 +222,7 @@ suite('cmp', (): void => {
         }
       };
 
-      cmp.eqs(first, second).should.equal(true);
+      compare.eqs(first, second).should.equal(true);
     });
 
     test('missing property on second level => false', async (): Promise<void> => {
@@ -245,7 +245,7 @@ suite('cmp', (): void => {
         }
       };
 
-      cmp.eqs(first, second).should.equal(false);
+      compare.eqs(first, second).should.equal(false);
     });
   });
 });

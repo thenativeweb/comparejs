@@ -1,4 +1,4 @@
-import cmp from '../../lib/compare';
+import { compare } from '../../lib/compare';
 import 'should';
 
 suite('object x object', (): void => {
@@ -29,77 +29,77 @@ suite('object x object', (): void => {
   suite('eq', (): void => {
     suite('equal => true', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.eq(o1, o2).should.equal(true);
+        compare.eq(o1, o2).should.equal(true);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.eq(o1, O1).should.equal(true);
+        compare.eq(o1, O1).should.equal(true);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.eq(O1, o1).should.equal(true);
+        compare.eq(O1, o1).should.equal(true);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.eq(O1, O2).should.equal(true);
+        compare.eq(O1, O2).should.equal(true);
       });
 
       test('null x null', async (): Promise<void> => {
-        cmp.eq(null, null).should.equal(true);
+        compare.eq(null, null).should.equal(true);
       });
 
       test('falsy x falsy', async (): Promise<void> => {
-        cmp.eq(r1, r2).should.equal(true);
+        compare.eq(r1, r2).should.equal(true);
       });
     });
 
     suite('not equal => false', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.eq(o1, p1).should.equal(false);
+        compare.eq(o1, p1).should.equal(false);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.eq(o1, P1).should.equal(false);
+        compare.eq(o1, P1).should.equal(false);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.eq(O1, p1).should.equal(false);
+        compare.eq(O1, p1).should.equal(false);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.eq(O1, P1).should.equal(false);
+        compare.eq(O1, P1).should.equal(false);
       });
 
       test('object x null', async (): Promise<void> => {
-        cmp.eq(o1, null).should.equal(false);
+        compare.eq(o1, null).should.equal(false);
       });
 
       test('Object() x null', async (): Promise<void> => {
-        cmp.eq(O1, null).should.equal(false);
+        compare.eq(O1, null).should.equal(false);
       });
 
       test('null x object', async (): Promise<void> => {
-        cmp.eq(null, o1).should.equal(false);
+        compare.eq(null, o1).should.equal(false);
       });
 
       test('null x Object()', async (): Promise<void> => {
-        cmp.eq(null, O1).should.equal(false);
+        compare.eq(null, O1).should.equal(false);
       });
 
       test('object x falsy', async (): Promise<void> => {
-        cmp.eq(o1, r1).should.equal(false);
+        compare.eq(o1, r1).should.equal(false);
       });
 
       test('falsy x object', async (): Promise<void> => {
-        cmp.eq(r1, o1).should.equal(false);
+        compare.eq(r1, o1).should.equal(false);
       });
 
       test('falsy x falsy', async (): Promise<void> => {
-        cmp.eq(r1, s1).should.equal(false);
+        compare.eq(r1, s1).should.equal(false);
       });
 
       test('object x empty array', async (): Promise<void> => {
-        cmp.eq(empty, []).should.equal(false);
+        compare.eq(empty, []).should.equal(false);
       });
     });
   });
@@ -107,69 +107,69 @@ suite('object x object', (): void => {
   suite('eqs', (): void => {
     suite('equal => true', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.eqs(o1, p1).should.equal(true);
+        compare.eqs(o1, p1).should.equal(true);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.eqs(o1, P1).should.equal(true);
+        compare.eqs(o1, P1).should.equal(true);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.eqs(O1, p1).should.equal(true);
+        compare.eqs(O1, p1).should.equal(true);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.eqs(O1, P1).should.equal(true);
+        compare.eqs(O1, P1).should.equal(true);
       });
 
       test('falsy x falsy', async (): Promise<void> => {
-        cmp.eqs(r1, s1).should.equal(true);
+        compare.eqs(r1, s1).should.equal(true);
       });
     });
 
     suite('not equal => false', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.eqs(o1, empty).should.equal(false);
+        compare.eqs(o1, empty).should.equal(false);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.eqs(o1, Empty).should.equal(false);
+        compare.eqs(o1, Empty).should.equal(false);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.eqs(O1, empty).should.equal(false);
+        compare.eqs(O1, empty).should.equal(false);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.eqs(O1, Empty).should.equal(false);
+        compare.eqs(O1, Empty).should.equal(false);
       });
 
       test('object x null', async (): Promise<void> => {
-        cmp.eqs(o1, null).should.equal(false);
+        compare.eqs(o1, null).should.equal(false);
       });
 
       test('Object() x null', async (): Promise<void> => {
-        cmp.eqs(O1, null).should.equal(false);
+        compare.eqs(O1, null).should.equal(false);
       });
 
       test('null x object', async (): Promise<void> => {
-        cmp.eqs(null, o1).should.equal(false);
+        compare.eqs(null, o1).should.equal(false);
       });
 
       test('null x Object()', async (): Promise<void> => {
-        cmp.eqs(null, O1).should.equal(false);
+        compare.eqs(null, O1).should.equal(false);
       });
 
       test('null x null', async (): Promise<void> => {
-        cmp.eqs(null, null).should.equal(false);
+        compare.eqs(null, null).should.equal(false);
       });
 
       test('object x falsy', async (): Promise<void> => {
-        cmp.eqs(q1, r1).should.equal(false);
+        compare.eqs(q1, r1).should.equal(false);
       });
 
       test('falsy x object', async (): Promise<void> => {
-        cmp.eqs(r1, q1).should.equal(false);
+        compare.eqs(r1, q1).should.equal(false);
       });
     });
   });
@@ -177,73 +177,73 @@ suite('object x object', (): void => {
   suite('ne', (): void => {
     suite('equal => false', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.ne(o1, o2).should.equal(false);
+        compare.ne(o1, o2).should.equal(false);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.ne(o1, O1).should.equal(false);
+        compare.ne(o1, O1).should.equal(false);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.ne(O1, o1).should.equal(false);
+        compare.ne(O1, o1).should.equal(false);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.ne(O1, O2).should.equal(false);
+        compare.ne(O1, O2).should.equal(false);
       });
 
       test('null x null', async (): Promise<void> => {
-        cmp.ne(null, null).should.equal(false);
+        compare.ne(null, null).should.equal(false);
       });
 
       test('falsy x falsy', async (): Promise<void> => {
-        cmp.ne(r1, r2).should.equal(false);
+        compare.ne(r1, r2).should.equal(false);
       });
     });
 
     suite('not equal => true', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.ne(o1, p1).should.equal(true);
+        compare.ne(o1, p1).should.equal(true);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.ne(o1, P1).should.equal(true);
+        compare.ne(o1, P1).should.equal(true);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.ne(O1, p1).should.equal(true);
+        compare.ne(O1, p1).should.equal(true);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.ne(O1, P1).should.equal(true);
+        compare.ne(O1, P1).should.equal(true);
       });
 
       test('object x null', async (): Promise<void> => {
-        cmp.ne(o1, null).should.equal(true);
+        compare.ne(o1, null).should.equal(true);
       });
 
       test('Object() x null', async (): Promise<void> => {
-        cmp.ne(O1, null).should.equal(true);
+        compare.ne(O1, null).should.equal(true);
       });
 
       test('null x object', async (): Promise<void> => {
-        cmp.ne(null, o1).should.equal(true);
+        compare.ne(null, o1).should.equal(true);
       });
 
       test('null x Object()', async (): Promise<void> => {
-        cmp.ne(null, O1).should.equal(true);
+        compare.ne(null, O1).should.equal(true);
       });
 
       test('falsy x falsy', async (): Promise<void> => {
-        cmp.ne(r1, s1).should.equal(true);
+        compare.ne(r1, s1).should.equal(true);
       });
 
       test('object x false', async (): Promise<void> => {
-        cmp.ne(o1, r1).should.equal(true);
+        compare.ne(o1, r1).should.equal(true);
       });
 
       test('falsy x object', async (): Promise<void> => {
-        cmp.ne(r1, o1).should.equal(true);
+        compare.ne(r1, o1).should.equal(true);
       });
     });
   });
@@ -251,69 +251,69 @@ suite('object x object', (): void => {
   suite('nes', (): void => {
     suite('equal => false', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.nes(o1, p1).should.equal(false);
+        compare.nes(o1, p1).should.equal(false);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.nes(o1, P1).should.equal(false);
+        compare.nes(o1, P1).should.equal(false);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.nes(O1, p1).should.equal(false);
+        compare.nes(O1, p1).should.equal(false);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.nes(O1, P1).should.equal(false);
+        compare.nes(O1, P1).should.equal(false);
       });
 
       test('null x null', async (): Promise<void> => {
-        cmp.nes(null, null).should.equal(false);
+        compare.nes(null, null).should.equal(false);
       });
 
       test('falsy x falsy', async (): Promise<void> => {
-        cmp.nes(r1, s1).should.equal(false);
+        compare.nes(r1, s1).should.equal(false);
       });
 
       test('object x false', async (): Promise<void> => {
-        cmp.nes(o1, r1).should.equal(false);
+        compare.nes(o1, r1).should.equal(false);
       });
 
       test('falsy x object', async (): Promise<void> => {
-        cmp.nes(r1, o1).should.equal(false);
+        compare.nes(r1, o1).should.equal(false);
       });
 
       test('object x null', async (): Promise<void> => {
-        cmp.nes(o1, null).should.equal(false);
+        compare.nes(o1, null).should.equal(false);
       });
 
       test('Object() x null', async (): Promise<void> => {
-        cmp.nes(O1, null).should.equal(false);
+        compare.nes(O1, null).should.equal(false);
       });
 
       test('null x object', async (): Promise<void> => {
-        cmp.nes(null, o1).should.equal(false);
+        compare.nes(null, o1).should.equal(false);
       });
 
       test('null x Object()', async (): Promise<void> => {
-        cmp.nes(null, O1).should.equal(false);
+        compare.nes(null, O1).should.equal(false);
       });
     });
 
     suite('not equal => true', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.nes(o1, empty).should.equal(true);
+        compare.nes(o1, empty).should.equal(true);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.nes(o1, Empty).should.equal(true);
+        compare.nes(o1, Empty).should.equal(true);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.nes(O1, empty).should.equal(true);
+        compare.nes(O1, empty).should.equal(true);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.nes(O1, Empty).should.equal(true);
+        compare.nes(O1, Empty).should.equal(true);
       });
     });
   });
@@ -321,117 +321,117 @@ suite('object x object', (): void => {
   suite('gt', (): void => {
     suite('greater than => true', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.gt(t2, t1).should.equal(true);
+        compare.gt(t2, t1).should.equal(true);
       });
 
       test('object x empty', async (): Promise<void> => {
-        cmp.gt(o1, empty).should.equal(true);
+        compare.gt(o1, empty).should.equal(true);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.gt(o1, Empty).should.equal(true);
+        compare.gt(o1, Empty).should.equal(true);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.gt(O1, empty).should.equal(true);
+        compare.gt(O1, empty).should.equal(true);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.gt(O1, Empty).should.equal(true);
+        compare.gt(O1, Empty).should.equal(true);
       });
 
       test('falsy x object', async (): Promise<void> => {
-        cmp.gt(r1, empty).should.equal(true);
+        compare.gt(r1, empty).should.equal(true);
       });
     });
 
     suite('equal => false', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.gt(o1, o2).should.equal(false);
+        compare.gt(o1, o2).should.equal(false);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.gt(o1, O1).should.equal(false);
+        compare.gt(o1, O1).should.equal(false);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.gt(O1, o1).should.equal(false);
+        compare.gt(O1, o1).should.equal(false);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.gt(O1, O2).should.equal(false);
+        compare.gt(O1, O2).should.equal(false);
       });
 
       test('null x null', async (): Promise<void> => {
-        cmp.gt(null, null).should.equal(false);
+        compare.gt(null, null).should.equal(false);
       });
 
       test('falsy x falsy', async (): Promise<void> => {
-        cmp.gt(r1, r1).should.equal(false);
+        compare.gt(r1, r1).should.equal(false);
       });
     });
 
     suite('not equal => false', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.gt(o1, p1).should.equal(false);
+        compare.gt(o1, p1).should.equal(false);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.gt(o1, P1).should.equal(false);
+        compare.gt(o1, P1).should.equal(false);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.gt(O1, p1).should.equal(false);
+        compare.gt(O1, p1).should.equal(false);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.gt(O1, P1).should.equal(false);
+        compare.gt(O1, P1).should.equal(false);
       });
 
       test('object x null', async (): Promise<void> => {
-        cmp.gt(o1, null).should.equal(false);
+        compare.gt(o1, null).should.equal(false);
       });
 
       test('Object() x null', async (): Promise<void> => {
-        cmp.gt(O1, null).should.equal(false);
+        compare.gt(O1, null).should.equal(false);
       });
 
       test('null x object', async (): Promise<void> => {
-        cmp.gt(null, o1).should.equal(false);
+        compare.gt(null, o1).should.equal(false);
       });
 
       test('null x Object()', async (): Promise<void> => {
-        cmp.gt(null, O1).should.equal(false);
+        compare.gt(null, O1).should.equal(false);
       });
 
       test('falsy x falsy', async (): Promise<void> => {
-        cmp.gt(r1, r2).should.equal(false);
+        compare.gt(r1, r2).should.equal(false);
       });
     });
 
     suite('less than => false', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.gt(t1, t2).should.equal(false);
+        compare.gt(t1, t2).should.equal(false);
       });
 
       test('empty x object', async (): Promise<void> => {
-        cmp.gt(empty, o1).should.equal(false);
+        compare.gt(empty, o1).should.equal(false);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.gt(Empty, o1).should.equal(false);
+        compare.gt(Empty, o1).should.equal(false);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.gt(empty, O1).should.equal(false);
+        compare.gt(empty, O1).should.equal(false);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.gt(Empty, O1).should.equal(false);
+        compare.gt(Empty, O1).should.equal(false);
       });
 
       test('object x falsy', async (): Promise<void> => {
-        cmp.gt(empty, r1).should.equal(false);
+        compare.gt(empty, r1).should.equal(false);
       });
     });
   });
@@ -439,93 +439,93 @@ suite('object x object', (): void => {
   suite('gts', (): void => {
     suite('greater than => true', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.gts(o1, empty).should.equal(true);
+        compare.gts(o1, empty).should.equal(true);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.gts(o1, Empty).should.equal(true);
+        compare.gts(o1, Empty).should.equal(true);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.gts(O1, empty).should.equal(true);
+        compare.gts(O1, empty).should.equal(true);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.gts(O1, Empty).should.equal(true);
+        compare.gts(O1, Empty).should.equal(true);
       });
     });
 
     suite('equal => false', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.gts(o1, o2).should.equal(false);
+        compare.gts(o1, o2).should.equal(false);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.gts(o1, O1).should.equal(false);
+        compare.gts(o1, O1).should.equal(false);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.gts(O1, o1).should.equal(false);
+        compare.gts(O1, o1).should.equal(false);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.gts(O1, O2).should.equal(false);
+        compare.gts(O1, O2).should.equal(false);
       });
 
       test('null x null', async (): Promise<void> => {
-        cmp.gts(null, null).should.equal(false);
+        compare.gts(null, null).should.equal(false);
       });
     });
 
     suite('not equal => false', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.gts(o1, q1).should.equal(false);
+        compare.gts(o1, q1).should.equal(false);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.gts(o1, Q1).should.equal(false);
+        compare.gts(o1, Q1).should.equal(false);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.gts(O1, q1).should.equal(false);
+        compare.gts(O1, q1).should.equal(false);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.gts(O1, Q1).should.equal(false);
+        compare.gts(O1, Q1).should.equal(false);
       });
 
       test('object x null', async (): Promise<void> => {
-        cmp.gts(o1, null).should.equal(false);
+        compare.gts(o1, null).should.equal(false);
       });
 
       test('Object() x null', async (): Promise<void> => {
-        cmp.gts(O1, null).should.equal(false);
+        compare.gts(O1, null).should.equal(false);
       });
     });
 
     suite('less than => false', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.gts(empty, o1).should.equal(false);
+        compare.gts(empty, o1).should.equal(false);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.gts(Empty, o1).should.equal(false);
+        compare.gts(Empty, o1).should.equal(false);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.gts(empty, O1).should.equal(false);
+        compare.gts(empty, O1).should.equal(false);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.gts(Empty, O1).should.equal(false);
+        compare.gts(Empty, O1).should.equal(false);
       });
 
       test('null x object', async (): Promise<void> => {
-        cmp.gts(null, o1).should.equal(false);
+        compare.gts(null, o1).should.equal(false);
       });
 
       test('null x Object()', async (): Promise<void> => {
-        cmp.gts(null, O1).should.equal(false);
+        compare.gts(null, O1).should.equal(false);
       });
     });
   });
@@ -533,129 +533,129 @@ suite('object x object', (): void => {
   suite('gte', (): void => {
     suite('greater than => true', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.gte(t2, t1).should.equal(true);
+        compare.gte(t2, t1).should.equal(true);
       });
 
       test('object x empty', async (): Promise<void> => {
-        cmp.gte(o1, empty).should.equal(true);
+        compare.gte(o1, empty).should.equal(true);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.gte(o1, Empty).should.equal(true);
+        compare.gte(o1, Empty).should.equal(true);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.gte(O1, empty).should.equal(true);
+        compare.gte(O1, empty).should.equal(true);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.gte(O1, Empty).should.equal(true);
+        compare.gte(O1, Empty).should.equal(true);
       });
 
       test('falsy x object', async (): Promise<void> => {
-        cmp.gte(r1, empty).should.equal(true);
+        compare.gte(r1, empty).should.equal(true);
       });
     });
 
     suite('equal => true', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.gte(o1, o2).should.equal(true);
+        compare.gte(o1, o2).should.equal(true);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.gte(o1, O1).should.equal(true);
+        compare.gte(o1, O1).should.equal(true);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.gte(O1, o1).should.equal(true);
+        compare.gte(O1, o1).should.equal(true);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.gte(O1, O2).should.equal(true);
+        compare.gte(O1, O2).should.equal(true);
       });
 
       test('null x null', async (): Promise<void> => {
-        cmp.gte(null, null).should.equal(true);
+        compare.gte(null, null).should.equal(true);
       });
 
       test('falsy x falsy', async (): Promise<void> => {
-        cmp.gte(r1, r1).should.equal(true);
+        compare.gte(r1, r1).should.equal(true);
       });
     });
 
     suite('not equal => false', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.gte(o1, p1).should.equal(false);
+        compare.gte(o1, p1).should.equal(false);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.gte(o1, P1).should.equal(false);
+        compare.gte(o1, P1).should.equal(false);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.gte(O1, p1).should.equal(false);
+        compare.gte(O1, p1).should.equal(false);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.gte(O1, P1).should.equal(false);
+        compare.gte(O1, P1).should.equal(false);
       });
 
       test('object x null', async (): Promise<void> => {
-        cmp.gte(o1, null).should.equal(false);
+        compare.gte(o1, null).should.equal(false);
       });
 
       test('Object() x null', async (): Promise<void> => {
-        cmp.gte(O1, null).should.equal(false);
+        compare.gte(O1, null).should.equal(false);
       });
 
       test('null x object', async (): Promise<void> => {
-        cmp.gte(null, o1).should.equal(false);
+        compare.gte(null, o1).should.equal(false);
       });
 
       test('null x Object()', async (): Promise<void> => {
-        cmp.gte(null, O1).should.equal(false);
+        compare.gte(null, O1).should.equal(false);
       });
 
       test('null x falsy', async (): Promise<void> => {
-        cmp.gte(null, r1).should.equal(false);
+        compare.gte(null, r1).should.equal(false);
       });
 
       test('falsy x null', async (): Promise<void> => {
-        cmp.gte(r1, null).should.equal(false);
+        compare.gte(r1, null).should.equal(false);
       });
 
       test('object x falsy', async (): Promise<void> => {
-        cmp.gte(o1, r1).should.equal(false);
+        compare.gte(o1, r1).should.equal(false);
       });
 
       test('falsy x object', async (): Promise<void> => {
-        cmp.gte(r1, o1).should.equal(false);
+        compare.gte(r1, o1).should.equal(false);
       });
     });
 
     suite('less than => false', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.gte(t1, t2).should.equal(false);
+        compare.gte(t1, t2).should.equal(false);
       });
 
       test('empty x object', async (): Promise<void> => {
-        cmp.gte(empty, o1).should.equal(false);
+        compare.gte(empty, o1).should.equal(false);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.gte(Empty, o1).should.equal(false);
+        compare.gte(Empty, o1).should.equal(false);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.gte(empty, O1).should.equal(false);
+        compare.gte(empty, O1).should.equal(false);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.gte(Empty, O1).should.equal(false);
+        compare.gte(Empty, O1).should.equal(false);
       });
 
       test('object x falsy', async (): Promise<void> => {
-        cmp.gte(empty, r1).should.equal(false);
+        compare.gte(empty, r1).should.equal(false);
       });
     });
   });
@@ -663,93 +663,93 @@ suite('object x object', (): void => {
   suite('gtes', (): void => {
     suite('greater than => true', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.gtes(o1, empty).should.equal(true);
+        compare.gtes(o1, empty).should.equal(true);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.gtes(o1, Empty).should.equal(true);
+        compare.gtes(o1, Empty).should.equal(true);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.gtes(O1, empty).should.equal(true);
+        compare.gtes(O1, empty).should.equal(true);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.gtes(O1, Empty).should.equal(true);
+        compare.gtes(O1, Empty).should.equal(true);
       });
     });
 
     suite('equal => true', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.gtes(o1, o2).should.equal(true);
+        compare.gtes(o1, o2).should.equal(true);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.gtes(o1, O1).should.equal(true);
+        compare.gtes(o1, O1).should.equal(true);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.gtes(O1, o1).should.equal(true);
+        compare.gtes(O1, o1).should.equal(true);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.gtes(O1, O2).should.equal(true);
+        compare.gtes(O1, O2).should.equal(true);
       });
     });
 
     suite('not equal => false', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.gtes(o1, q1).should.equal(false);
+        compare.gtes(o1, q1).should.equal(false);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.gtes(o1, Q1).should.equal(false);
+        compare.gtes(o1, Q1).should.equal(false);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.gtes(O1, q1).should.equal(false);
+        compare.gtes(O1, q1).should.equal(false);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.gtes(O1, Q1).should.equal(false);
+        compare.gtes(O1, Q1).should.equal(false);
       });
 
       test('object x null', async (): Promise<void> => {
-        cmp.gtes(o1, null).should.equal(false);
+        compare.gtes(o1, null).should.equal(false);
       });
 
       test('Object() x null', async (): Promise<void> => {
-        cmp.gtes(O1, null).should.equal(false);
+        compare.gtes(O1, null).should.equal(false);
       });
 
       test('null x null', async (): Promise<void> => {
-        cmp.gtes(null, null).should.equal(false);
+        compare.gtes(null, null).should.equal(false);
       });
     });
 
     suite('less than => false', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.gtes(empty, o1).should.equal(false);
+        compare.gtes(empty, o1).should.equal(false);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.gtes(Empty, o1).should.equal(false);
+        compare.gtes(Empty, o1).should.equal(false);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.gtes(empty, O1).should.equal(false);
+        compare.gtes(empty, O1).should.equal(false);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.gtes(Empty, O1).should.equal(false);
+        compare.gtes(Empty, O1).should.equal(false);
       });
 
       test('null x object', async (): Promise<void> => {
-        cmp.gtes(null, o1).should.equal(false);
+        compare.gtes(null, o1).should.equal(false);
       });
 
       test('null x Object()', async (): Promise<void> => {
-        cmp.gtes(null, O1).should.equal(false);
+        compare.gtes(null, O1).should.equal(false);
       });
     });
   });
@@ -757,117 +757,117 @@ suite('object x object', (): void => {
   suite('lt', (): void => {
     suite('greater than => false', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.lt(t2, t1).should.equal(false);
+        compare.lt(t2, t1).should.equal(false);
       });
 
       test('object x empty', async (): Promise<void> => {
-        cmp.lt(o1, empty).should.equal(false);
+        compare.lt(o1, empty).should.equal(false);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.lt(o1, Empty).should.equal(false);
+        compare.lt(o1, Empty).should.equal(false);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.lt(O1, empty).should.equal(false);
+        compare.lt(O1, empty).should.equal(false);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.lt(O1, Empty).should.equal(false);
+        compare.lt(O1, Empty).should.equal(false);
       });
 
       test('falsy x object', async (): Promise<void> => {
-        cmp.lt(r1, empty).should.equal(false);
+        compare.lt(r1, empty).should.equal(false);
       });
     });
 
     suite('equal => false', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.lt(o1, o2).should.equal(false);
+        compare.lt(o1, o2).should.equal(false);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.lt(o1, O1).should.equal(false);
+        compare.lt(o1, O1).should.equal(false);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.lt(O1, o1).should.equal(false);
+        compare.lt(O1, o1).should.equal(false);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.lt(O1, O2).should.equal(false);
+        compare.lt(O1, O2).should.equal(false);
       });
 
       test('null x null', async (): Promise<void> => {
-        cmp.lt(null, null).should.equal(false);
+        compare.lt(null, null).should.equal(false);
       });
 
       test('falsy x falsy', async (): Promise<void> => {
-        cmp.lt(r1, r1).should.equal(false);
+        compare.lt(r1, r1).should.equal(false);
       });
     });
 
     suite('not equal => false', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.lt(o1, p1).should.equal(false);
+        compare.lt(o1, p1).should.equal(false);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.lt(o1, P1).should.equal(false);
+        compare.lt(o1, P1).should.equal(false);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.lt(O1, p1).should.equal(false);
+        compare.lt(O1, p1).should.equal(false);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.lt(O1, P1).should.equal(false);
+        compare.lt(O1, P1).should.equal(false);
       });
 
       test('object x null', async (): Promise<void> => {
-        cmp.lt(o1, null).should.equal(false);
+        compare.lt(o1, null).should.equal(false);
       });
 
       test('Object() x null', async (): Promise<void> => {
-        cmp.lt(O1, null).should.equal(false);
+        compare.lt(O1, null).should.equal(false);
       });
 
       test('null x object', async (): Promise<void> => {
-        cmp.lt(null, o1).should.equal(false);
+        compare.lt(null, o1).should.equal(false);
       });
 
       test('null x Object()', async (): Promise<void> => {
-        cmp.lt(null, O1).should.equal(false);
+        compare.lt(null, O1).should.equal(false);
       });
 
       test('falsy x falsy', async (): Promise<void> => {
-        cmp.lt(r1, r2).should.equal(false);
+        compare.lt(r1, r2).should.equal(false);
       });
     });
 
     suite('less than => true', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.lt(t1, t2).should.equal(true);
+        compare.lt(t1, t2).should.equal(true);
       });
 
       test('empty x object', async (): Promise<void> => {
-        cmp.lt(empty, o1).should.equal(true);
+        compare.lt(empty, o1).should.equal(true);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.lt(Empty, o1).should.equal(true);
+        compare.lt(Empty, o1).should.equal(true);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.lt(empty, O1).should.equal(true);
+        compare.lt(empty, O1).should.equal(true);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.lt(Empty, O1).should.equal(true);
+        compare.lt(Empty, O1).should.equal(true);
       });
 
       test('object x falsy', async (): Promise<void> => {
-        cmp.lt(empty, r1).should.equal(true);
+        compare.lt(empty, r1).should.equal(true);
       });
     });
   });
@@ -875,93 +875,93 @@ suite('object x object', (): void => {
   suite('lts', (): void => {
     suite('greater than => false', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.lts(o1, empty).should.equal(false);
+        compare.lts(o1, empty).should.equal(false);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.lts(o1, Empty).should.equal(false);
+        compare.lts(o1, Empty).should.equal(false);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.lts(O1, empty).should.equal(false);
+        compare.lts(O1, empty).should.equal(false);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.lts(O1, Empty).should.equal(false);
+        compare.lts(O1, Empty).should.equal(false);
       });
 
       test('object x null', async (): Promise<void> => {
-        cmp.lts(o1, null).should.equal(false);
+        compare.lts(o1, null).should.equal(false);
       });
 
       test('Object() x null', async (): Promise<void> => {
-        cmp.lts(O1, null).should.equal(false);
+        compare.lts(O1, null).should.equal(false);
       });
     });
 
     suite('equal => false', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.lts(o1, o2).should.equal(false);
+        compare.lts(o1, o2).should.equal(false);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.lts(o1, O1).should.equal(false);
+        compare.lts(o1, O1).should.equal(false);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.lts(O1, o1).should.equal(false);
+        compare.lts(O1, o1).should.equal(false);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.lts(O1, O2).should.equal(false);
+        compare.lts(O1, O2).should.equal(false);
       });
 
       test('null x null', async (): Promise<void> => {
-        cmp.lts(null, null).should.equal(false);
+        compare.lts(null, null).should.equal(false);
       });
     });
 
     suite('not equal => false', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.lts(o1, q1).should.equal(false);
+        compare.lts(o1, q1).should.equal(false);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.lts(o1, Q1).should.equal(false);
+        compare.lts(o1, Q1).should.equal(false);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.lts(O1, q1).should.equal(false);
+        compare.lts(O1, q1).should.equal(false);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.lts(O1, Q1).should.equal(false);
+        compare.lts(O1, Q1).should.equal(false);
       });
 
       test('null x object', async (): Promise<void> => {
-        cmp.lts(null, o1).should.equal(false);
+        compare.lts(null, o1).should.equal(false);
       });
 
       test('null x Object()', async (): Promise<void> => {
-        cmp.lts(null, O1).should.equal(false);
+        compare.lts(null, O1).should.equal(false);
       });
     });
 
     suite('less than => true', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.lts(empty, o1).should.equal(true);
+        compare.lts(empty, o1).should.equal(true);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.lts(Empty, o1).should.equal(true);
+        compare.lts(Empty, o1).should.equal(true);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.lts(empty, O1).should.equal(true);
+        compare.lts(empty, O1).should.equal(true);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.lts(Empty, O1).should.equal(true);
+        compare.lts(Empty, O1).should.equal(true);
       });
     });
   });
@@ -969,129 +969,129 @@ suite('object x object', (): void => {
   suite('lte', (): void => {
     suite('greater than => false', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.lte(t2, t1).should.equal(false);
+        compare.lte(t2, t1).should.equal(false);
       });
 
       test('object x empty', async (): Promise<void> => {
-        cmp.lte(o1, empty).should.equal(false);
+        compare.lte(o1, empty).should.equal(false);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.lte(o1, Empty).should.equal(false);
+        compare.lte(o1, Empty).should.equal(false);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.lte(O1, empty).should.equal(false);
+        compare.lte(O1, empty).should.equal(false);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.lte(O1, Empty).should.equal(false);
+        compare.lte(O1, Empty).should.equal(false);
       });
 
       test('falsy x object', async (): Promise<void> => {
-        cmp.lte(r1, empty).should.equal(false);
+        compare.lte(r1, empty).should.equal(false);
       });
     });
 
     suite('equal => true', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.lte(o1, o2).should.equal(true);
+        compare.lte(o1, o2).should.equal(true);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.lte(o1, O1).should.equal(true);
+        compare.lte(o1, O1).should.equal(true);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.lte(O1, o1).should.equal(true);
+        compare.lte(O1, o1).should.equal(true);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.lte(O1, O2).should.equal(true);
+        compare.lte(O1, O2).should.equal(true);
       });
 
       test('null x null', async (): Promise<void> => {
-        cmp.lte(null, null).should.equal(true);
+        compare.lte(null, null).should.equal(true);
       });
 
       test('falsy x falsy', async (): Promise<void> => {
-        cmp.lte(r1, r1).should.equal(true);
+        compare.lte(r1, r1).should.equal(true);
       });
     });
 
     suite('not equal => false', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.lte(o1, p1).should.equal(false);
+        compare.lte(o1, p1).should.equal(false);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.lte(o1, P1).should.equal(false);
+        compare.lte(o1, P1).should.equal(false);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.lte(O1, p1).should.equal(false);
+        compare.lte(O1, p1).should.equal(false);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.lte(O1, P1).should.equal(false);
+        compare.lte(O1, P1).should.equal(false);
       });
 
       test('object x null', async (): Promise<void> => {
-        cmp.lte(o1, null).should.equal(false);
+        compare.lte(o1, null).should.equal(false);
       });
 
       test('Object() x null', async (): Promise<void> => {
-        cmp.lte(O1, null).should.equal(false);
+        compare.lte(O1, null).should.equal(false);
       });
 
       test('null x object', async (): Promise<void> => {
-        cmp.lte(null, o1).should.equal(false);
+        compare.lte(null, o1).should.equal(false);
       });
 
       test('null x Object()', async (): Promise<void> => {
-        cmp.lte(null, O1).should.equal(false);
+        compare.lte(null, O1).should.equal(false);
       });
 
       test('null x falsy', async (): Promise<void> => {
-        cmp.lte(null, r1).should.equal(false);
+        compare.lte(null, r1).should.equal(false);
       });
 
       test('falsy x null', async (): Promise<void> => {
-        cmp.lte(r1, null).should.equal(false);
+        compare.lte(r1, null).should.equal(false);
       });
 
       test('object x falsy', async (): Promise<void> => {
-        cmp.lte(o1, r1).should.equal(false);
+        compare.lte(o1, r1).should.equal(false);
       });
 
       test('falsy x object', async (): Promise<void> => {
-        cmp.lte(r1, o1).should.equal(false);
+        compare.lte(r1, o1).should.equal(false);
       });
     });
 
     suite('less than => true', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.lte(t1, t2).should.equal(true);
+        compare.lte(t1, t2).should.equal(true);
       });
 
       test('empty x object', async (): Promise<void> => {
-        cmp.lte(empty, o1).should.equal(true);
+        compare.lte(empty, o1).should.equal(true);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.lte(Empty, o1).should.equal(true);
+        compare.lte(Empty, o1).should.equal(true);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.lte(empty, O1).should.equal(true);
+        compare.lte(empty, O1).should.equal(true);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.lte(Empty, O1).should.equal(true);
+        compare.lte(Empty, O1).should.equal(true);
       });
 
       test('object x falsy', async (): Promise<void> => {
-        cmp.lte(empty, r1).should.equal(true);
+        compare.lte(empty, r1).should.equal(true);
       });
     });
   });
@@ -1099,93 +1099,93 @@ suite('object x object', (): void => {
   suite('ltes', (): void => {
     suite('greater than => false', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.ltes(o1, empty).should.equal(false);
+        compare.ltes(o1, empty).should.equal(false);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.ltes(o1, Empty).should.equal(false);
+        compare.ltes(o1, Empty).should.equal(false);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.ltes(O1, empty).should.equal(false);
+        compare.ltes(O1, empty).should.equal(false);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.ltes(O1, Empty).should.equal(false);
+        compare.ltes(O1, Empty).should.equal(false);
       });
 
       test('object x null', async (): Promise<void> => {
-        cmp.ltes(o1, null).should.equal(false);
+        compare.ltes(o1, null).should.equal(false);
       });
 
       test('Object() x null', async (): Promise<void> => {
-        cmp.ltes(O1, null).should.equal(false);
+        compare.ltes(O1, null).should.equal(false);
       });
     });
 
     suite('equal => true', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.ltes(o1, o2).should.equal(true);
+        compare.ltes(o1, o2).should.equal(true);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.ltes(o1, O1).should.equal(true);
+        compare.ltes(o1, O1).should.equal(true);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.ltes(O1, o1).should.equal(true);
+        compare.ltes(O1, o1).should.equal(true);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.ltes(O1, O2).should.equal(true);
+        compare.ltes(O1, O2).should.equal(true);
       });
     });
 
     suite('not equal => false', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.ltes(o1, q1).should.equal(false);
+        compare.ltes(o1, q1).should.equal(false);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.ltes(o1, Q1).should.equal(false);
+        compare.ltes(o1, Q1).should.equal(false);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.ltes(O1, q1).should.equal(false);
+        compare.ltes(O1, q1).should.equal(false);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.ltes(O1, Q1).should.equal(false);
+        compare.ltes(O1, Q1).should.equal(false);
       });
 
       test('null x null', async (): Promise<void> => {
-        cmp.ltes(null, null).should.equal(false);
+        compare.ltes(null, null).should.equal(false);
       });
 
       test('null x object', async (): Promise<void> => {
-        cmp.ltes(null, o1).should.equal(false);
+        compare.ltes(null, o1).should.equal(false);
       });
 
       test('null x Object()', async (): Promise<void> => {
-        cmp.ltes(null, O1).should.equal(false);
+        compare.ltes(null, O1).should.equal(false);
       });
     });
 
     suite('less than => true', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.ltes(empty, o1).should.equal(true);
+        compare.ltes(empty, o1).should.equal(true);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.ltes(Empty, o1).should.equal(true);
+        compare.ltes(Empty, o1).should.equal(true);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.ltes(empty, O1).should.equal(true);
+        compare.ltes(empty, O1).should.equal(true);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.ltes(Empty, O1).should.equal(true);
+        compare.ltes(Empty, O1).should.equal(true);
       });
     });
   });
@@ -1193,41 +1193,41 @@ suite('object x object', (): void => {
   suite('id', (): void => {
     suite('identical => true', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.id(o1, o1).should.equal(true);
+        compare.id(o1, o1).should.equal(true);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.id(O1, O1).should.equal(true);
+        compare.id(O1, O1).should.equal(true);
       });
 
       test('null x null', async (): Promise<void> => {
-        cmp.id(null, null).should.equal(true);
+        compare.id(null, null).should.equal(true);
       });
 
       test('falsy x falsy', async (): Promise<void> => {
-        cmp.id(r1, r1).should.equal(true);
+        compare.id(r1, r1).should.equal(true);
       });
     });
 
     suite('not identical => false', (): void => {
       test('object x object', async (): Promise<void> => {
-        cmp.id(o1, o2).should.equal(false);
+        compare.id(o1, o2).should.equal(false);
       });
 
       test('object x Object()', async (): Promise<void> => {
-        cmp.id(o1, O1).should.equal(false);
+        compare.id(o1, O1).should.equal(false);
       });
 
       test('Object() x object', async (): Promise<void> => {
-        cmp.id(O1, o1).should.equal(false);
+        compare.id(O1, o1).should.equal(false);
       });
 
       test('Object() x Object()', async (): Promise<void> => {
-        cmp.id(O1, O2).should.equal(false);
+        compare.id(O1, O2).should.equal(false);
       });
 
       test('falsy x falsy', async (): Promise<void> => {
-        cmp.id(r1, r2).should.equal(false);
+        compare.id(r1, r2).should.equal(false);
       });
     });
   });
