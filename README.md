@@ -9,7 +9,7 @@ comparejs implements JavaScript's comparison operators the way you would expect 
 | Version          | [![npm](https://img.shields.io/npm/v/comparejs)](https://www.npmjs.com/package/comparejs)                                                      |
 | Dependencies     | ![David](https://img.shields.io/david/thenativeweb/comparejs)                                                                                  |
 | Dev dependencies | ![David](https://img.shields.io/david/dev/thenativeweb/comparejs)                                                                              |
-| Build            | [![CircleCI](https://img.shields.io/circleci/build/github/thenativeweb/comparejs)](https://circleci.com/gh/thenativeweb/comparejs/tree/master) |
+| Build            | ![GitHub Actions](https://github.com/thenativeweb/comparejs/workflows/Release/badge.svg?branch=master) |
 | License          | ![GitHub](https://img.shields.io/github/license/thenativeweb/comparejs)                                                                        |
 
 ## Installation
