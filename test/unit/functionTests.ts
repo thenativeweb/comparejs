@@ -2,11 +2,11 @@ import { compare } from '../../lib/compare';
 import 'should';
 
 suite('function x function', (): void => {
-  /* eslint-disable no-new-func */
+  /* eslint-disable no-new-func, @typescript-eslint/no-implied-eval */
   const F1 = new Function('return 23;'),
         F2 = new Function('return 23;'),
         G1 = new Function('return 42;');
-  /* eslint-enable no-new-func */
+  /* eslint-enable no-new-func, @typescript-eslint/no-implied-eval */
 
   const f1 = function (): number {
           return 23;
