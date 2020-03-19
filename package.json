@@ -1,6 +1,6 @@
 {
   "name": "comparejs",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "comparejs implements JavaScript's comparison operators the way you would expect them to be.",
   "contributors": [
     {
