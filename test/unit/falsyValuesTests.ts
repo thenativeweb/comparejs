@@ -20,6 +20,7 @@ suite('falsy values', (): void => {
     });
 
     test(' 0 x undefined', async (): Promise<void> => {
+      // eslint-disable-next-line unicorn/no-useless-undefined
       compare.eq(0, undefined).should.equal(false);
     });
 
@@ -40,6 +41,7 @@ suite('falsy values', (): void => {
     });
 
     test('"" x undefined', async (): Promise<void> => {
+      // eslint-disable-next-line unicorn/no-useless-undefined
       compare.eq('', undefined).should.equal(false);
     });
 
@@ -60,6 +62,7 @@ suite('falsy values', (): void => {
     });
 
     test('false x undefined', async (): Promise<void> => {
+      // eslint-disable-next-line unicorn/no-useless-undefined
       compare.eq(false, undefined).should.equal(false);
     });
 
@@ -80,6 +83,7 @@ suite('falsy values', (): void => {
     });
 
     test('null x undefined', async (): Promise<void> => {
+      // eslint-disable-next-line unicorn/no-useless-undefined
       compare.eq(null, undefined).should.equal(false);
     });
 
@@ -100,6 +104,7 @@ suite('falsy values', (): void => {
     });
 
     test('undefined x undefined', async (): Promise<void> => {
+      // eslint-disable-next-line unicorn/no-useless-undefined
       compare.eq(undefined, undefined).should.equal(true);
     });
   });

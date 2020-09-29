@@ -8,6 +8,7 @@ suite('number x number', (): void => {
   /* eslint-enable no-new-wrappers, unicorn/new-for-builtins */
 
   const largeNumber = 42,
+        // eslint-disable-next-line @typescript-eslint/naming-convention
         notANumber = Number.NaN,
         smallNumber = 23;
 
