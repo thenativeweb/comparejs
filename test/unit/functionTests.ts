@@ -8,6 +8,7 @@ suite('function x function', (): void => {
         G1 = new Function('return 42;');
   /* eslint-enable no-new-func, @typescript-eslint/no-implied-eval */
 
+  /* eslint-disable unicorn/consistent-function-scoping */
   const f1 = function (): number {
           return 23;
         },
@@ -17,6 +18,7 @@ suite('function x function', (): void => {
         g1 = function (): number {
           return 42;
         };
+  /* eslint-enable unicorn/consistent-function-scoping */
 
   suite('eq', (): void => {
     suite('equal => true', (): void => {

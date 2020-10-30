@@ -2,6 +2,7 @@ import { compare } from '../../lib/compare';
 import 'should';
 
 suite('mixed types', (): void => {
+  // eslint-disable-next-line unicorn/consistent-function-scoping
   const fn = function (): number {
     return 23;
   };
