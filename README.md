@@ -74,9 +74,9 @@ For objects, there are special operators that compare by structure. Among other 
 
 Please note that these operators only work for objects. For any other type, they return `false`.
 
-## Running the build
+## Running quality assurance
 
-To build this module use [roboter](https://www.npmjs.com/package/roboter).
+To run quality assurance for this module use [roboter](https://www.npmjs.com/package/roboter):
 
 ```shell
 $ npx roboter
