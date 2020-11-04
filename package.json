@@ -1,6 +1,6 @@
 {
   "name": "comparejs",
-  "version": "4.0.1",
+  "version": "4.0.4",
   "description": "comparejs implements JavaScript's comparison operators the way you would expect them to be.",
   "contributors": [
     {
@@ -27,12 +27,12 @@
   "main": "build/lib/compare.js",
   "types": "build/lib/compare.d.ts",
   "dependencies": {
-    "is-subset-of": "3.1.0",
-    "typedescriptor": "3.0.0"
+    "is-subset-of": "3.1.2",
+    "typedescriptor": "3.0.1"
   },
   "devDependencies": {
-    "roboter": "11.5.1",
-    "semantic-release-configuration": "1.0.23",
+    "roboter": "11.5.3",
+    "semantic-release-configuration": "1.0.25",
     "should": "13.2.3"
   },
   "repository": {
