@@ -32,7 +32,7 @@
   },
   "devDependencies": {
     "roboter": "11.6.4",
-    "semantic-release-configuration": "1.0.30",
+    "semantic-release-configuration": "1.0.32",
     "should": "13.2.3"
   },
   "repository": {
