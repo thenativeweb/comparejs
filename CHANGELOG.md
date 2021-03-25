@@ -1,3 +1,10 @@
+## [4.0.5](https://github.com/thenativeweb/comparejs/compare/4.0.4...4.0.5) (2021-03-25)
+
+
+### Bug Fixes
+
+* Migrate from master to main. ([#291](https://github.com/thenativeweb/comparejs/issues/291)) ([7754cab](https://github.com/thenativeweb/comparejs/commit/7754cab94b5fcda9db41ba0ff6be2d67337ee317))
+
 ## [4.0.4](https://github.com/thenativeweb/comparejs/compare/4.0.3...4.0.4) (2020-11-03)
 
 
