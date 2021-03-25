@@ -1,3 +1,10 @@
+## [4.0.6](https://github.com/thenativeweb/comparejs/compare/4.0.5...4.0.6) (2021-03-25)
+
+
+### Bug Fixes
+
+* bump is-subset-of from 3.1.2 to 3.1.3 ([#292](https://github.com/thenativeweb/comparejs/issues/292)) ([127e37e](https://github.com/thenativeweb/comparejs/commit/127e37eaa5dfce87dfa9ebfc020e36f7ce895b22))
+
 ## [4.0.5](https://github.com/thenativeweb/comparejs/compare/4.0.4...4.0.5) (2021-03-25)
 
 
