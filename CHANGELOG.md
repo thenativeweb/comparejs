@@ -1,3 +1,10 @@
+## [4.0.7](https://github.com/thenativeweb/comparejs/compare/4.0.6...4.0.7) (2021-03-25)
+
+
+### Bug Fixes
+
+* bump typedescriptor from 3.0.1 to 3.0.2 ([#294](https://github.com/thenativeweb/comparejs/issues/294)) ([5213e3f](https://github.com/thenativeweb/comparejs/commit/5213e3fe0f7f36added05f78210d62dbc03e2e8c))
+
 ## [4.0.6](https://github.com/thenativeweb/comparejs/compare/4.0.5...4.0.6) (2021-03-25)
 
 
