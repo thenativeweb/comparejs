@@ -1,3 +1,10 @@
+## [4.0.8](https://github.com/thenativeweb/comparejs/compare/4.0.7...4.0.8) (2021-05-10)
+
+
+### Bug Fixes
+
+* bump hosted-git-info from 2.8.8 to 2.8.9 ([#307](https://github.com/thenativeweb/comparejs/issues/307)) ([90a9dd5](https://github.com/thenativeweb/comparejs/commit/90a9dd58924cba8eb50d8cc936bbcdf6c6c69d67))
+
 ## [4.0.7](https://github.com/thenativeweb/comparejs/compare/4.0.6...4.0.7) (2021-03-25)
 
 
