@@ -28,7 +28,7 @@
   "types": "build/lib/compare.d.ts",
   "dependencies": {
     "is-subset-of": "3.1.5",
-    "typedescriptor": "3.0.2"
+    "typedescriptor": "4.0.3"
   },
   "devDependencies": {
     "roboter": "11.6.49",
