@@ -1,3 +1,10 @@
+## [4.0.10](https://github.com/thenativeweb/comparejs/compare/4.0.9...4.0.10) (2021-06-08)
+
+
+### Bug Fixes
+
+* bump glob-parent from 5.1.1 to 5.1.2 ([#321](https://github.com/thenativeweb/comparejs/issues/321)) ([83d744c](https://github.com/thenativeweb/comparejs/commit/83d744cbb679e02f9c5dd0cd75a08723350f865f))
+
 ## [4.0.9](https://github.com/thenativeweb/comparejs/compare/4.0.8...4.0.9) (2021-05-17)
 
 
