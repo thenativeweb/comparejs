@@ -1,3 +1,10 @@
+## [4.0.11](https://github.com/thenativeweb/comparejs/compare/4.0.10...4.0.11) (2021-06-08)
+
+
+### Bug Fixes
+
+* bump trim-newlines from 3.0.0 to 3.0.1 ([#320](https://github.com/thenativeweb/comparejs/issues/320)) ([b26bdc9](https://github.com/thenativeweb/comparejs/commit/b26bdc9c3ad9657a9d36970b881240891f8b1cf0))
+
 ## [4.0.10](https://github.com/thenativeweb/comparejs/compare/4.0.9...4.0.10) (2021-06-08)
 
 
