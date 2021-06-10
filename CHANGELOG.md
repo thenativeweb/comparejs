@@ -1,3 +1,10 @@
+## [4.0.12](https://github.com/thenativeweb/comparejs/compare/4.0.11...4.0.12) (2021-06-10)
+
+
+### Bug Fixes
+
+* bump normalize-url from 6.0.0 to 6.0.1 ([#322](https://github.com/thenativeweb/comparejs/issues/322)) ([f1fd239](https://github.com/thenativeweb/comparejs/commit/f1fd23907e31ae5ba4f7a5e0926cd28c45b34125))
+
 ## [4.0.11](https://github.com/thenativeweb/comparejs/compare/4.0.10...4.0.11) (2021-06-08)
 
 
