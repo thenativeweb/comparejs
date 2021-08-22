@@ -24,6 +24,7 @@
       "email": "hannes.leutloff@thenativeweb.io"
     }
   ],
+  "private": false,
   "main": "build/lib/compare.js",
   "types": "build/lib/compare.d.ts",
   "dependencies": {
@@ -31,10 +32,11 @@
     "typedescriptor": "3.0.2"
   },
   "devDependencies": {
-    "roboter": "11.7.8",
+    "roboter": "12.1.2",
     "semantic-release-configuration": "2.0.5",
     "should": "13.2.3"
   },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git://github.com/thenativeweb/comparejs.git"
