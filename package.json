@@ -28,7 +28,7 @@
   "main": "build/lib/compare.js",
   "types": "build/lib/compare.d.ts",
   "dependencies": {
-    "is-subset-of": "3.1.9",
+    "is-subset-of": "3.1.10",
     "typedescriptor": "3.0.2"
   },
   "devDependencies": {
