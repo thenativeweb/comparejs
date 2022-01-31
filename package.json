@@ -32,7 +32,7 @@
     "typedescriptor": "3.0.2"
   },
   "devDependencies": {
-    "roboter": "12.6.2",
+    "roboter": "12.6.4",
     "semantic-release-configuration": "2.0.5",
     "should": "13.2.3"
   },
